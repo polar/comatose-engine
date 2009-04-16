@@ -1,0 +1,9 @@
+= 0.1.0
+
+* Initial Commit of Comatose
+* Rails 2.2.2
+* Refactoring into an Engines Plugin
+* Included needed plugins in engine_plugins
+* Added an association for pages to uploaded photos
+  with attachment_fu.
+
