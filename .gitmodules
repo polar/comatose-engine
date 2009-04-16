@@ -1,0 +1,15 @@
+[submodule "acts_as_list"]
+	path = acts_as_list
+	url = /mnt/jager/home/polar/src/comatose_engine/engine_plugins/acts_as_list/.git
+[submodule "acts_as_tree"]
+	path = acts_as_tree
+	url = /mnt/jager/home/polar/src/comatose_engine/engine_plugins/acts_as_tree/.git
+[submodule "paginating_find"]
+	path = paginating_find
+	url = /mnt/jager/home/polar/src/comatose_engine/engine_plugins/paginating_find/.git
+[submodule "responds_to_parent"]
+	path = responds_to_parent
+	url = /mnt/jager/home/polar/src/comatose_engine/engine_plugins/responds_to_parent/.git
+[submodule "attachment_fu"]
+	path = attachment_fu
+	url = /mnt/jager/home/polar/src/comatose_engine/engine_plugins/attachment_fu/.git
