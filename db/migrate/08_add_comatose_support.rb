@@ -52,7 +52,7 @@ class AddComatoseSupport < ActiveRecord::Migration
         :title  => 'Home Page',
         :body   => File.open(
                  File.join(RAILS_ROOT, "vendor" , "plugins", "comatose_engine",
-                           "UserManual.textile")),
+                           "UserManual.textile")).read,
         :author => 'System' )
   end
 
