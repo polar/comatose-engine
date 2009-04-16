@@ -50,7 +50,7 @@ class AddComatoseSupport < ActiveRecord::Migration
     puts "Creating the default 'Home Page'..."
     ComatosePage.create(
         :title  => 'Home Page',
-        :body   => File.open(File.join(__FILE__, ".." , "..", "UserManual.textile"))
+        :body   => File.open(File.join(__FILE__, ".." , "..", "UserManual.textile")),
         :author => 'System' )
   end
 

@@ -57,17 +57,17 @@ using.
 
 	* If you're not using git, and just want to add the source files:
 
-			Download a tarball from https://github.com/polar/comatoseengine/tarball/master and unpack it into /vendor/plugins/comatose\_engine
+			Download a tarball from https://github.com/polar/comatose-engine/tarball/master and unpack it into /vendor/plugins/comatose\_engine
 
 	* Using git, make a shallow clone of the comatose_engine repository:
 
-			$ git clone --depth 1 git://github.com/polar/comatoseengine.git vendor/plugins/comatose_engine
+			$ git clone --depth 1 git://github.com/polar/comatose-engine.git vendor/plugins/comatose_engine
 
 	* If you want to keep your comatose_engine plugin up to date using git, you'll have to add it as a submodule:
 
 			http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#submodules
 			Basically:
-			git submodule add git://github.com/polar/comatoseengine.git vendor/plugins/comatose_engine
+			git submodule add git://github.com/polar/comatose-engine.git vendor/plugins/comatose_engine
 			git submodule init
 			git submodule update
 
