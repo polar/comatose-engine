@@ -1,0 +1,183 @@
+<%= error_messages_for :page %>
+<p>
+Click this picture to change the picture for this page. Fill in the appearing form to upload the image imediately by selecting the local file, then clicking the "Upload" button. This will upload the image immediately. However, you still must click the "Save Changes" button below for it to take effect for the page.
+<div id='page_photo'>
+  <%= render :partial => "page_photos/page_photo",
+             :object => @page.page_photo %>
+</div>
+<br/>
+<br/>
+<div id="page_photo_form" style="display: none;">
+  <% form_for(:page_photo,
+              :url => formatted_page_photos_path(:format => 'js'),
+              :html => { :multipart => true, :target => 'upload_frame'}) do |f| %>
+    <%= f.file_field :uploaded_data %>
+    <%= submit_tag "Upload and Change",
+                   :onclick => "$('page_photo_form').hide(); return true;" %>
+    <a href="#" onclick="$('page_photo_form').hide(); return false;">Cancel</a>
+  <%  end %>
+</div>
+
+<iframe id='upload_frame'
+        name="upload_frame"
+        style="width:1px;height:1px;border:0px"
+        src="about:blank"></iframe>
+
+<br/>
+<br/>
+
+<% form_for :page, @page, :html => { :id => "comatose-page-form" } do |f| %>
+  <%
+  # The page_photo_input div's html gets replaced by uploading a photo.
+  %>
+  <div id="page_photo_input">
+    <%= f.hidden_field :page_photo_id %>
+  </div>
+  <table class="page-form" cellpadding="0" cellspacing="0">
+    <tr>
+      <td class="label">
+        <label for="page_title">Title</label>
+      </td>
+      <td class="field">
+        <%= f.text_field :title, :tabindex=>1, :maxlength=>255, :size=>50 %>
+        <%= link_to_function "More...",
+                             "ComatoseEditForm.toggle_extra_fields(this)",
+                             :id => 'more-options' %>
+      </td>
+    </tr>
+
+    <tr id="slug_row" class="meta-info">
+      <td class="label">
+        <label for="page_slug">Slug</label>
+      </td>
+      <td class="field">
+        <%= f.text_field :slug,
+                         :tabindex => 6,
+                         :maxlength => 255,
+                         :size => 50 %>
+      </td>
+    </tr>
+
+  <% if show_field? 'keywords' %>
+    <tr id="keywords_row" class="meta-info">
+      <td class="label">
+        <label for="page_keywords">Keywords</label>
+      </td>
+      <td class="field">
+        <%= f.text_field :keywords,
+                         :tabindex => 7,
+                         :maxlength => 1000,
+                         :size => 50 %>
+      </td>
+    </tr>
+  <% end %>
+
+  <% if show_field? 'parent' %>
+    <tr id="parent_row" class="meta-info">
+      <td class="label">
+        <label for="page_parent">Parent</label>
+      </td>
+      <td class="field">
+        <% if mode != :new and @root_pages.include? @page %>
+          <select id="page_parent" disabled="true">
+            <option><%= @page.title %> is a root page</option>
+          </select>
+        <% else %>
+          <select id="page_parent" name="page[parent_id]" tabindex="8">
+            <%= tree_select_box @root_pages, @page.parent_id, @page.id %>
+          </select>
+         <% end %>
+      </td>
+    </tr>
+  <% end %>
+
+    <tr>
+      <td class="label body">
+        <label for="page_body">Body</label>
+      </td>
+      <td class="field">
+        <%= f.text_area :body, :rows => 20, :tabindex => 2 %>
+      </td>
+    </tr>
+
+  <% if show_field? 'filter' %>
+    <tr id="filter_row" class="meta-info">
+      <td class="label">
+        <label for="page_filter_type">Filter</label>
+      </td>
+      <td class="field">
+        <%= select_tag 'page[filter_type]',
+                        options_for_select(TextFilters.all_titles.sort, @page.filter_type ||
+                          Comatose.config.default_filter),
+                        :tabindex=>3,
+                        :id=>'page_filter_type' %>
+        <span class="field-help">Converts plain text into html</span>
+      </td>
+    </tr>
+  <% end %>
+
+  <% if show_field? 'created_on' %>
+    <tr id="created_row" class="meta-info">
+      <td class="label">
+        <label for="page_created_on">Created</label>
+      </td>
+      <td class="field">
+        <%= f.datetime_select :created_on %>
+      </td>
+    </tr>
+  <% end %>
+
+  </table>
+
+  <div id="button-group">
+    <% unless @page.updated_on.nil? %>
+      <div class="last-update">
+        <label>
+          Updated <%= time_ago_in_words @page.updated_on, true %> ago by
+          <%= @page.author %>.
+          <%= link_to(pluralize(@page.versions.length, 'revision', 'revisions'),
+                      :action=>'versions', :id=>@page) if @page.versions.length > 0 %>
+        </label>
+      </div>
+    <% end %>
+    <div class="comatose-page-buttons">
+      <%= image_tag 'comatose/spinner.gif',
+                    :plugin => 'comatose_engine',
+                    :id=>'spinner',
+                    :align=>'absmiddle',
+                    :style=>'display:none;' %>
+        <%= button_to_function('Preview',
+                     "ComatoseEditForm.preview_content('#{
+                               url_for :controller=>controller.controller_name,
+                                     :action=>'preview', :id=>@page
+                      }')",
+                      :tabindex=>3,
+                      :id=>'preview-btn' ) if show_field? 'preview' %>
+        &nbsp;
+        <%= submit_tag ((mode == :edit) ? 'Save Changes' : 'Create Page'), :tabindex=>4 %>
+        <% if @page.versions.length > 0 %>
+          &nbsp;
+          <%= link_to "Revert", :action=>'versions', :id=>@page %>
+        <% end %>
+        or
+        <a href="<%= url_for :controller=>controller.controller_name, :action=>'index' %>"
+           onlick="ComatoseEditForm.cancel(this.href); return false;"
+           tabindex="5">Cancel</a>
+    </div>
+  </div>
+<% end %>
+
+<div id="preview-area">
+  <fieldset>
+    <legend>Page Preview</legend>
+    <div class="preview-body">
+      <div id="preview-panel"><span style='color:blue;'>Loading Preview...</span></div>
+      <div style="clear:both"></div>
+    </div>
+  </fieldset>
+  <div class="commands">
+    <a href="#" onclick="$('preview-area').hide();">Close Preview</a> or <a href="#">Back to top</a>
+  </div>
+</div>
+
+<%= javascript_tag "ComatoseEditForm.init('#{mode.to_s}');" %>

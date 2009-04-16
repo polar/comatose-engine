@@ -1,0 +1,82 @@
+h1. Welcome
+
+Your content goes here.
+
+h2. Edit Admin
+
+You may edit the contents of your pages from this URL, provided
+you haven't configured it otherwise:
+
+  Link to <a href="/comatose_admin">Edit Admin Page</a>
+
+h2. Getting properties of a current page
+
+You may get properties from the system using certain previously
+defined and configured "drops" for your system. The "page" drop
+contains properties of the current page.
+
+The properties of the "page" drop you can use are the following:
+Look at both the source from the admin page and the previews for
+a better example of their use.
+
+    * page.title
+    - {{ page.title }}
+    * page.slug
+    - {{ page.slug }}
+    * page.keywords
+    - {{ page.keywords }}
+    * page.has_keyword.key -- where key is the downcased keyword you're testing for
+    - {{ page.has_keyword.example }}
+    * page.uri
+    - {{ page.uri }}
+    * page.link -- returns a titled link to current page
+    - {{ page.link }}
+    * page.full_path
+    - {{ page.full_path }}
+    * page.content -- processed and filtered page.body
+    -  We don't display content here, because it's recursive.
+    * page.author
+    - {{ page.author }}
+    * page.filter_type
+    - {{ page.filter_type }}
+    * page.updated_on
+    - {{ page.updated_on }}
+    * page.created_on
+    - {{ page.created_on }}
+    * page.parent -- the parent page
+    - {{ page.parent.title }}
+    * page.first_child -- the first child page
+    - {{ page.first_child }}
+    * page.last_child -- the last child page
+    - {{ page.last_child }}
+    * page.children -- array of child pages
+    - {{ page.children }}
+    * page.rchildren -- array of child pages in reverse order
+    - {{ page.rchildren }}
+    * params.* -- request info and any passed params from the mounting point
+    - {{ page.params.id }}
+    * * (Any params sent via :locals when inline)
+    - {{ somevar }}
+
+h1. Photos
+
+You have access to the photos in various sizes
+h1. Photo URLs
+    * page.page_photo_uri.thumb
+    - {{ page.page_photo_uri.thumb }}
+    * page.page_photo_uri.small
+    - {{ page.page_photo_uri.small }}
+    * page.page_photo_uri.medium
+    - {{ page.page_photo_uri.medium }}
+    * page.page_photo_uri.large
+    - {{ page.page_photo_uri.large }}
+
+h1. Thumb Photo
+    * page.page_photo.thumb
+    - {{ page.page_photo.thumb }}
+    * page.page_photo.small
+    - {{ page.page_photo.small }}
+    * page.page_photo.medium
+    - {{ page.page_photo.medium }}
+    * page.page_photo.large
+    - {{ page.page_photo.large }}

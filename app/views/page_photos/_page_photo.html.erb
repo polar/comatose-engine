@@ -1,0 +1,38 @@
+<%
+# This partial generates a link using the "small" version of the
+# photo, or it uses a default photo for the edit page of the
+# ComatosePage. It exposes the <div id="page_photo_form"> when
+# clicked. The page_photo controller will call this again to
+# replace the surrounding div.
+#
+# Locals:
+#   page_photo   The page_photo from the ComatosePage
+#
+%>
+<script type="text/javascript">
+/*
+ * This function replaces any loaded image in the page with the
+ * default "no photo" image.
+ */
+function deletePhoto(){
+  $('page_photo_form').hide();
+  $('page_photo_link').innerHTML =
+             '<%= image_tag("comatose/page.gif",
+             :plugin => "comatose_engine",
+             :alt => "Change Photo") %>';
+  $('page_page_photo_id').setValue('');
+  return true;
+}
+</script>
+<%= link_to(
+     (page_photo ?
+          image_tag(page_photo.public_filename(:small),
+             :alt => "Change Photo") :
+          image_tag("comatose/page.gif",
+             :plugin => "comatose_engine",
+             :alt => "Change Photo")),
+     '#',
+     :id => 'page_photo_link',
+     :onclick => "$('page_photo_form').setStyle({display: 'inline'}); return false;") %>
+<input id="page_photo_delete" class="button-to"
+       value="Delete Photo" onclick="deletePhoto(); return false;" type="button"/>
