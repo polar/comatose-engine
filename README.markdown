@@ -99,6 +99,7 @@ using.
         # existing routes, but before the default rails routes:
 		map.from_plugin :comatose_engine
         # Otherwise, follow the Comatose Description for routes.
+        # map.resources "page_photos"
         # map.comatose_admin
         # map.comatose_root "home"
 
