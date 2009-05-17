@@ -4,6 +4,7 @@
 * Author: Polar Humenn
           extending upon the work of M@ McRay
 * Website: http://github.com/polar/comatose_engine
+* Branch:  desert
 * Email: polar humenn at gmail com
 
 * Comatose Engine is a modified Desert Plugin (upgrading from Engines Plugin) 
@@ -17,7 +18,7 @@ It's intended for simple CMS support. Comatose Engine supports
  * Versioning
  * Page markup in Textile, Markdown, RDoc, or easily add your own
  * Page processing through Liquid or ERb
- * Engines Ready for easy installation/migration
+ * Desert Plugin Ready for easy installation/migration
  * Completely self-contained within plugin folder
  * Can handle uploading images and associating with a page.
 
