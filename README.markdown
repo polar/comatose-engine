@@ -68,11 +68,9 @@ using.
 
 			http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#submodules
 			Basically:
-			git submodule add git://github.com/polar/comatose-engine.git vendor/plugins/comatose_engine
+			git submodule add -b desert git://github.com/polar/comatose-engine.git vendor/plugins/comatose_engine
 			git submodule init
 			git submodule update
-                        cd vendor/plugins/comatose_engine
-                        git checkout desert
 
 	* Make sure you rename your CE directory to `comatose_engine` (note the underscore) if it isn't named that for some reason
 
