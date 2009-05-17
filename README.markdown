@@ -1,12 +1,13 @@
-# ComatoseEngine [v0.1.0]
+# ComatoseEngine [v0.2.0]
 
-* Versin 0.1.0 Alpha
+* Version 0.2.0 Alpha
 * Author: Polar Humenn
           extending upon the work of M@ McRay
 * Website: http://github.com/polar/comatose_engine
 * Email: polar humenn at gmail com
 
-* Comatose Engine is an Engines Plugin of the popular Comatose
+* Comatose Engine is a modified Desert Plugin (upgrading from Engines Plugin) 
+of the popular Comatose
 plugin, enhanced with associating photos with pages with
 the attachment_fu plugin.
 
@@ -25,15 +26,14 @@ existing applications.
 
 ### Requirements:
 
-	- RAILS VERSION 2.2.2
-	- The engines plugin for Rails 2.2.2
+	- RAILS VERSION 2.3
 	- ImageMagick (>6.4)
 	- Several gems:
+          desert (0.5.0)
 	  rmagick, if using page photos
-	  rake 0.8.3
+	  rake 0.8.4
 
-This plugin includes the following plugins in "engine_plugins", and they
-are git submodules.
+This plugin includes the following plugins in the "plugins" directory.
 
   * acts_as_list
   * acts_as_tree
@@ -49,15 +49,15 @@ using.
 
 		$ rails site_name (create a rails app if you don't have one already)
 
-2. Install the engines plugin:
+2. Install the 'desert' gem:
 
-		$ script/plugin install git://github.com/lazyatom/engines.git
+		$ gem install desert
 
 3. Put the comatose engine plugin into plugins directory (use one of the following methods):
 
 	* If you're not using git, and just want to add the source files:
 
-			Download a tarball from https://github.com/polar/comatose-engine/tarball/master and unpack it into /vendor/plugins/comatose\_engine
+			Download a tarball from https://github.com/polar/comatose-engine/tarball/desert and unpack it into /vendor/plugins/comatose\_engine
 
 	* Using git, make a shallow clone of the comatose_engine repository:
 
@@ -70,6 +70,8 @@ using.
 			git submodule add git://github.com/polar/comatose-engine.git vendor/plugins/comatose_engine
 			git submodule init
 			git submodule update
+                        cd vendor/plugins/comatose_engine
+                        git checkout desert
 
 	* Make sure you rename your CE directory to `comatose_engine` (note the underscore) if it isn't named that for some reason
 
@@ -80,32 +82,34 @@ using.
 6. Modify your environment.rb as indicated below:
 
 		## environment.rb should look something like this:
-		RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
+		RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 		require File.join(File.dirname(__FILE__), 'boot')
-		require File.join(File.dirname(__FILE__), '../vendor/plugins/engines/boot')
+
+                require 'desert'
 
 		Rails::Initializer.run do |config|
-		  config.plugins = [:engines, :comatose_engine, :all]
-		  config.plugin_paths += ["#{RAILS_ROOT}/vendor/plugins/comatose_engine/engine_plugins"]
+		  config.plugins = [:comatose_engine, :all]
+		  config.plugin_paths += ["#{RAILS_ROOT}/vendor/plugins/comatose_engine/plugins"]
 
 		  ... Your stuff here ...
 		end
 		# Include your application configuration below
-		require "#{RAILS_ROOT}/vendor/plugins/comatose_engine/engine_config/boot.rb"
+		require "#{RAILS_ROOT}/vendor/plugins/comatose_engine/config/boot.rb"
 
 7. Modify your routes.rb as indicated below:
 
-		# If you want default routes from the plugin add this after any of your own
+	# If you want default routes from the plugin add this after any of your own
         # existing routes, but before the default rails routes:
-		map.from_plugin :comatose_engine
-        # Otherwise, follow the Comatose Description for routes.
-        # map.resources "page_photos"
-        # map.comatose_admin
-        # map.comatose_root "home"
+	     map.routes_from_plugin :comatose_engine
+        # Otherwise, follow the Comatose Description for routes. For example,
+        # putting the following in your 'config/routes.rb' file.
+        #    map.resources "page_photos"
+        #    map.comatose_admin
+        #    map.comatose_root "home"
 
-		# Install the default routes as the lowest priority.
-		map.connect ':controller/:action/:id'
-		map.connect ':controller/:action/:id.:format'
+	# Install the default routes as the lowest priority.
+	map.connect ':controller/:action/:id'
+	map.connect ':controller/:action/:id.:format'
 
 10. Generate the comatose engine migrations:
 
@@ -175,7 +179,7 @@ procedures are still valid. Here's an example that uses the
       end
     end
 
-However, now that Comatose is an Engines Plugin, you can
+However, now that Comatose is an Desert Plugin, you can
 just mix in methods in the ComatoseController and ComatoseAdminController.
 
 ## Photo Uploading
@@ -203,6 +207,7 @@ missed someone/something please let me know.
  * [Acts as Versioned][]  by [Rick Olsen][]
  * [Behaviors][] by Atomic Object LLC -- very nice BDD-like testing library
  * [Engines][] by Lazy Tom
+ * [Desert][] by Pivotal
 
 ### Feedback
 
@@ -212,6 +217,7 @@ If you like it, hate it, or have some ideas for new features, let me know!
 
 polar.humenn at gmail com
 
+[Desert]: http://github.com/pivotal/desert
 [Engines]: http://github.com/lazytom/engines
 [Getting Started]: http://comatose.rubyforge.org/getting-started-guide
 [Liquid]: http://home.leetsoft.com/liquid

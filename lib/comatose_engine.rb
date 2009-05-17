@@ -4,7 +4,7 @@ module ComatoseEngine
   class << self
 
     def check_for_pending_migrations
-      newest_ce_migration = Engines.plugins[:comatose_engine].latest_migration
+      newest_ce_migration = Desert::Manager.find_plugin('comatose_engine').latest_migration
       current_ce_version  = guess_current_ce_version
 
       pending = newest_ce_migration - current_ce_version
@@ -30,3 +30,8 @@ module ComatoseEngine
   end
 
 end
+#
+# The following copies the certain parts of this plugin's
+# /public directory to the global public/plugin_assets directory.
+# 
+require 'rails_asset_extensions'

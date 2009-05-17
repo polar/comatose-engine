@@ -44,6 +44,8 @@ class ActionController::Routing::RouteSet::Mapper
       comatose_root( *(args << opts) )
     else
       super unless args.length >= 1 && proc.nil?
+p name
+p args
       @set.add_named_route(name, *args)
     end
   end

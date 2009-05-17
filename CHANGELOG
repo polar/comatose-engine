@@ -1,3 +1,9 @@
+= 0.2.0
+
+* Branch "desert"
+* Rails 2.3.2
+* Refactored from Engines Plugin to Desert
+
 = 0.1.0
 
 * Initial Commit of Comatose

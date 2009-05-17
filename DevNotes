@@ -1,0 +1,30 @@
+ = 0.2.0
+
+The move to Desert from an Engines plugin required the following 
+location changes:
+
+routes.rb  => config/desert_routes.rb
+        - This file is kind of an include file for a 
+          route mapper, and is not stand alone.
+engine_config/* => config
+engine_plugins/* => plugins
+assets/* => public
+
+In order to move to Desert from Engines, we had to hack a 
+couple of things.
+
+init.rb - Inserted some hacks to Desert::Plugin to handle our
+          way of doing migrations. These hacks were copied from
+          from CommunityEngine's conversion.
+
+lib/comatose_engine.rb
+        - Changes Engines.for_plugin to Desert::Manager.find_plugin
+          when checking for pending migrations.
+        - requires 'rails_asset_extensions'
+
+lib/rails_asset_extensions
+        - This contains a code from the Engines Plugin to
+          handle copying assets from the plugin's public
+          directory to the global public/plugin_assets 
+          directory. 
+          TODO: Explore using "desert_assets".
