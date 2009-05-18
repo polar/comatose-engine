@@ -123,7 +123,7 @@ module AssetHelpers
   end
   
 end
-  p ::ActionView::Helpers::AssetTagHelper.included_modules
+
 module ::ActionView::Helpers::AssetTagHelper
   if !self.included_modules.include? AssetHelpers
     include AssetHelpers
