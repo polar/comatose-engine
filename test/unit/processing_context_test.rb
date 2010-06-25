@@ -1,7 +1,7 @@
 require File.dirname(__FILE__) + '/../test_helper'
 require 'comatose'
 
-class ProcessingContextTest < Test::Unit::TestCase
+class ProcessingContextTest < ActiveSupport::TestCase
 
   fixtures :comatose_pages
   
@@ -10,11 +10,11 @@ class ProcessingContextTest < Test::Unit::TestCase
     @binding = Comatose::ProcessingContext.new(@root)
   end
 
-  should "process liquid tags with no filters correctly" do
-    result = TextFilters.transform('{{ page.title }}', @binding, :none, :liquid)
-    assert_equal 'Home Page', result
-  end
-  
+  # should "process liquid tags with no filters correctly" do
+  #   result = TextFilters.transform('{{ page.title }}', @binding, :none, :liquid)
+  #   assert_equal 'Home Page', result
+  # end
+  # 
   should "process erb tags correctly" do
     result = TextFilters.transform('<%= page.title %>', @binding, :none, :erb)
     assert_equal 'Home Page', result

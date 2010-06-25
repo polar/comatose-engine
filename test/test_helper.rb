@@ -1,16 +1,33 @@
 ENV["RAILS_ENV"] = 'test'
 
-require File.expand_path(File.join(File.dirname(__FILE__), '../../../../config/environment.rb'))
+if "plugins" == File.basename(File.expand_path(File.join(File.dirname(__FILE__),"../..")))  
+  RAILS_ROOT = File.expand_path(File.join(File.dirname(__FILE__),"../../../"))
+else
+  RAILS_ROOT = File.expand_path(File.join(File.dirname(__FILE__), "../"))
+end
 
-require 'test/unit'
+require "#{RAILS_ROOT}/config/environment.rb"
+
 require 'test_help'
 
-class Test::Unit::TestCase
+class ActiveSupport::TestCase
 
   self.fixture_path = File.expand_path( File.join(File.dirname(__FILE__), 'fixtures') )
 
   self.use_transactional_fixtures = true
   self.use_instantiated_fixtures  = false
+  
+  def setup
+    Comatose.configure do |config|
+      config.default_filter      = :textile
+      config.default_processor   = :liquid
+      config.authorization       = Proc.new { true }
+      config.admin_authorization = Proc.new { true }
+      config.admin_get_author    = Proc.new { request.env['REMOTE_ADDR'] }
+      config.admin_get_root_page = Proc.new { ComatosePage.root }
+    end
+    TextFilters.default_filter = "Textile"
+  end
 
   def create_page(options={})
     ComatosePage.create({ :title => 'Comatose Page', :author=>'test', :parent_id=>1 }.merge(options))
@@ -29,6 +46,8 @@ class Test::Unit::TestCase
   def assert_no_difference(object, method, &block)
     assert_difference object, method, 0, &block
   end
+
+
 
   class << self
     def should(behave,&block)

@@ -16,14 +16,6 @@ end
 
 namespace :comatose_engine do
 
-  desc 'Move the comatose engine assets to application public directory'
-  task :mirror_public_assets => :environment do
-    # Actually, there is no need to do anything here.
-    # The mere act of running rake mirrors
-    # moves the plugin assets for everything.
-    # Engines::Assets.mirror_files_for(Rails.plugins[:comatose_engine])
-  end
-
   desc 'Test the comatose_engine plugin.'
   Rake::TestTask.new(:test) do |t|
     t.libs << 'lib'
@@ -39,7 +31,7 @@ namespace :comatose_engine do
     RCOV = "rcov"
     OUTPUT_DIR = "../../../coverage/comatose_engine"
 
-    desc "Generate a coverage report in coverage/communuity_engine. NOTE: you must have rcov installed for this to work!"
+    desc "Generate a coverage report in coverage/comatose_engine. NOTE: you must have rcov installed for this to work!"
     task :rcov  => [:clobber_rcov] do
       params = String.new
       if ENV['RCOV_PARAMS']

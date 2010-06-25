@@ -3,7 +3,7 @@ require 'support/class_options'
 class TextFilters
   
   define_option :default_processor, :liquid
-  define_option :default_filter,    :textile
+  define_option :default_filter,    "Textile"
   define_option :logger,            nil
   
   @registered_filters = {}
@@ -57,7 +57,9 @@ class TextFilters
     def get_filter(name)
       name = TextFilters.default_filter if name.nil?
       name = registered_titles[name] if name.is_a? String
-      registered_filters[name]
+      filter = registered_filters[name]
+      raise "No filter found for '#{name}' in registered_titles: #{registered_titles.inspect} or registered_filters: #{registered_filters.inspect}" unless filter
+      filter
     end
 
     def [](name)

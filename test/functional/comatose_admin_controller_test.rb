@@ -8,10 +8,10 @@ class ComatoseAdminController
   def rescue_action(e) raise e end
 end
 
-class ComatoseAdminControllerTest < Test::Unit::TestCase
+class ComatoseAdminControllerTest < ActionController::TestCase
 
   fixtures :comatose_pages
-
+    
   def setup
     @controller = ComatoseAdminController.new
     @request    = ActionController::TestRequest.new
@@ -19,31 +19,31 @@ class ComatoseAdminControllerTest < Test::Unit::TestCase
     Comatose.config.admin_get_author = nil
     Comatose.config.admin_authorization = nil
   end
-
+  
   should "show the index action" do
     get :index
     assert_response :success
     assert assigns(:root_pages)
   end
-
+  
   should "show the new action" do
     get :new
     assert_response :success
     assert assigns(:page)
   end
-
+  
   should "successfully create pages" do
     post :new, :page=>{:title=>"Test page", :body=>'This is a *test*', :parent_id=>1, :filter_type=>'Textile'}
     assert_response :redirect
-    assert_redirected_to :controller=>'comatose_admin', :action=>'index'
+    assert_redirected_to comatose_admin_path(:action=>'index')
   end
-
+  
   should "create a page with an empty body" do
     post :new, :page=>{:title=>"Test page", :body=>nil, :parent_id=>1, :filter_type=>'Textile'}
     assert_response :redirect
-    assert_redirected_to :controller=>'comatose_admin', :action=>'index'
+    assert_redirected_to comatose_admin_path(:action=>'index')
   end
-
+  
   should "not create a page with a missing title" do
     post :new, :page=>{:title=>nil, :body=>'This is a *test*', :parent_id=>1, :filter_type=>'Textile'}
     assert_response :success
@@ -51,7 +51,7 @@ class ComatoseAdminControllerTest < Test::Unit::TestCase
     assert (assigns['page'].errors.length > 0), "Page errors"
     assert_equal 'must be present', assigns['page'].errors.on('title')
   end
-
+  
   should "not create a page associated to an invalid parent" do
     post :new, :page=>{:title=>'Test page', :body=>'This is a *test*', :parent_id=>nil, :filter_type=>'Textile'}
     assert_response :success
@@ -59,24 +59,24 @@ class ComatoseAdminControllerTest < Test::Unit::TestCase
     assert (assigns['page'].errors.length > 0), "Page errors"
     assert_equal 'must be present', assigns['page'].errors.on('parent_id')
   end
-
+  
   should "contain all the correct options for filter_type" do
     get :new
     assert_response :success
     assert_select 'SELECT[id=page_filter_type]>*', :count=>TextFilters.all_titles.length
   end
-
+  
   should "show the edit action" do
     get :edit, :id=>1
     assert_response :success
   end
-
+  
   should "update pages with valid data" do
     post :edit, :id=>1, :page=>{ :title=>'A new title' }
     assert_response :redirect
-    assert_redirected_to :action=>"index"
+    assert_redirected_to comatose_admin_path(:action=>"index")
   end
-
+  
   should "not update pages with invalid data" do
     post :edit, :id=>1, :page=>{ :title=>nil }
     assert_response :success
@@ -86,7 +86,7 @@ class ComatoseAdminControllerTest < Test::Unit::TestCase
   should "delete a page" do
     post :delete, :id=>1
     assert_response :redirect
-    assert_redirected_to :action=>"index"
+    assert_redirected_to comatose_admin_path(:action=>"index")
   end
 
   should "reorder pages" do
@@ -95,15 +95,16 @@ class ComatoseAdminControllerTest < Test::Unit::TestCase
     assert_difference q1, :position do
       post :reorder, :id=>q1.parent.id, :page=>q1.id, :cmd=>'down'
       assert_response :redirect
-      assert_redirected_to :action=>"reorder"
+      assert_redirected_to comatose_admin_path(:action=>"reorder")
       q1.reload
     end
   end
-
+  
   should "set runtime mode" do
-    assert_equal :plugin, ComatoseAdminController.runtime_mode
-    # We are an engine so the views are in the comatose_engine/app/views directory
-    comatose_admin_view_path = File.expand_path(File.join( File.dirname(__FILE__), '..', '..', 'app', 'views'))
+    # The new script copies comatose_admin.js to the applicatoin and this sets 
+    # runtime_mode to :application. So, in the test_harness, it's always application.
+    #assert_equal :plugin, ComatoseAdminController.runtime_mode
+    comatose_admin_view_path = File.expand_path(File.join( File.dirname(__FILE__), '..', '..', 'views'))
 
     if ComatoseAdminController.respond_to?(:template_root)
       assert_equal comatose_admin_view_path, ComatoseAdminController.template_root
