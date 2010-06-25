@@ -1,7 +1,7 @@
 ENV["RAILS_ENV"] = 'test'
 
 if "plugins" == File.basename(File.expand_path(File.join(File.dirname(__FILE__),"../..")))  
-  RAILS_ROOT = File.expand_path(File.join(File.dirname(__FILE__),"../../../"))
+  RAILS_ROOT = File.expand_path(File.join(File.dirname(__FILE__),"../../../../"))
 else
   RAILS_ROOT = File.expand_path(File.join(File.dirname(__FILE__), "../"))
 end

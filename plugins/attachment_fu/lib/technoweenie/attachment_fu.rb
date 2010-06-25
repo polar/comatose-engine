@@ -103,8 +103,8 @@ module Technoweenie # :nodoc:
         attachment_options[:path_prefix] ||= attachment_options[:file_system_path]
         if attachment_options[:path_prefix].nil?
           attachment_options[:path_prefix] = case attachment_options[:storage]
-            when :s3: table_name
-            when :cloud_files: table_name
+            when :s3 then table_name
+            when :cloud_files then table_name
             else File.join("public", table_name)
           end
         end
@@ -183,7 +183,6 @@ module Technoweenie # :nodoc:
         base.after_save :after_process_attachment
         base.after_destroy :destroy_file
         base.after_validation :process_attachment
-        base.attr_accessible :uploaded_data
         if defined?(::ActiveSupport::Callbacks)
           base.define_callbacks :after_resize, :after_attachment_saved, :before_thumbnail_saved
         end
