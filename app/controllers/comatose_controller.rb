@@ -16,8 +16,8 @@ class ComatoseController < ApplicationController
     end
     # if it's still nil, well, send a 404 status
     if page.nil?
-      render :nothing=>true, :status=>status
-      #raise ActiveRecord::RecordNotFound.new("Comatose page not found ")
+      render  :file => "#{RAILS_ROOT}/public/404.html",  
+	      :status => 404
     else
       # Make the page access 'safe'
       @page = Comatose::PageWrapper.new(page)

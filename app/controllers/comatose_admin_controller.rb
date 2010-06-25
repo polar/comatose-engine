@@ -118,13 +118,12 @@ class ComatoseAdminController < ApplicationController
       else
         content = page.to_html( {'params'=>params.stringify_keys} )
       end
-      content
     rescue SyntaxError
       content = "<p>There was an error generating the preview.</p><p><pre>#{$!.to_s.gsub(/\</, '&lt;')}</pre></p>"
     rescue
       content = "<p>There was an error generating the preview.</p><p><pre>#{$!.to_s.gsub(/\</, '&lt;')}</pre></p>"
     end
-    render :text=>content, :layout => false
+    render :text => content, :layout => false
   end
 
   # Expires the entire page cache
