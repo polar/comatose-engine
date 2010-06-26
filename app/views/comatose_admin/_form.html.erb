@@ -1,6 +1,7 @@
 <%= error_messages_for :page %>
 <p>
 Click this picture to change the picture for this page. Fill in the appearing form to upload the image imediately by selecting the local file, then clicking the "Upload" button. This will upload the image immediately. However, you still must click the "Save Changes" button below for it to take effect for the page.
+</p>
 <div id='page_photo'>
   <%= render :partial => "page_photos/page_photo",
              :object => @page.page_photo %>
