@@ -9,7 +9,7 @@ Click this picture to change the picture for this page. Fill in the appearing fo
 <br/>
 <div id="page_photo_form" style="display: none;">
   <% form_for(:page_photo,
-              :url => formatted_page_photos_path(:format => 'js'),
+              :url => page_photos_path(:format => 'js'),
               :html => { :multipart => true, :target => 'upload_frame'}) do |f| %>
     <%= f.file_field :uploaded_data %>
     <%= submit_tag "Upload and Change",
@@ -106,7 +106,7 @@ Click this picture to change the picture for this page. Fill in the appearing fo
         <%= link_to "Textile Help", "http://hobix.com/textile/", :popup => true %>
         <%= link_to "Textile Quick Reference", "http://hobix.com/textile/quick.html", :popup => true %>
       </td>
-    <tr>
+    </tr>
   <% if show_field? 'filter' %>
     <tr id="filter_row" class="meta-info">
       <td class="label">
