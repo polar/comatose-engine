@@ -1,0 +1,1 @@
+puts "Initializer #{Rails.logger.inspect}"

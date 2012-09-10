@@ -1,0 +1,31 @@
+<div class="action">
+  <%= button_to 'Clear Page Cache',  expire_page_cache_admins_path, :class => "btn" %>
+<% if Comatose.config.allow_import_export %>
+  <%= link_to 'Import', '#', :id => 'import_link2' %>
+  <%= link_to 'Export', export_admins_path %>
+  <div id="import_form">
+      <%= form_tag import_admins_path, :html => {:multipart => true} do %>
+        <%= file_field_tag 'import_file' %>
+        <%= submit_tag 'Upload and Import', :class => "btn" %>
+        <a href="#" onclick="$('#import_form').hide(); return false;">Cancel</a>
+      <% end %>
+  </div>
+<% end %>
+</div>
+
+<h1>
+  Page List
+  <%= image_tag 'comatose/spinner.gif',
+                :plugin => 'comatose_engine',
+                :id=>'spinner',
+                :align=>'absmiddle',
+                :style=>'display:none;' %>
+</h1>
+
+<div style="clear : both"></div>
+
+<div id="pages_list_root">
+<%= render( :partial => "comatose/admins/admins_items").html_safe %>
+</div>
+
+<div id="status"></div>

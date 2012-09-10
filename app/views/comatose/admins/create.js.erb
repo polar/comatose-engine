@@ -1,0 +1,12 @@
+<% if @disposition == "success" %>
+  window.location = "<%= escape_javascript(@redirect_path) %>";
+<% else %>
+    $("#page_errors").html('<%= @page_errors.map {|m| content_tag("li", escape_javascript(m)) }.join("").html_safe if @page_errors %>')
+    $("#page_status").html('<%= content_tag("span", escape_javascript(@page_status.html_safe), :class => "text-#{@disposition}") if @page_status %>');
+    setTimeout(function() {
+        $("#page_status").fade();
+    },5000);
+    $("#preview-panel").html('<%= escape_javascript(@html.html_safe) if @html %>');
+    $("#preview-area").show();                                                             s
+<% end %>
+console.log("preview panel loaded");

@@ -1,0 +1,19 @@
+<%
+# This partial generates a link using the "small" version of the
+# photo, or it uses a default photo for the edit page of the
+# ComatosePage. It exposes the <div id="page_photo_form"> when
+# clicked. The page_photo controller will call this again to
+# replace the surrounding div.
+#
+# Locals:
+#   page   The ComatosePage
+#
+%>
+<%= link_to(
+     (page.page_photo.url ?
+          image_tag(page.page_photo.url,
+             :alt => "Change Photo") :
+          image_tag("/assets/comatose/page.gif",
+             :alt => "Change Photo")),
+     '#',
+     :id => 'page_photo_link') %>

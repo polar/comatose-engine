@@ -1,0 +1,141 @@
+<ul id="page_errors">
+  <% @page.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+  <% end %>
+</ul>
+
+<iframe id='upload_frame'
+        name="upload_frame"
+        style="width:1px;height:1px;border:0px"
+        src="about:blank">
+</iframe>
+
+<br/>
+<br/>
+
+<p id="page_status"></p>
+
+<%= form_for @page, :url => (@page.new_record? ? admins_path : admin_path(@page)), :id => "comatose-page-form", :remote => true, :validate => true do |f| %>
+    <%
+       # The page_photo_input div's html gets replaced by uploading a photo.
+    %>
+    <table class="page-form">
+      <tr>
+        <td>
+          <div id='page_photo'>
+            <%= render :partial => "comatose/admins/page_photo",
+                       :locals  => { :page => @page } %>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.label :page_photo, "Page Photo", :class => "file" %>
+        </td>
+        <td><%= f.file_field :page_photo %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :title, "Page Title" %></td>
+        <td><%= f.text_field :title, :tabindex => 1, :maxlength => 255, :size => 50%></td>
+      </tr>
+      <tr>
+        <td><%= f.label :slug, "Slug" %></td>
+        <td><%= f.text_field :slug, :tabindex => 6, :maxlength => 255, :size => 50 %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :keywords, "Keywords" %></td>
+        <td><%= f.text_field :keywords, :tabindex => 7, :maxlength => 1000, :size => 50 %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :parent, "Parent" %></td>
+        <td>
+          <% if @root_pages && @root_pages.include?(@page) %>
+              <select id="page_parent" disabled="true">
+                <option><%= @page.title %> is a root page</option>
+              </select>
+          <% else %>
+              <select id="page_parent" name="page[parent_id]" tabindex="8">
+                <%= tree_select_box @root_pages, @page.parent_id, @page.id %>
+              </select>
+          <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <td><%= f.label :body, "Body" %></td>
+        <td><%= f.text_area :body, :rows => 20, :tabindex => 2 %></td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <%= link_to "Textile Help", "http://redcloth.org//textile/" %>
+          <%= link_to "Textile Quick Reference", "http://redcloth.org/hobix.com/textile/quick.html" %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <%= f.label :page_filter_type, "Page Filter" %>
+        </td>
+        <td>
+          <%= f.select :filter_type,
+                       options_for_select(TextFilters.all_titles.sort, @page.filter_type ||
+                               Comatose.config.default_filter),
+                       :tabindex => 3,
+                       :id       => 'page_filter_type' %>
+          <span class="field-help">Converts plain text into html</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <%= f.label "page_created_on", "Created" %>
+        </td>
+      </tr>
+    </table>
+
+    <div id="button-group">
+
+      <% unless @page.updated_on.nil? %>
+          <div class="last-update">
+            <label>
+              Updated <%= time_ago_in_words @page.updated_on, true %> ago by
+              <%= @page.author %>.
+              <%= link_to(pluralize(@page.versions.length, 'revision', 'revisions'),
+                          :action => 'versions', :id => @page) if @page.versions.length > 0 %>
+            </label>
+          </div>
+      <% end %>
+
+      <div class="comatose-page-buttons">
+        <%= image_tag 'comatose/spinner.gif',
+                      :plugin => 'comatose_engine',
+                      :id     => 'spinner',
+                      :align  => 'absmiddle',
+                      :style  => 'display:none;' %>
+        <%= f.submit 'Preview', :tabindex => 3, :id => 'preview-btn', :class => "btn" %>
+        &nbsp;
+        <%= f.submit (@page.new_record? ? 'Create Page' : 'Save Changes'), :tabindex => 4, :class => "btn" %>
+        <% if @page.versions.length > 0 %>
+            &nbsp;
+            <%= link_to "Revert", :action => 'versions', :id => @page %>
+        <% end %>
+        or
+        <%= link_to "Cancel", admins_path, :tabindex => 5, :onclick => "return false" %>
+      </div>
+    </div>
+<% end %>
+
+<div id="preview-area">
+  <fieldset>
+    <legend>Page Preview</legend>
+    <div class="preview-body">
+      <div id="preview-panel"><span style='color:blue;'>Loading Preview...</span></div>
+      <div style="clear:both"></div>
+    </div>
+  </fieldset>
+  <div class="commands">
+    <a href="#" onclick="$('preview-area').hide();">Close Preview</a> or <a href="#">Back to top</a>
+  </div>
+</div>
+
