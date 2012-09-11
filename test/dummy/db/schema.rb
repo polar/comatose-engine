@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120906152842) do
+ActiveRecord::Schema.define(:version => 20120910223341) do
 
   create_table "comatose_page_versions", :force => true do |t|
     t.integer  "page_id"
     t.integer  "version"
     t.integer  "parent_id"
+    t.string   "mount"
     t.text     "full_path",                             :default => ""
     t.string   "title"
     t.string   "slug"
@@ -31,7 +32,6 @@ ActiveRecord::Schema.define(:version => 20120906152842) do
     t.string   "page_photo_content_type"
     t.integer  "page_photo_file_size"
     t.datetime "page_photo_updated_at"
-    t.integer  "author_user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20120906152842) do
 
   create_table "comatose_pages", :force => true do |t|
     t.integer  "parent_id"
+    t.string   "mount"
     t.text     "full_path",                             :default => ""
     t.string   "title"
     t.string   "slug"
@@ -55,7 +56,6 @@ ActiveRecord::Schema.define(:version => 20120906152842) do
     t.string   "page_photo_content_type"
     t.integer  "page_photo_file_size"
     t.datetime "page_photo_updated_at"
-    t.integer  "author_user_id"
     t.datetime "created_at",                                                   :null => false
     t.datetime "updated_at",                                                   :null => false
   end

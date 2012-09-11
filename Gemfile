@@ -30,9 +30,12 @@ gem "remotipart"
 group :test do
   gem "thin"
   gem "test-unit"
+  gem "sqlite3"
 end
 
 group :development do
   gem "thin"
   gem "debugger"
+  gem "sqlite3"
+  gem "tinymce-rails"
 end

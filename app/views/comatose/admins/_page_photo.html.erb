@@ -10,10 +10,10 @@
 #
 %>
 <%= link_to(
-     (page.page_photo.url ?
+     (page.page_photo.path ?
           image_tag(page.page_photo.url,
              :alt => "Change Photo") :
-          image_tag("/assets/comatose/page.gif",
+          image_tag("/assets/comatose/addphoto.jpg",
              :alt => "Change Photo")),
      '#',
      :id => 'page_photo_link') %>

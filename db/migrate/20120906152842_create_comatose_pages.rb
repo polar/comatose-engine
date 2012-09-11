@@ -2,6 +2,7 @@ class CreateComatosePages < ActiveRecord::Migration
   def up
     create_table :comatose_pages do |t|
       t.integer    "parent_id"
+      t.string     "mount"
       t.text       "full_path",   :default => ''
       t.string     "title",       :limit => 255
       t.string     "slug",        :limit => 255
@@ -14,7 +15,6 @@ class CreateComatosePages < ActiveRecord::Migration
       t.date       "created_on"
       t.date       "updated_on"
       t.attachment "page_photo"
-      t.references "author_user"
       t.timestamps
     end
     Comatose::Page.create_versioned_table

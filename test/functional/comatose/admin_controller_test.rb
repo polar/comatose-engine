@@ -13,99 +13,138 @@ class Comatose::AdminsControllerTest < ActionController::TestCase
     @routes = Comatose::Engine.routes
     Comatose.config.admin_get_author = nil
     Comatose.config.admin_authorization = nil
+    # We need to set this up as the Engine SCRIPT_NAME, or else it gets clobbered.
+    @controller.config.relative_url_root = "/comatose"
+    # However, we cannot test the Engine mounted at two different mount points
+    # because the named paths, such as "admins_path" always come out as the last
+    # route mounted. However, in practice it works, we just cannot jury rig the
+    # test harness to do so. So, we really cannot test two different mount points.
   end
 
   test "show the index action" do
-    get :index, :use_route => "comatose"
+    get :index, {:use_route => "comatose"},
+        @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
     assert assigns(:root_pages)
   end
 
   test "show the new action" do
-    get :new, :use_route => "comatose"
+    get :new, { :use_route => "comatose" },
+        @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
     assert assigns(:page)
   end
 
   test "successfully create pages" do
-    post :create, :use_route => "comatose", :page=>{:title=>"Test page", :body=>'This is a *test*', :parent_id=>1, :filter_type=>'Textile'}
-    assert_response :redirect
-    assert_redirected_to admins_path
+    post :create, {:use_route => "comatose",
+                   :page=>{:title=>"Test page",
+                           :body=>'This is a *test*',
+                           :parent_id=>1,
+                           :filter_type=>'Textile'},
+                   :commit => "Create Page", :format => :js},
+        @request.env.update('SCRIPT_NAME' => "/comatose")
+    assert_response :success
+    # Should be redirected to AdminsPath by way of Javascript
+    #assert_redirected_to admins_path
+    assert_match /window.location\s*=\s*\"\/comatose\/admins\"\s*;/, response.body
   end
 
   test "create a page with an empty body" do
-    post :create, :use_route => "comatose", :page=>{:title=>"Test page", :body=>nil, :parent_id=>1, :filter_type=>'Textile'}
-    assert_response :redirect
-    assert_redirected_to admins_path
+    post :create, {:use_route => "comatose",
+                   :page=>{:title=>"Test page",
+                           :body=>nil,
+                           :parent_id=>1,
+                           :filter_type=>'Textile'},
+                   :commit => "Create Page", :format => :js},
+        @request.env.update('SCRIPT_NAME' => "/comatose")
+    assert_response :success
+    # Should be redirected to AdminsPath by way of Javascript
+    #assert_redirected_to admins_path
+    assert_match /window.location\s*=\s*\"\/comatose\/admins\"\s*;/, response.body
   end
 
   test "not create a page with a missing title" do
-    post :create, :use_route => "comatose", :page=>{:title=>nil, :body=>'This is a *test*', :parent_id=>1, :filter_type=>'Textile'}
+    post :create, {:use_route => "comatose",
+                   :page=>{:title=>nil,
+                           :body=>'This is a *test*',
+                           :parent_id=>1,
+                           :filter_type=>'Textile'},
+                   :commit => "Create Page", :format => :js},
+        @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
     assert assigns.has_key?('page'), "Page assignment"
-    assert (assigns['page'].errors.length > 0), "Page errors"
+    assert (assigns['page'].errors.size > 0), "Page errors"
     assert_equal ['must be present'], assigns['page'].errors["title"]
   end
 
   test "not create a page associated to an invalid parent" do
-    post :create, :use_route => "comatose", :page=>{:title=>'Test page', :body=>'This is a *test*', :parent_id=>nil, :filter_type=>'Textile'}
+    post :create, {:use_route => "comatose",
+                   :page=>{:title=>'Test page',
+                           :body=>'This is a *test*',
+                           :parent_id=>3423423,
+                           :filter_type=>'Textile'},
+                   :commit => "Create Page", :format => :js},
+        @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
     assert assigns.has_key?('page'), "Page assignment"
     assert (assigns['page'].errors.size > 0), "Page errors"
-    assert_equal ['must be present'], assigns['page'].errors['parent_id']
+    assert_equal ['invalid parent'], assigns['page'].errors['parent_id']
   end
 
   test "contain all the correct options for filter_type" do
-    get :new, :use_route => "comatose"
+    get :new, { :use_route => "comatose" },
+        @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
+    # Assert_select cannot handle quoted HTML such as is put in by scripts in form validators.
+    # It issues lots of warnings "ignoring attept to close div with script" etc.
     assert_select 'SELECT[id=page_filter_type]>*', :count=>TextFilters.all_titles.length
   end
 
   test "show the edit action" do
-    get :edit, :use_route => "comatose", :id=>1
+    get :edit, { :use_route => "comatose", :id => 1 },
+        @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
   end
 
   test "update pages with valid data" do
-    post :update, :use_route => "comatose", :id=>1, :page=>{ :title=>'A new title' }
-    assert_response :redirect
-    assert_redirected_to admins_path
+    post :update, {:use_route => "comatose",
+                   :id=>1,
+                   :page=>{ :title=>'A new title' },
+                   :commit => "Save Changes", :format => :js },
+        @request.env.update('SCRIPT_NAME' => "/comatose")
+    assert_response :success
+    # Should be redirected to AdminsPath by way of Javascript
+    #assert_redirected_to admins_path
+    assert_match /window.location\s*=\s*\"\/comatose\/admins\"\s*;/, response.body
   end
 
   test "not update pages with invalid data" do
-    post :update, :use_route => "comatose", :id=>1, :page=>{ :title=>nil }
+    post :update, {:use_route => "comatose",
+                   :id=>1,
+                   :page=>{ :title=>nil },
+                   :commit => "Save Changes", :format => :js },
+        @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
     assert_equal ['must be present'], assigns['page'].errors['title']
   end
 
   test "delete a page" do
-    delete :destroy, :use_route => "comatose", :id=>1
+    delete :destroy, {:use_route => "comatose", :id=>1},
+        @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :redirect
     assert_redirected_to admins_path
   end
 
   test "reorder pages" do
-    q1 = Comatose::Page.find_by_slug("question-one")
+    q1 = Comatose::Page.find_by_path("/comatose", "faq/question-one")
     assert_not_nil q1
     prev_position = q1.position
-    post :reorder, :use_route => "comatose", :id=>q1.parent.id, :page=>q1.id, :cmd=>'down'
-    assert_response :redirect
-    assert_redirected_to reorder_admin_path(q1)
+    post :reorder, {:use_route => "comatose", :id=>q1.id, :position => 1, :format => :js },
+        @request.env.update('SCRIPT_NAME' => "/comatose")
+    assert_response :success
     q1.reload
-    assert_difference prev_position, q1.position
+    assert_equal q1.position, 1
   end
 
-  test "set runtime mode" do
-    # The new script copies comatose_admin.js to the application and this sets
-    # runtime_mode to :application. So, in the test_harness, it's always application.
-    #assert_equal :plugin, ComatoseAdminController.runtime_mode
-    comatose_admin_view_path = File.expand_path(File.join( File.dirname(__FILE__), '..', '..', "app", 'views'))
-
-    if Comatose::AdminController.respond_to?(:template_root)
-      assert_equal comatose_admin_view_path, Comatose::AdminController.template_root
-    else
-      assert Comatose::AdminController.view_paths.include?(comatose_admin_view_path)
-    end
-  end
 
 end

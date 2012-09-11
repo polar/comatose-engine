@@ -9,6 +9,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "comatose/admins" %>
     <%= javascript_include_tag "comatose/admins" %>
+    <%= yield :head %>
   </head>
   <body>
     <div id="page-container">
@@ -24,10 +25,7 @@
         <%= yield %>
       </div>
       <div id="footer">
-        Powered by <a href="http://comatose.rubyforge.org" target="_new_window">Comatose
-        <%= Comatose::VERSION_STRING %></a>,
-        created by
-        <a href="http://www.mattmccray.com"  target="_new_window">M@ McCray</a>.
+        Powered by Comatose 3.0 by Dr. Polar Humenn
       </div>
     </div>
   </body>

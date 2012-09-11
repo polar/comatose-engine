@@ -1,15 +1,17 @@
 //= require jquery.jstree
 //= require ./slugify
 //= require jquery.remotipart
+//= require rails.validations
 //= require_self
 
-var reorder_url = "/comatose/admins/reorder";
-
-function deletePhoto() {
-    $('#page_photo_form').hide();
-    $('#page_photo_link').html('<img alt="Change Photo" src="/assets/comatose/page.gif" />');
-    $('#page_page_photo_id').val('');
-    return true;
+/**
+ * This function may be overwritten in the case that the engine is mounted
+ * in someplace other than the default.
+ *
+ * @return {String}
+ */
+function reorder_url() {
+   return "/comatose/admins/reorder";
 }
 
 $(function () {
@@ -60,11 +62,10 @@ $(function () {
     })
     .bind("move_node.jstree", function (e, data) {
         data.rslt.o.each(function (i) {
-            alert("Moved " + $(this).attr("id"));
             $.ajax({
                 async : false,
                 type : "POST",
-                url  : reorder_url,
+                url  : reorder_url(),
                 data : {
                     "operation" : "move_node",
                     "id" : $(this).attr("id").replace("page_",""),

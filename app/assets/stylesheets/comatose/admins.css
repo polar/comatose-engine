@@ -282,35 +282,48 @@ BODY {
   display: block;
   color: #000;
 }
+
 #content .revisions label span {
   color: #999;
   font-weight: normal !important;
 }
+
 #content .revisions .title {
   font-weight: bold;
   margin-top: 5px;
 }
+
 #content .revisions .header {
   font-size: 110%;
   vertical-align: middle;
   font-weight: bold;
 }
+
 #content .revisions .header-actions {
   float: right;
   font-size: 90%;
   font-weight: normal;
   color: #999;
 }
+
+#content .revisions .header-actions select {
+    width :  3em;
+}
+
 #content .revisions .meta {
   margin-bottom: 15px;
 }
+
 #content .revisions .footer {
   margin-top: 25px !important;
   text-align: center !important;
 }
+
 #content #go-btn {
   display: none;
 }
+
+
 /* Errors */
 #errorExplanation {
   border: 1px solid red;

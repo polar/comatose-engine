@@ -1,11 +1,6 @@
 module Comatose
   module AdminsHelper
 
-    #  Checks the hidden_meta_fields class variable for a specified field name...
-    def show_field?(key)
-      !Comatose.config.hidden_meta_fields.include? key
-    end
-
     # Used in the Page Form to build an indented drop-down list of pages
     def tree_select_box(nodes, selected= nil, hide= nil, label="Parent", add_initial=false)
       level      = 0
@@ -36,14 +31,6 @@ module Comatose
         select_box += add_select_tree_node(child, selected, level + 1, hide) unless hide_values.include?(node.id)
       end
       select_box
-    end
-
-    def form_url(page)
-      if page.id
-        action="/comatose_admin/edit/#{page.id}"
-      else
-        action="/comatose_admin/new"
-      end
     end
   end
 end

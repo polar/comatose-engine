@@ -26,14 +26,12 @@ def do_page(page, xml)
                    :title => "Add a child to '#{page.title}'",
                    :class => 'add-page')
 
-  unless @root_pages.include? page
-    links << button_to('delete', admin_path(page), :method => :delete,
+  links << button_to('delete', admin_path(page), :method => :delete,
                        :confirm     => 'This will delete this page, and any children. Are you sure?',
                        :title       => "Delete page '#{page.title}' and all it's children",
                        :class       => 'delete-page',
                        :onmouseover => "ComatoseList.item_hover('page_#{page.id}', 'over', true)",
                        :onmouseout  => "ComatoseList.item_hover('page_#{page.id}', 'out', true)")
-  end
     xml.li(:id => "page_#{page.id}") {
       xml.a page.title, :href => edit_admin_path(page)
             xml.div(:class => "commands") {
@@ -47,12 +45,10 @@ def do_page(page, xml)
                 xml << link_to('add child page', new_admin_path(:parent_id => page.id),
                                :title => "Add a child to '#{page.title}'",
                                :class => 'add-page')
-              unless @root_pages.include? page
                 xml << link_to('delete', "#",
                                  :title       => "Delete page '#{page.title}' and all it's children",
                                  :class       => 'delete-page',
                                  :data_delete_form => "delete_form_#{page.id}")
-              end
               xml.div(:id => "delete_form_#{page.id}", :class => "delete_form") {
                 xml << form_for(page, :url => admin_path(page), :method => :delete) do |form|
                   form.label "Do you really want to delete this page?"
