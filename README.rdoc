@@ -3,7 +3,7 @@
 This project rocks and uses MIT-LICENSE.
 
 This project gem contains a small mountable Rails Engine that provides some content manangement
- support that may be embedded into other Rails applications.
+support that may be embedded into other Rails applications.
 
 == Usage
 
@@ -21,7 +21,7 @@ Install the Gem.
 
 === Administer Pages
 
-Start the Server and point your browser to: http://somehost/home/admins
+Start the Server and point your browser to: ``http://somehost/home/admins''
 You will be able create pages and child pages that are accessed as:
 
   http://somehost/home
