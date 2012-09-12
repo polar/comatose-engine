@@ -1,0 +1,13 @@
+<%= render :partial => "script" %>
+
+<%= render :partial => "comatose/pages/import_export" %>
+
+<h1> Page List </h1>
+
+<div style="clear : both"></div>
+
+<%= link_to "Create Root Page", new_page_path, :class => "btn" %>
+
+<%= render :partial => 'comatose/pages/page_list' %>
+
+<div id="status"></div>

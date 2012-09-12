@@ -11,7 +11,7 @@
  * @return {String}
  */
 function reorder_url() {
-   return "/comatose/admins/reorder";
+   return "/comatose/pages/reorder";
 }
 
 $(function () {
@@ -67,11 +67,8 @@ $(function () {
                 type : "POST",
                 url  : reorder_url(),
                 data : {
-                    "operation" : "move_node",
                     "id" : $(this).attr("id").replace("page_",""),
-                    "ref"  : data.rslt.cr === -1 ? 1 : data.rslt.np.attr("id").replace("page_",""),
                     "position" : data.rslt.cp + i,
-                    "title" : data.rslt.name,
                     "copy" : data.rslt.cy ? 1 : 0
                 },
                 success : function (t) {

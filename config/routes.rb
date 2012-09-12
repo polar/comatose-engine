@@ -1,7 +1,7 @@
 Comatose::Engine.routes.draw do
-  match "/", :to => "pages#show"
-  resources :pages, :only => [:show]
-  resources :admins do
+  match "/", :to => "content#show"
+  resources :content, :only => [:show]
+  resources :pages do
     collection do
       get :export
       post :import
@@ -14,5 +14,5 @@ Comatose::Engine.routes.draw do
       post :set_version
     end
   end
-  match "/(*page_path)", :to => "pages#show"
+  match "/(*page_path)", :to => "content#show"
 end

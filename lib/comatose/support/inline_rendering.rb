@@ -1,41 +1,40 @@
 # Extends the view to support rendering inline comatose pages...
 ActionView::Base.class_eval do
-  alias_method :render_otherwise, :render
-  
-  def render(options = {}, old_local_assigns = {}, &block) #:nodoc:
-    if options.is_a?(Hash) && page_name = options.delete(:comatose)
-      render_comatose(page_name, options[:params] || options)
-    else
-      render_otherwise(options, old_local_assigns, &block)
-    end
-  end
-  
-  def render_comatose(page_path, params = {})
+
+  def render_comatose(page_path, params)
     params = {
-      :silent => false,
-      :use_cache => true,
-      :locals => {}
+        :silent => false,
+        :locals => { }
     }.merge(params)
-    if params[:use_cache] and params[:locals].empty?
-      render_cached_comatose_page(page_path, params)
+
+    # Checking for the Comatose::EngineController will only work if the
+    # route to the controller is under the mount point. A programmer may extend this controller,
+    # but unless request.env["SCRIPT_NAME"] is the mount point it won't work.
+    # In that case, the programmer needs to specify :comatose_mount.
+    if controller.is_a? Comatose::EngineController
+      mount = controller.get_mount_point()
     else
-      render_comatose_page(page_path, params)
+      mount = params[:comatose_mount]
     end
-  end
-  
-protected
-  
-  def render_cached_comatose_page(page_path, params)
-    key = page_path.gsub(/\//, '+')
-    unless html = controller.read_fragment(key)
-      html = render_comatose_page( page_path, params )
-      controller.write_fragment(key, html) unless Comatose.config.disable_caching
+
+    # if mount is not defined the application may just have one Comatose::Engine mounted,
+    # Therefore, we assume it's a default.
+    if mount
+      pages = Comatose::Page.where(:mount => mount, :full_path => path).all
+    else
+      pages = Comatose::Page.where(:full_path => path).all
     end
-    html
-  end
-  
-  def render_comatose_page(page_path, params)
-    if page = ComatosePage.find_by_path(page_path)
+
+    # As of Rails 3.2.8 we don't know how many times or where the Comatose::Engine are mounted.
+    # We will raise an error if we find two different pages with different mount points.
+    # We always want the full path emanating from the first root-page
+    mount_diff = pages.first.mount if pages
+    page = pages.reduce() do |t, v|
+        rails "mount is not specified" if mount_diff != v.mount
+        t.root.position < v.root.position ? t : v
+      end
+
+    if page
       # Add the request params to the context...
       params[:locals]['params'] = controller.params
       html = page.to_html( params[:locals] )

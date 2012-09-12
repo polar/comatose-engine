@@ -17,8 +17,8 @@ module Comatose
   class Page < ActiveRecord::Base
 
     # This method allows liquid to call these methods as if it were a Drop.
-    liquid_methods :children, :page_photo, :title, :keywords, :slug, :position,
-                   :created_on, :updated_on, :full_path, :uri, :next, :prev, :body, :content
+    liquid_methods :children, :page_photo, :title, :keywords, :slug, :position, :author,
+                   :created_on, :updated_on, :full_path, :url, :next, :prev, :body, :content, :link
 
 
     # We do not allow mass assignment of the mount.
@@ -76,16 +76,16 @@ module Comatose
     end
 
     # Returns a pages URI dynamically, based on the active mount point
-    def uri
+    def url
       (self.mount + self.full_path).squeeze("/")
     end
 
     def prev
-      self.lower_item
+      self.higher_item
     end
 
     def next
-      self.higher_item
+      self.lower_item
     end
 
     # Check if a page has a selected keyword... NOT case sensitive.
@@ -97,11 +97,15 @@ module Comatose
       false
     end
 
+    def link
+      "/#{self.mount}/#{self.full_path}".squeeze("/")
+    end
+
     def content
       text        = self.body
       binding     = Comatose::ProcessingContext.new(self, {})
       filter_type = self.filter_type || '[No Filter]'
-      TextFilters.transform(text, binding, filter_type, Comatose.config.default_processor)
+      TextFilters.transform(text, binding, filter_type)
     end
 
     # Returns the page's content, transformed and filtered...
@@ -110,7 +114,7 @@ module Comatose
       text        = self.body
       binding     = Comatose::ProcessingContext.new(self, options)
       filter_type = self.filter_type || '[No Filter]'
-      TextFilters.transform(text, binding, filter_type, Comatose.config.default_processor)
+      TextFilters.transform(text, binding, filter_type)
     end
 
     # Static helpers...

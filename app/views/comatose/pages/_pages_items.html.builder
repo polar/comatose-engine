@@ -19,30 +19,30 @@ def do_page(page, xml)
 # Create the page-level links...
   links = []
   if !page.nil? and !page.versions.nil? and page.versions.length > 0
-    links << link_to(pluralize(page.versions.length, 'revision', 'revisions'), versions_admin_path(page))
+    links << link_to(pluralize(page.versions.length, 'revision', 'revisions'), versions_page_path(page))
   end
 
-  links << link_to('add child page', new_admin_path(:parent_id => page.id),
+  links << link_to('add child page', new_page_path(:parent_id => page.id),
                    :title => "Add a child to '#{page.title}'",
                    :class => 'add-page')
 
-  links << button_to('delete', admin_path(page), :method => :delete,
+  links << button_to('delete', page_path(page), :method => :delete,
                        :confirm     => 'This will delete this page, and any children. Are you sure?',
                        :title       => "Delete page '#{page.title}' and all it's children",
                        :class       => 'delete-page',
                        :onmouseover => "ComatoseList.item_hover('page_#{page.id}', 'over', true)",
                        :onmouseout  => "ComatoseList.item_hover('page_#{page.id}', 'out', true)")
     xml.li(:id => "page_#{page.id}") {
-      xml.a page.title, :href => edit_admin_path(page)
+      xml.a page.title, :href => edit_page_path(page)
             xml.div(:class => "commands") {
               xml.span "Created on #{page.created_on}"
               if !page.author.nil? and !page.author.empty?
                 xml.span "by #{page.author}"
               end
               if !page.nil? and !page.versions.nil? and page.versions.length > 0
-                xml << link_to(pluralize(page.versions.length, 'revision', 'revisions'), versions_admin_path(page))
+                xml << link_to(pluralize(page.versions.length, 'revision', 'revisions'), versions_page_path(page))
               end
-                xml << link_to('add child page', new_admin_path(:parent_id => page.id),
+                xml << link_to('add child page', new_page_path(:parent_id => page.id),
                                :title => "Add a child to '#{page.title}'",
                                :class => 'add-page')
                 xml << link_to('delete', "#",
@@ -50,7 +50,7 @@ def do_page(page, xml)
                                  :class       => 'delete-page',
                                  :data_delete_form => "delete_form_#{page.id}")
               xml.div(:id => "delete_form_#{page.id}", :class => "delete_form") {
-                xml << form_for(page, :url => admin_path(page), :method => :delete) do |form|
+                xml << form_for(page, :url => page_path(page), :method => :delete) do |form|
                   form.label "Do you really want to delete this page?"
                   form.submit( 'Delete', :class => "btn btn-small")
                 end

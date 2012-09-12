@@ -2,7 +2,7 @@
 <div class="revisions older-content">
   <div class="header">
     <div class="header-actions">
-    <%= form_tag versions_admin_path(@page) do %>
+    <%= form_tag versions_page_path(@page) do %>
           <div class="input-append input-small">
             <%= label_tag "View Version:" %>
             <%= select_tag "version",
@@ -22,11 +22,11 @@
   </div>
   <%= @version.body.split("\n").join('<br/>') unless @version.body.nil? %>
   <div id="button-group" class="footer">
-    <%= form_tag set_version_admin_path(@page) do %>
+    <%= form_tag set_version_page_path(@page) do %>
       <%= hidden_field_tag "version", @version_num %>
       <%= submit_tag "Set As Current Version" %>
       or
-      <%= link_to "Cancel", admins_path %>
+      <%= link_to "Cancel", pages_path %>
     <% end %>
   </div>
 </div>

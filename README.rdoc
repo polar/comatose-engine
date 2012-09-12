@@ -11,27 +11,54 @@ Install the Gem.
 
    gem install comatose_engine, :git => "git://github.com/polar/comatose-engine", :branch => "rails3"
 
+=== Migrate your data base (ActiveRecord)
+
+If you are using ActiveRecord for an Object Relational Model (ORM), you need to add a couple
+tables to your database to house the pages. Generate the migration and then run it.
+
+   rake comatose:engine:install_migrations
+   rake db:migrate
+
+This process is standard Rails Engine stuff.
 
 === Mount the Engine
 
-   Application::Routes.draw do
-      root :to => "home/pages#show"
+   Rails.application.routes.draw do
+      root :to => "home/content#show"
       mount Comatose::Engine => "/home"
    end
 
-=== Administer Pages
+== Example Application
 
-Start the Server and point your browser to: ``http://somehost/home/admins''
+The gem comes with a default example Rails application that should be able to get you up and running.
+For instance, just with the engine mounted at "/home" you can create pages, create content for them,
+and reorder them.
+
+==== Administer Pages
+
+Start the standard rails server and point your browser to: ``http://localhost:3000/home/pages''
 You will be able create pages and child pages that are accessed as:
 
-  http://somehost/home
-  http://somehost/home/sub-page1
+  http://localhost:3000/home
+  http://localhost:3000/home/sub-page1
 
 and so on. The adminstration pages will assign "slugs" to your pages based
 on the title you give the page. You may change the url slug for the page
 at any time.
 
-=== Page Content
+Of course this is a Rails Engine that is meant to give you the processing capaiblity for dynamic content
+for pages that you may want to deploy in your application. The default application may not be
+what you want, and in fact, I will dare say, it is probably not what you want.
+
+So don't complain that there is no public confiuration module for the application. There also is no
+authentication or authorization model in use. If you want a configurable application, build one.
+You may use pieces and parts, and they will demonstrate how to use the controllers.
+
+The "app/views/comatose/pages" view is sufficiently pieced out in partial ERBs that you can pick and choose
+what you want to show or not. I'll take it from here that you know how to deal with extending/mixing controllers
+in engines. You may want to do extend the controllers if you want add an authenticated authorization model.
+
+== Page Content (Liquid and Textile)
 
 The body of a page is processed by Liquid and Textile. Liquid processes a page
 by giving you special constructs with which to program your page. Constructs
@@ -45,23 +72,40 @@ An example might be iterating through a page's children and listing their titles
   <dl>
   {% for p in page.children %}
      <dt>{{ forloop.index }}. {{ p.title }}</dt>
-     <dd>{{ p.link }}</dd>
+     <dd>|"{{ p.title }}":{{ p.link }}|</dd>
   {% endfor %}
   </dl>
 
 In Comatose Engine, the variable {{ page }} refers to the page you are on. You may access
-the children, content, title, slug, link, of any other page by using the "pages" variable.
+the children, content, title, slug, link, full_path of any other page by using the "pages" variable.
 
   {{ pages['mary'].link }}
 
-Note: You must be careful about how you name your pages. Just using a single slug with in
+Note: You must be careful about how you name your pages. Just using a single slug within
 the [] brackets may result in a collection if you have more than one page with the same
-slug. You may differentiate them by including the slug of the root page and using the
-path.
+slug. You may differentiate them by including the slug of the root page, prepeneded with a
+hash (#) and using the full_path of the page. For instance, if you have two root pages with direct
+child pages named "mary", you can differentiate them as:
 
   {{ pages['#fester/mary'].link }}
 
   {{ pages['#houser/mary'].link }}
+
+=== Variables
+
+A Comatose::Variable is basically a Liquid::Drop, which means you define a variable for use within a
+{{ }} construct. You define a Comatose::Variable by a block, usually in an initializer.
+
+  Comatose::Variable.define("products") do
+    return Products.all
+  end
+
+This variable is dynamic. Each time you use it, the block will get evaluated.
+You may want a static variable that gets evaluated only when it is initialized.
+
+  Comatose::Variable.define_static("app-title") do
+    return Rails::Application.title
+  end
 
 == Rants
 

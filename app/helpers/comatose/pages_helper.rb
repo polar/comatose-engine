@@ -1,5 +1,5 @@
 module Comatose
-  module AdminsHelper
+  module PagesHelper
 
     # Used in the Page Form to build an indented drop-down list of pages
     def tree_select_box(nodes, selected= nil, hide= nil, label="Parent", add_initial=false)

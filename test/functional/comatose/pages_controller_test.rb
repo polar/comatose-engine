@@ -1,11 +1,11 @@
 require File.dirname(__FILE__) + '/../../test_helper'
 
 # Re-raise errors caught by the controller.
-class Comatose::AdminsController
+class Comatose::PagesController
   def rescue_action(e) raise e end
 end
 
-class Comatose::AdminsControllerTest < ActionController::TestCase
+class Comatose::PagesControllerTest < ActionController::TestCase
 
   fixtures "comatose/pages"
 
@@ -16,7 +16,7 @@ class Comatose::AdminsControllerTest < ActionController::TestCase
     # We need to set this up as the Engine SCRIPT_NAME, or else it gets clobbered.
     @controller.config.relative_url_root = "/comatose"
     # However, we cannot test the Engine mounted at two different mount points
-    # because the named paths, such as "admins_path" always come out as the last
+    # because the named paths, such as "pages_path" always come out as the last
     # route mounted. However, in practice it works, we just cannot jury rig the
     # test harness to do so. So, we really cannot test two different mount points.
   end
@@ -44,9 +44,9 @@ class Comatose::AdminsControllerTest < ActionController::TestCase
                    :commit => "Create Page", :format => :js},
         @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
-    # Should be redirected to AdminsPath by way of Javascript
-    #assert_redirected_to admins_path
-    assert_match /window.location\s*=\s*\"\/comatose\/admins\"\s*;/, response.body
+    # Should be redirected to PagesPath by way of Javascript
+    #assert_redirected_to pages_path
+    assert_match /window.location\s*=\s*\"\/comatose\/pages\"\s*;/, response.body
   end
 
   test "create a page with an empty body" do
@@ -58,9 +58,9 @@ class Comatose::AdminsControllerTest < ActionController::TestCase
                    :commit => "Create Page", :format => :js},
         @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
-    # Should be redirected to AdminsPath by way of Javascript
-    #assert_redirected_to admins_path
-    assert_match /window.location\s*=\s*\"\/comatose\/admins\"\s*;/, response.body
+    # Should be redirected to PagesPath by way of Javascript
+    #assert_redirected_to pages_path
+    assert_match /window.location\s*=\s*\"\/comatose\/pages\"\s*;/, response.body
   end
 
   test "not create a page with a missing title" do
@@ -113,9 +113,9 @@ class Comatose::AdminsControllerTest < ActionController::TestCase
                    :commit => "Save Changes", :format => :js },
         @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
-    # Should be redirected to AdminsPath by way of Javascript
-    #assert_redirected_to admins_path
-    assert_match /window.location\s*=\s*\"\/comatose\/admins\"\s*;/, response.body
+    # Should be redirected to PagesPath by way of Javascript
+    #assert_redirected_to pages_path
+    assert_match /window.location\s*=\s*\"\/comatose\/pages\"\s*;/, response.body
   end
 
   test "not update pages with invalid data" do
@@ -132,7 +132,7 @@ class Comatose::AdminsControllerTest < ActionController::TestCase
     delete :destroy, {:use_route => "comatose", :id=>1},
         @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :redirect
-    assert_redirected_to admins_path
+    assert_redirected_to pages_path
   end
 
   test "reorder pages" do

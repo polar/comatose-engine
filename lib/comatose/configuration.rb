@@ -1,3 +1,4 @@
+require "comatose/support/class_options"
 module Comatose
 
   def self.config

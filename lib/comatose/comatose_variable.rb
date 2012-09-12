@@ -1,24 +1,34 @@
 module Comatose
 
-  class Drop < ::Liquid::Drop
+  class Variable
 
-    private :initialize
+    attr_accessor :block
 
-    def before_method(method)
-      self.send(method.to_sym)
-    rescue
-      Comatose::PageController.logger.debug "Error calling #{method}: #{$!}"
-      raise $!
+    def initialize(&blk)
+       @block = blk
+    end
+
+    def to_liquid
+      drop = Liquid::Drop.new
+      drop.instance_eval(block)
+      drop
     end
 
     class << self
-      # Define a new ComatoseDrop by name
-      def define( name, &block )
-        d = Comatose::Drop.new
+
+      def define(name, &block)
+        d = Comatose::Variable.new(&block)
+        Comatose.registered_drops[name] = d
+      rescue Exception => boom
+        Rails.logger.debug "Drop '#{name}' was not included: #{boom}"
+      end
+
+      def define_static(name, &block)
+        d = Liquid::Drop.new
         d.instance_eval(&block)
         Comatose.registered_drops[name] = d
-      rescue
-        Comatose::PageController.logger.debug "Drop '#{name}' was not included: #{$!}"
+      rescue Exception => boom
+        Rails.logger.debug "Drop '#{name}' was not included: #{boom}"
       end
     end
   end
@@ -33,7 +43,7 @@ module Comatose
     # Simple wrapper around the ProcessingContext.define method
     # I think Comatose.define_drop is probably simpler to remember too
     def define_drop(name, &block)
-      Comatose::Drop.define(name, &block)
+      Comatose::Variable.define(name, &block)
     end
 
     # Registers a 'filter' for Liquid use

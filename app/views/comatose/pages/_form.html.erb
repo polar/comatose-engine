@@ -1,0 +1,27 @@
+<%= render :partial => "comatose/pages/form_errors" %>
+<%= render :partial => "comatose/pages/form_page_status" %>
+
+<%= form_for @page,
+             :url => (@page.new_record? ? pages_path : page_path(@page)),
+             :id  => "comatose-page-form", :remote => true, :validate => true do |form| %>
+
+    <table class="page-form">
+      <tbody>
+      <%= render :partial => 'comatose/pages/form_page_photo_row', :locals => { :form => form } %>
+      <%= render :partial => 'comatose/pages/form_page_photo_field_row', :locals => { :form => form } %>
+      <%= render :partial => 'comatose/pages/form_title_row', :locals => { :form => form } %>
+      <%= render :partial => 'comatose/pages/form_slug_row', :locals => { :form => form } %>
+      <%= render :partial => 'comatose/pages/form_keywords_row', :locals => { :form => form } %>
+      <%= render :partial => 'comatose/pages/form_parent_row', :locals => { :form => form } %>
+      <%= render :partial => 'comatose/pages/form_body_row', :locals => { :form => form } %>
+      <%= render :partial => 'comatose/pages/form_help_row', :locals => { :form => form } %>
+      <%= render :partial => 'comatose/pages/form_filter_row', :locals => { :form => form } %>
+      <%= render :partial => 'comatose/pages/form_created_on_row', :locals => { :form => form } %>
+      </tbody>
+    </table>
+
+    <%= render :partial => 'comatose/pages/form_submit_button_group', :locals => { :form => form } %>
+<% end %>
+
+<%= render :partial => 'comatose/pages/form_preview_area' %>
+
