@@ -1,3 +1,69 @@
-= Comatose
+= Comatose Engine
 
 This project rocks and uses MIT-LICENSE.
+
+This project gem contains a small mountable Rails Engine that provides some content manangement
+ support that may be embedded into other Rails applications.
+
+== Usage
+
+Install the Gem.
+
+   gem install comatose_engine, :git => "git://github.com/polar/comatose-engine", :branch => "rails3"
+
+
+=== Mount the Engine
+
+   Application::Routes.draw do
+      root :to => "home/pages#show"
+      mount Comatose::Engine => "/home"
+   end
+
+=== Administer Pages
+
+Start the Server and point your browser to: http://somehost/home/admins
+You will be able create pages and child pages that are accessed as:
+
+  http://somehost/home
+  http://somehost/home/sub-page1
+
+and so on. The adminstration pages will assign "slugs" to your pages based
+on the title you give the page. You may change the url slug for the page
+at any time.
+
+=== Page Content
+
+The body of a page is processed by Liquid and Textile. Liquid processes a page
+by giving you special constructs with which to program your page. Constructs
+appearing between {% ... %} are control structures and do not print and {{ ...  }} are
+usually variable accesses and print their processed context. Please check Liquid for more
+information and for the constructs available..
+
+An example might be iterating through a page's children and listing their titles.
+
+  <h1>This page has the following sub pages</h1>
+  <dl>
+  {% for p in page.children %}
+     <dt>{{ forloop.index }}. {{ p.title }}</dt>
+     <dd>{{ p.link }}</dd>
+  {% endfor %}
+  </dl>
+
+In Comatose Engine, the variable {{ page }} refers to the page you are on. You may access
+the children, content, title, slug, link, of any other page by using the "pages" variable.
+
+  {{ pages['mary'].link }}
+
+Note: You must be careful about how you name your pages. Just using a single slug with in
+the [] brackets may result in a collection if you have more than one page with the same
+slug. You may differentiate them by including the slug of the root page and using the
+path.
+
+  {{ pages['#fester/mary'].link }}
+
+  {{ pages['#houser/mary'].link }}
+
+== Rants
+
+I have many rants about Rails software and "magic". I will expound here about this project
+soon.

@@ -6,8 +6,30 @@ class Comatose::ProcessingContext < Liquid::Context
       @mount = mount
     end
 
+    #
+    # If there is more than one it returns a collection, otherwise, just one or nil
+    # User should know these things.
+    #
     def [](key)
-      Comatose::Page.where(:mount => @mount, :slug => key).first
+      if (/\// =~ key)
+        match = /^((:?#)([a-zA-Z0-9\-]+))?(\/[a-zA-Z0-9\-\/]+)?/.match key
+        if match
+          rootslug = match[3]
+          path = "/#{match[4]}".squeeze("/")
+        end
+        if 1 < Comatose::Page.where(:mount => @mount, :full_path => path).count
+          pages = Comatose::Page.where(:mount => @mount, :full_path => path).all
+          rootslug.nil? ? pages : pages.find {|p| p.slug == rootslug }
+        else
+          Comatose::Page.where(:mount => @mount, :full_path => path).first
+        end
+      else
+        if 1 < Comatose::Page.where(:mount => @mount, :slug => key).count
+          Comatose::Page.where(:mount => @mount, :slug => key).all
+        else
+          Comatose::Page.where(:mount => @mount, :slug => key).first
+        end
+      end
     end
 
     def has_key?(key)
