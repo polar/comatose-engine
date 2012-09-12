@@ -35,9 +35,9 @@ at any time.
 
 The body of a page is processed by Liquid and Textile. Liquid processes a page
 by giving you special constructs with which to program your page. Constructs
-appearing between {% ... %} are control structures and do not print and {{ ...  }} are
-usually variable accesses and print their processed context. Please check Liquid for more
-information and for the constructs available..
+appearing between {% ... %} are control structures and do not print. Constructs
+appearing inside {{ ...  }} are usually variable accesses and print their processed context.
+Please check the Liquid documentation for more information and for the constructs available..
 
 An example might be iterating through a page's children and listing their titles.
 
