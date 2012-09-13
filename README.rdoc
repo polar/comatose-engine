@@ -2,8 +2,8 @@
 
 This project rocks and uses MIT-LICENSE.
 
-This project gem contains a small mountable Rails Engine that provides some content management
-support that may be embedded into other Rails applications. At the time of this writing this
+This project gem contains a small mountable Rails 3 Engine that provides some HTML content management
+support that may be embedded into other Rails applications. At the time of this writing, this
 project was developed with Rails 3.2.8 and Ruby 1.9.3-p194. There will be no support below that.
 Other dependencies are in the +gemspec+ and +Gemfile+ files.
 
