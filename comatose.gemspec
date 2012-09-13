@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Dr. Polar Humenn"]
   s.email       = ["polar.humenn@gmail.com","polar@adiron.com"]
   s.homepage    = "http://github.com/polar/comatose-engine"
-  s.summary     = "CMS Rails Embeddable Engine"
-  s.description = "Content Management System"
+  s.summary     = "HTML CMS Rails Embeddable Engine"
+  s.description = "HTML Content Management System"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
