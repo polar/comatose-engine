@@ -47,10 +47,10 @@ class TextFilters
         else
           raise "#render_text isn't implemented in this class"
         end
-      rescue LoadError
-        TextFilters.logger.debug "Filter '#{name}' was not included: #{$!}" unless TextFilters.logger.nil?
-      rescue
-        TextFilters.logger.debug "Filter '#{name}' was not included: #{$!}" unless TextFilters.logger.nil?
+      rescue LoadError => boom
+        TextFilters.logger.debug "Filter '#{name}' was not included: #{boom}" unless TextFilters.logger.nil?
+      rescue Exception => boom1
+        TextFilters.logger.debug "Filter '#{name}' was not included: #{boom1}" unless TextFilters.logger.nil?
       end
     end
     
@@ -92,18 +92,9 @@ private
 
   # This is an instance method so that it won't puke on requiring
   # a non-existent library until it's being registered -- the only
-  # place I can really capture the LoadError
+  # place I can really capture the LoadError.
   def require(name)
     Kernel.require name
-  end
-
-  # Use ERB to process text...
-  def process_with_erb(text, context)
-    begin
-      ERB.new( text ).result( context.get_binding )
-    rescue
-      raise "ERB Error: #{$!}"
-    end
   end
 
   # Use Liquid to process text...
@@ -111,29 +102,12 @@ private
     begin
       context = context.stringify_keys if context.respond_to? :stringify_keys
       Liquid::Template.parse(text).render(context)
-    rescue
-      raise "Liquid Error: #{$!}"
+    rescue Exception => boom
+      raise "Liquid Error: #{boom}"
     end
   end
   
 end
-
-class Hash
-  # Having the method_missing catchall in conjunction with get_binding 
-  # allows us to use the hash as a Context for ERB
-  def method_missing(meth, *arg)
-    if self.has_key? meth.to_s
-      self[meth.to_s]
-    else
-      super
-    end
-  end
-  # Gets the binding object for use with ERB
-  def get_binding
-    binding
-  end
-end
-
 
 Dir[File.join(File.dirname(__FILE__), 'text_filters', '*.rb')].each do |path|
   require "text_filters/#{File.basename(path)}"

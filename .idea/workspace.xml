@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="98af8748-e56d-4376-b836-6162a4ab11ba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.rdoc" afterPath="$PROJECT_DIR$/README.rdoc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/comatose/comatose_variable.rb" afterPath="$PROJECT_DIR$/lib/comatose/comatose_variable.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/text_filters.rb" afterPath="$PROJECT_DIR$/lib/text_filters.rb" />
     </list>
     <ignored path="comatose.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,54 +42,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/dummy/config/application.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="39" selection-start="2884" selection-end="2884" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1347510441000" expanded="true" signature="1702:2311" placeholder="#..." />
-                <marker date="1347510441000" expanded="true" signature="2551:2774" placeholder="#..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="18" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/src/buspass.admin/app/assets/stylesheets/application.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="normal-layout.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/src/buspass.admin/app/assets/stylesheets/normal-layout.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="17" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.css.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/comatose/application.css.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="43" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pages_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/comatose/pages_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -98,46 +51,83 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.rdoc" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.rdoc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="83" selection-start="144" selection-end="144" vertical-scroll-proportion="0.09234508">
+            <state line="4" column="83" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form_parent_row.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/comatose/pages/_form_parent_row.html.erb">
+      <file leaf-file-name="inline_rendering.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/comatose/support/inline_rendering.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="75" selection-start="264" selection-end="264" vertical-scroll-proportion="-3.125">
-              <folding>
-                <marker date="1347514055000" expanded="true" signature="3:497" placeholder="..." />
-                <marker date="1347514055000" expanded="true" signature="57:491" placeholder="..." />
-                <marker date="1347514055000" expanded="true" signature="66:481" placeholder="if ... end" />
-                <marker date="1347514055000" expanded="true" signature="187:294" placeholder="..." />
-                <marker date="1347514055000" expanded="true" signature="379:469" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pages.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/comatose/pages.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="65" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rails.validations.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/vendor/assets/javascripts/rails.validations.js">
+      <file leaf-file-name="class_options.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/comatose/support/class_options.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="18" selection-start="3183" selection-end="3191" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comatose_variable.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/comatose/comatose_variable.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="3" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="extensions.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/comatose/extensions.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="processing_context.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/comatose/processing_context.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="version.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/comatose/version.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="textile.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/text_filters/textile.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="text_filters.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/text_filters.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="62" selection-start="1672" selection-end="1672" vertical-scroll-proportion="-0.20291616">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -163,8 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20120906152842_create_comatose_pages.rb" />
-        <option value="$PROJECT_DIR$/app/views/comatose/pages/_pages_items.html.builder" />
         <option value="$PROJECT_DIR$/app/views/comatose/pages/_form_submit_button_group.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/comatose/pages.html.erb" />
         <option value="$PROJECT_DIR$/app/views/comatose/pages/_form.html.erb" />
@@ -179,6 +167,8 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/comatose/application.css.scss" />
         <option value="$PROJECT_DIR$/app/views/comatose/pages/_form_parent_row.html.erb" />
         <option value="$PROJECT_DIR$/README.rdoc" />
+        <option value="$PROJECT_DIR$/lib/comatose/comatose_variable.rb" />
+        <option value="$PROJECT_DIR$/lib/text_filters.rb" />
       </list>
     </option>
   </component>
@@ -1680,7 +1670,11 @@
       <created>1347519399939</created>
       <updated>1347519399939</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Progress&#10;">
+      <created>1347519476636</created>
+      <updated>1347519476636</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1769,65 +1763,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/core_ext/range.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/core_ext/regexp.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/action_view.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/action_view/form_builder.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/action_view/form_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="11" selection-start="1576" selection-end="1579" vertical-scroll-proportion="-25.72">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/src/buspass.admin/app/assets/stylesheets/application.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/dummy/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="39" selection-start="2884" selection-end="2884" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1347510441000" expanded="true" signature="1702:2311" placeholder="#..." />
-            <marker date="1347510441000" expanded="true" signature="2551:2774" placeholder="#..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="18" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/src/buspass.admin/app/assets/stylesheets/normal-layout.css.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="17" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.0">
@@ -1848,11 +1783,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="75" selection-start="264" selection-end="264" vertical-scroll-proportion="-3.125">
           <folding>
-            <marker date="1347514055000" expanded="true" signature="3:497" placeholder="..." />
-            <marker date="1347514055000" expanded="true" signature="57:491" placeholder="..." />
-            <marker date="1347514055000" expanded="true" signature="66:481" placeholder="if ... end" />
-            <marker date="1347514055000" expanded="true" signature="187:294" placeholder="..." />
-            <marker date="1347514055000" expanded="true" signature="379:469" placeholder="..." />
+            <marker date="1347514055000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1347514055000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1347514055000" expanded="true" signature="-1:-1" placeholder="if ... end" />
+            <marker date="1347514055000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1347514055000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1887,7 +1822,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="83" selection-start="144" selection-end="144" vertical-scroll-proportion="0.09234508">
+        <state line="4" column="83" selection-start="144" selection-end="144" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/comatose/support/inline_rendering.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/comatose/support/class_options.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/comatose/comatose_variable.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="3" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/comatose/extensions.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/comatose/processing_context.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/comatose/version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/text_filters/textile.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/text_filters.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="62" selection-start="1672" selection-end="1672" vertical-scroll-proportion="-0.20291616">
           <folding />
         </state>
       </provider>
