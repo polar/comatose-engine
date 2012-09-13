@@ -162,9 +162,9 @@ In this case, you must register an instance of the class under a name that you w
 keys.
 
 You *cannot* hand a method any arguments from Textile as if it were a parameterized function.
-In the Liquid implementation, access into variables is always by [],with "fetch" with an integer, or using "size", "first", and
-"last" on collections. You may get somewhat creative by returning another Comatose::Variable by overriding []
-and "has_key?", but I'll leave that to the experimenter.
+In the Liquid implementation, access into variables is always by [],with +fetch+ with an integer, or using +size+, +first+, and
++last+ on collections. You may get somewhat creative by returning another Comatose::Variable by overriding []
+and +has_key?+, but I'll leave that to the experimenter.
 
 === Page Variable Fields
 
@@ -184,8 +184,7 @@ The page variable has the following fields:
 
 [+position+] This field returns the position in its parent's child list, which is ordered.
 
-[+prev+]
-This field returns the previous page in the parent's child list, at position - 1.
+[+prev+] This field returns the previous page in the parent's child list, at position - 1.
 
 [+next+] This field returns the next page in the parent's child list, at position + 1.
 
