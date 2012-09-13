@@ -139,7 +139,10 @@ This field returns the slug column of the page.
 This field returns the url path of the page from the mount point.
 
 * url
-This field contains the url path of the page including the mount point.
+This field returns the url path of the page including the mount point.
+
+* link
+This field returns the url path of a Rails link to the page including the mount point, such as +/home/pages/3422+.
 
 * photo
 This field returns a url for the associated photo.
