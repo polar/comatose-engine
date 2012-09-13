@@ -3,7 +3,9 @@
 This project rocks and uses MIT-LICENSE.
 
 This project gem contains a small mountable Rails Engine that provides some content management
-support that may be embedded into other Rails applications.
+support that may be embedded into other Rails applications. At the time of this writing this
+project was developed with Rails 3.2.8 and Ruby 1.9.3-p194. There will be no support below that.
+Other dependencies are in the +gemspec+ and +Gemfile+ files.
 
 == Usage
 
@@ -232,7 +234,7 @@ I don't see the need to supply a default application for Comatose or to make it 
 box, but it was needed for testing, so there you have it. The real reason for it, is that
 I couldn't test multiple engine mount points because the standard testing harness doesn't
 know how to deal with that correctly yet. Named route methods are the culprit on that one. They only
-refer to the last engine mounted. This is as of Rails 3.2.8.
+refer to the last engine mounted. This situation is as of Rails 3.2.8.
 
 Be warned, I make no claims for the
 default app or wish to maintain it to a deployable status. Use it at your peril.
