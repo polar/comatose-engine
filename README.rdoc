@@ -190,8 +190,7 @@ The page variable has the following fields:
 
 [+content+] This field returns the HTML content of the page as rendered by its filter, i.e. Textile or not.
 
-[+body+] This field returns the body of the page, which is exactly what you may have typed in. Remember
-it is still evaluated by the filter of the current page.
+[+body+] This field returns the body of the page, which is exactly what you may have typed in. Remember it is still evaluated by the filter of the current page.
 
 [+children+] This field returns a collection of "page" that may be iterated through using a {% for .... %} construct.
 
