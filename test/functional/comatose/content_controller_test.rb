@@ -62,29 +62,27 @@ class Comatose::ContentControllerTest < ActionController::TestCase
     # We need to update the first @request.env so that it uses it as a session and setup the ENGINE mount path.
     get :show, {
         :use_route => "comatose",
-        :page_path => 'dynamic-var',
+        :page_path => 'variable',
         :layout    => 'comatose/content.html.erb' },
         @request.env.update('SCRIPT_NAME' => "/comatose")
 
     assert_response :success
-    # This test makes sure we have an @html_document to work with
-
     assert_tag :tag => 'h1'
-
     time1 = find_tag(:tag => "h1")
+
+    sleep 1
 
     # We need to update the first @request.env so that it uses it as a session and setup the ENGINE mount path.
     get :show, {
         :use_route => "comatose",
-        :page_path => 'dynamic-var',
+        :page_path => 'variable',
         :layout    => 'comatose/content.html.erb' },
         @request.env.update('SCRIPT_NAME' => "/comatose")
 
     assert_response :success
-    # This test makes sure we have an @html_document to work with
     assert_tag :tag => 'h1'
-
     time2 = find_tag(:tag => "h1")
+
     assert_not_equal time1, time2
   end
 
@@ -97,7 +95,7 @@ class Comatose::ContentControllerTest < ActionController::TestCase
     # We need to update the first @request.env so that it uses it as a session and setup the ENGINE mount path.
     get :show, {
         :use_route => "comatose",
-        :page_path => 'dynamic-var',
+        :page_path => 'variable',
         :layout    => 'comatose/content.html.erb' },
         @request.env.update('SCRIPT_NAME' => "/comatose")
 
@@ -111,7 +109,7 @@ class Comatose::ContentControllerTest < ActionController::TestCase
     # We need to update the first @request.env so that it uses it as a session and setup the ENGINE mount path.
     get :show, {
         :use_route => "comatose",
-        :page_path => 'dynamic-var',
+        :page_path => 'variable',
         :layout    => 'comatose/content.html.erb' },
         @request.env.update('SCRIPT_NAME' => "/comatose")
 
@@ -137,8 +135,6 @@ class Comatose::ContentControllerTest < ActionController::TestCase
         @request.env.update('SCRIPT_NAME' => "/comatose")
 
     assert_response :success
-    # This test makes sure we have an @html_document to work with
-
     assert_tag :tag => 'h1', :child => "Hello World!"
     assert_tag :tag => 'h2', :child => "Hello World!"
     assert_tag :tag => 'h3', :child => "Hello World!"
@@ -161,8 +157,6 @@ class Comatose::ContentControllerTest < ActionController::TestCase
         @request.env.update('SCRIPT_NAME' => "/comatose")
 
     assert_response :success
-    # This test makes sure we have an @html_document to work with
-
     assert_tag :tag => 'h1', :child => "Hello World!"
     assert_tag :tag => 'h2', :child => "Hello World!"
     assert_tag :tag => 'h3', :child => "Hello World!"
