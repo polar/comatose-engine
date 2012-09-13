@@ -1,5 +1,10 @@
 # ComatoseEngine [v0.1.0]
 
+# This project is no longer supported. 
+
+Please go to the "rails3" branch.
+
+
 * Versin 0.1.0 Alpha
 * Author: Polar Humenn
           extending upon the work of M@ McRay
