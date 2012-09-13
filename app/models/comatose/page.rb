@@ -72,8 +72,10 @@ module Comatose
     validates_each :parent_id, :allow_nil => true do |record, attr, value|
       if record.parent_id
         p = Comatose::Page.where(:id => record.parent_id).first
-        if !p || p.mount != record.mount
+        if !p
           record.errors.add :parent_id, "invalid parent"
+        elsif p.mount != record.mount
+          record.errors.add :parent_id, "parent mount mismatch"
         end
       end
     end

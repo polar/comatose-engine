@@ -5,7 +5,6 @@
 #  - slug
 #  - keywords
 #  - body
-#  - author
 #  - filter_type
 #  - position
 #  - version
@@ -22,7 +21,6 @@ root:
     h1. {{ page.title }}
 
     This is your *home page*.
-  author: Comatose
   keywords: "test, cms"
   filter_type: Textile
   position: 0
@@ -32,7 +30,7 @@ root:
   updated_at: <%= 10.days.ago.to_s :db %>
 
 faq:
-  parent_id: root
+  parent: root
   mount : "/comatose"
   full_path: "/faq"
   slug: faq
@@ -47,7 +45,6 @@ faq:
     {% endfor %}
   created_on: <%= 10.days.ago.to_s :db %>
   updated_on: <%= 10.days.ago.to_s :db %>
-  author: Comatose
   keywords: faq
   filter_type: Textile
   position: 0
@@ -55,7 +52,7 @@ faq:
   updated_at: <%= 10.days.ago.to_s :db %>
 
 question_one:
-  parent_id: faq
+  parent: faq
   mount : "/comatose"
   full_path: "/faq/question-one"
   slug: question-one
@@ -64,7 +61,6 @@ question_one:
     Content for *question one*.
   created_on: <%= 10.days.ago.to_s :db %>
   updated_on: <%= 10.days.ago.to_s :db %>
-  author: Comatose
   keywords: faq
   filter_type: Textile
   position: 0
@@ -72,7 +68,7 @@ question_one:
   updated_at: <%= 10.days.ago.to_s :db %>
 
 question_two:
-  parent_id: faq
+  parent: faq
   mount : "/comatose"
   full_path: "/faq/question-two"
   slug: question-two
@@ -97,7 +93,6 @@ question_two:
     nextcontent:{{ page.next.content }}
   created_on: <%= 10.days.ago.to_s :db %>
   updated_on: <%= 10.days.ago.to_s :db %>
-  author: Comatose
   keywords: one two three
   filter_type: Textile
   position: 1
@@ -105,7 +100,7 @@ question_two:
   updated_at: <%= 10.days.ago.to_s :db %>
 
 question_three:
-  parent_id: faq
+  parent: faq
   mount : "/comatose"
   full_path: "/faq/question-three"
   slug: question-three
@@ -114,7 +109,6 @@ question_three:
     Content for *question three*.
   created_on: <%= 10.days.ago.to_s :db %>
   updated_on: <%= 10.days.ago.to_s :db %>
-  author: Comatose
   keywords: faq
   filter_type: Textile
   position: 2
@@ -122,7 +116,7 @@ question_three:
   updated_at: <%= 10.days.ago.to_s :db %>
 
 param_driven:
-  parent_id: question_one
+  parent: question_one
   mount : "/comatose"
   full_path: "/params"
   slug: params
@@ -131,7 +125,6 @@ param_driven:
     I'm {{ extra }}
   created_on: <%= 10.days.ago.to_s :db %>
   updated_on: <%= 10.days.ago.to_s :db %>
-  author: Comatose
   keywords:
   filter_type: Textile
   position: 0

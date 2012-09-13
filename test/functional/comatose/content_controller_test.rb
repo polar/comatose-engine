@@ -43,16 +43,15 @@ class Comatose::ContentControllerTest < ActionController::TestCase
         @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
     assert_match /page_title:Question Two\?/, response.body
-    assert_match /page_photo:\/assets\/comatose\/addphoto.jpg/, response.body
+    assert_match /photo:/, response.body
     assert_match /keywords:one two three/, response.body
     assert_match /slug:question-two/, response.body
     assert_match /position:1/, response.body
-    assert_match /created_on:2012-09-02/, response.body
-    assert_match /updated_on:2012-09-02/, response.body
+    assert_match /created_on:[0-9][0-9][0-9][0-9]-[0-2][0-9]-[0-3][0-9]/, response.body
+    assert_match /updated_on:[0-9][0-9][0-9][0-9]-[0-2][0-9]-[0-3][0-9]/, response.body
     assert_match /full_path:\/faq\/question-two/, response.body
     assert_match /page_url:\/comatose\/faq\/question-two/, response.body
-    assert_match /page_link:\/comatose\/faq\/question-two/, response.body
-    assert_match /author:Comatose/, response.body
+    assert_match /page_link:\/comatose\/#{comatose_pages("question_two").id}/, response.body
     assert_match /prevslug:question-one/, response.body
     assert_match /nextslug:question-three/, response.body
     assert_match /prevbody:Content for <strong>question one<\/strong>\./, response.body

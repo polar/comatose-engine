@@ -11,8 +11,6 @@ class Comatose::PagesControllerTest < ActionController::TestCase
 
   def setup
     @routes = Comatose::Engine.routes
-    Comatose.config.admin_get_author = nil
-    Comatose.config.admin_authorization = nil
     # We need to set this up as the Engine SCRIPT_NAME, or else it gets clobbered.
     @controller.config.relative_url_root = "/comatose"
     # However, we cannot test the Engine mounted at two different mount points
@@ -39,7 +37,7 @@ class Comatose::PagesControllerTest < ActionController::TestCase
     post :create, {:use_route => "comatose",
                    :page=>{:title=>"Test page",
                            :body=>'This is a *test*',
-                           :parent_id=>1,
+                           :parent_id=>comatose_pages(:faq).id,
                            :filter_type=>'Textile'},
                    :commit => "Create Page", :format => :js},
         @request.env.update('SCRIPT_NAME' => "/comatose")
@@ -53,7 +51,7 @@ class Comatose::PagesControllerTest < ActionController::TestCase
     post :create, {:use_route => "comatose",
                    :page=>{:title=>"Test page",
                            :body=>nil,
-                           :parent_id=>1,
+                           :parent_id=> comatose_pages(:faq).id,
                            :filter_type=>'Textile'},
                    :commit => "Create Page", :format => :js},
         @request.env.update('SCRIPT_NAME' => "/comatose")
@@ -67,7 +65,7 @@ class Comatose::PagesControllerTest < ActionController::TestCase
     post :create, {:use_route => "comatose",
                    :page=>{:title=>nil,
                            :body=>'This is a *test*',
-                           :parent_id=>1,
+                           :parent_id=> comatose_pages(:faq).id,
                            :filter_type=>'Textile'},
                    :commit => "Create Page", :format => :js},
         @request.env.update('SCRIPT_NAME' => "/comatose")
@@ -101,14 +99,14 @@ class Comatose::PagesControllerTest < ActionController::TestCase
   end
 
   test "show the edit action" do
-    get :edit, { :use_route => "comatose", :id => 1 },
+    get :edit, { :use_route => "comatose", :id => comatose_pages(:faq).id },
         @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
   end
 
   test "update pages with valid data" do
     post :update, {:use_route => "comatose",
-                   :id=>1,
+                   :id=> comatose_pages(:faq).id,
                    :page=>{ :title=>'A new title' },
                    :commit => "Save Changes", :format => :js },
         @request.env.update('SCRIPT_NAME' => "/comatose")
@@ -120,7 +118,7 @@ class Comatose::PagesControllerTest < ActionController::TestCase
 
   test "not update pages with invalid data" do
     post :update, {:use_route => "comatose",
-                   :id=>1,
+                   :id=> comatose_pages(:faq).id,
                    :page=>{ :title=>nil },
                    :commit => "Save Changes", :format => :js },
         @request.env.update('SCRIPT_NAME' => "/comatose")
@@ -129,17 +127,17 @@ class Comatose::PagesControllerTest < ActionController::TestCase
   end
 
   test "delete a page" do
-    delete :destroy, {:use_route => "comatose", :id=>1},
+    delete :destroy, {:use_route => "comatose", :id => comatose_pages(:faq).id},
         @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :redirect
     assert_redirected_to pages_path
   end
 
   test "reorder pages" do
-    q1 = Comatose::Page.find_by_path("/comatose", "faq/question-one")
+    q1 = Comatose::Page.find_by_path("/comatose", "/faq/question-one")
     assert_not_nil q1
     prev_position = q1.position
-    post :reorder, {:use_route => "comatose", :id=>q1.id, :position => 1, :format => :js },
+    post :reorder, {:use_route => "comatose", :id => q1.id, :position => 1, :format => :js },
         @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
     q1.reload
