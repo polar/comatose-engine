@@ -66,7 +66,7 @@ in engines. You may want to do extend/copy/modify the controllers if you want ad
 The body of a page is processed by Liquid and Textile. Liquid processes a page
 by giving you special constructs with which to program your page. Constructs
 appearing between {% ... %} are control structures and do not print. Constructs
-appearing inside {{ ...  }} are usually variable accesses and print their processed context.
+appearing inside {{ ...  }} are variable accesses and put forth their context.
 Please check the Liquid documentation for more information and for the constructs available..
 
 An example might be iterating through a page's children and listing their titles with
@@ -76,12 +76,12 @@ their page photos.
   <dl>
   {% for p in page.children %}
      <dt>{{ forloop.index }}. {{ p.title }}</dt>
-     <dd>|!{{ p.page_photo }}!:{{ p.url }}|</dd>
+     <dd>|!{{ p.photo }}!:{{ p.url }}|</dd>
   {% endfor %}
   </dl>
 
 In Comatose Engine, the variable {{ page }} refers to the page you are on. You may access
-the children, content, title, slug, link, full_path of any other page by using the "pages" variable.
+the children, content, title, slug, url, etc of any other page by using the "pages" variable.
 
   {{ pages['mary'].url }}
 
@@ -95,12 +95,14 @@ child pages named "mary", you can differentiate them as:
 
   {{ pages['#houser/mary'].url }}
 
+For accessible page fields, see below.
+
 === Multiple Roots
 
 You are allowed to have multiple root pages, and they are ordered. When accessing a page by
 a full path url, and the page path matches two different pages from different roots,
-the *first* root-page is used. So, if you went to http\://localhost:3000/home/mary you would
-get to the "mary" under the "fester" root.
+the *first* root-page is used. So, assuming the "fester" root is before the "houser" root,
+if you went to http\://localhost:3000/home/mary you would get to the "mary" under the "fester" root.
 
 Having multiple roots allows you to use roots that may be
 hidden from user view. You can use extra roots to store snippets, which you can refer to by accessing
@@ -108,13 +110,13 @@ the body or content of them. If you had a root page called "snippet1", you could
 
   {{ pages["snippet1"].body }}
 
-to include its contents. Remember the body returns exactly what you had in it, but it will be
+to include its contents. Remember, the "body" field returns exactly what you had in it. However but it will be
 evaluated by Textile if you have Textile selected on the page in which you are including it.
 There is no automatic escaping to make it look exactly like it was stored.
 
 === Variables
 
-A +Comatose::Variable+ is basically a +Liquid::Drop+, which means you define a variable for use within a
+A Comatose::Variable is basically a Liquid::Drop, which means you define a variable for use within a
 {{ ... }} construct. You define a Comatose::Variable by a block, usually in an initializer.
 
   Comatose::Variable.define("products") do
@@ -130,13 +132,13 @@ use:
   end
 
 You may define Comatose::Variables that have keys by returning a Hash, such that you may
-access a field of a variable by one of two ways.
+access different fields of a variable.  For example, if you define a variable as follows:
 
   Comatose::Variable.define("hey") do
     { "hello" => "Hello World!", "good_bye" => "Goodbye World!" }
   end
 
-And you may access these elements in Liquid/Textile as:
+you may access these elements in Liquid/Textile as:
 
   {{ hey.hello }}
   {{ hey.good-bye }}
@@ -156,13 +158,17 @@ If you need bona fide methods to be dynamically evaluated you may extend Comatos
   Comatose.register_variable("hey", V.new())
 
 In this case, you must register an instance of the class under a name that you want to use in your Textile using
-+Comatose.register_variable+. You may also refer to these elements in Liquid/Textile the say way as above.
++Comatose.register_variable+. You  refer to these fields in Liquid/Textile the say way as above as if they were
+keys.
 
-You cannot hand your methods any arguments from Textile as if it were a parameterized function.
-In the Liquid implementation, access is always by [] or "fetch" with an integer, "size", "first", and "last".
-You can get somewhat creative by overriding [] and "has_key?", but I'll leave that as a hint.
+You cannot hand a method any arguments from Textile as if it were a parameterized function.
+In the Liquid implementation, access is always by [], or with "fetch" with an integer, or using "size", "first", and
+"last" on collections. You can get somewhat creative by returning another Comatose::Variable by overriding
+[ ] and "has_key?", but I'll leave that to the experimenter.
 
 === Page Variable Fields
+
+The page variable has the following fields:
 
 * title
 This field returns the title column of the page.
@@ -199,21 +205,24 @@ This field returns the body of the page, which is exactly what you may have type
 it is still evaluated by the filter of the current page.
 
 * children
-This field returns a collection that may be iterated through using a {% for .... %} construct.
+This field returns a collection of "page" that may be iterated through using a {% for .... %} construct.
 
 ==== Pages Variable
 
 The +pages+ variable refers to other pages by their slugs or full paths. It has the following
 formats:
 
-* {{ pages['/path/to/page'] }}
+  {{ pages['/path/to/page'] }}
+
 This selection refers to a page by the full path. If the path belongs to 2 or more pages, a
 collection will be returned, which may be iterated or selected with [0],[1], etc.
 
-* {{ pages['#root/path/to/page'] }}
+  {{ pages['#root/path/to/page'] }}
+
 This selection refers to a page from the full path of a specific root.
 
-* {{ pages['slug'] }}
+  {{ pages['slug'] }}
+
 This selection returns all pages with this particular slug.
 
 == Multiple Engine Mounts
