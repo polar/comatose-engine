@@ -264,17 +264,18 @@ RubyMine.  But with even great tools like RubyMine doesn't give you license to w
 
 It seems like since all this Ruby/Rails (stupid) "magic" exists, people feel they *must* use it!  CMS
 was riddled with some of the most bizarre shit: before filters, after filters, methods overwriting
-active record field accessors, all for what? To save on a variable name?
+active record field accessors, all for what? To save on a variable name, a function definition, or just
+to show people you're "smart"?
 
 So, stop it people, just stop it!
-Get off the meth, and get back to writing good, readable, understandable code. I don't know
+Get off the meth, and get back to writing good, readable, understandable code. For example, I don't know
 WTF happened, but in my days "DRY" stood for something you did when you got out of the water. "Don't
 repeat yourself"? Really? I mean. really? WTF? You mean, we should now all write small functions,
 modularize code, and then put it together in a coherent fashion and actually THINK about the problem
-a bit before jamming it together? Really? We've got to come up with an acronym and make it a fad, to
-get you to do that? What the hell have they been teaching you in college these days?
+a bit before jamming it together? Really? We've got to come up with an acronym and make it a fad to
+get us to do that? What the hell have they been teaching in college these days?
 
-If you are making a system that is going to be public, that "magic" shit just makes understanding a
+Listen, if you are buidling a system that "magic" shit just makes understanding a
 system almost impossible without a lot of time invested (wasted, IMHO). What a crock!
 After the debacle with Comfortable Mexican Sofa, I've decided to return to Comatose and something
 simple. Even it was too complicated.
