@@ -28,7 +28,7 @@
             <file leaf-file-name="page.rb" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/app/models/comatose/page.rb">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state line="77" column="3" selection-start="3008" selection-end="3008" vertical-scroll-proportion="0.98016334">
+                  <state line="77" column="3" selection-start="3008" selection-end="3008" vertical-scroll-proportion="1.0851809">
                     <folding />
                   </state>
                 </provider>
@@ -45,7 +45,10 @@
         <entry file="file://$PROJECT_DIR$/test/dummy/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="61" column="39" selection-start="2884" selection-end="2884" vertical-scroll-proportion="0.0">
-              <folding />
+              <folding>
+                <marker date="1347510441000" expanded="true" signature="1702:2311" placeholder="#..." />
+                <marker date="1347510441000" expanded="true" signature="2551:2774" placeholder="#..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,7 +101,7 @@
       <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.rdoc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="133" column="0" selection-start="5551" selection-end="5551" vertical-scroll-proportion="0.12272175">
+            <state line="125" column="97" selection-start="5403" selection-end="5403" vertical-scroll-proportion="2.8857837">
               <folding />
             </state>
           </provider>
@@ -108,7 +111,13 @@
         <entry file="file://$PROJECT_DIR$/app/views/comatose/pages/_form_parent_row.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="5" column="75" selection-start="264" selection-end="264" vertical-scroll-proportion="-3.125">
-              <folding />
+              <folding>
+                <marker date="1347514055000" expanded="true" signature="3:497" placeholder="..." />
+                <marker date="1347514055000" expanded="true" signature="57:491" placeholder="..." />
+                <marker date="1347514055000" expanded="true" signature="66:481" placeholder="if ... end" />
+                <marker date="1347514055000" expanded="true" signature="187:294" placeholder="..." />
+                <marker date="1347514055000" expanded="true" signature="379:469" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -186,10 +195,13 @@
           <State>
             <id />
           </State>
+          <State>
+            <id>Spelling</id>
+          </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>CSS</id>
+            <id>SpellCheckingInspection</id>
           </State>
         </selected-state>
       </profile-state>
@@ -1179,10 +1191,10 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="Errors" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/src/buspass.admin/app/assets/stylesheets/normal-layout.css.scss" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.splitter.details.proportions" value="0.5263158" />
     <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
@@ -1648,7 +1660,11 @@
       <created>1347515906903</created>
       <updated>1347515906903</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Progress&#10;">
+      <created>1347516883629</created>
+      <updated>1347516883629</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1782,7 +1798,10 @@
     <entry file="file://$PROJECT_DIR$/test/dummy/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="39" selection-start="2884" selection-end="2884" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1347510441000" expanded="true" signature="1702:2311" placeholder="#..." />
+            <marker date="1347510441000" expanded="true" signature="2551:2774" placeholder="#..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1812,7 +1831,13 @@
     <entry file="file://$PROJECT_DIR$/app/views/comatose/pages/_form_parent_row.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="75" selection-start="264" selection-end="264" vertical-scroll-proportion="-3.125">
-          <folding />
+          <folding>
+            <marker date="1347514055000" expanded="true" signature="3:497" placeholder="..." />
+            <marker date="1347514055000" expanded="true" signature="57:491" placeholder="..." />
+            <marker date="1347514055000" expanded="true" signature="66:481" placeholder="if ... end" />
+            <marker date="1347514055000" expanded="true" signature="187:294" placeholder="..." />
+            <marker date="1347514055000" expanded="true" signature="379:469" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1839,14 +1864,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/comatose/page.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="3" selection-start="3008" selection-end="3008" vertical-scroll-proportion="0.98016334">
+        <state line="77" column="3" selection-start="3008" selection-end="3008" vertical-scroll-proportion="1.0851809">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="0" selection-start="5551" selection-end="5551" vertical-scroll-proportion="0.12272175">
+        <state line="125" column="97" selection-start="5403" selection-end="5403" vertical-scroll-proportion="2.8857837">
           <folding />
         </state>
       </provider>

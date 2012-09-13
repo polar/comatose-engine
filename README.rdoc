@@ -2,7 +2,7 @@
 
 This project rocks and uses MIT-LICENSE.
 
-This project gem contains a small mountable Rails Engine that provides some content manangement
+This project gem contains a small mountable Rails Engine that provides some content management
 support that may be embedded into other Rails applications.
 
 == Usage
@@ -36,21 +36,21 @@ and reorder them.
 
 ==== Administer Pages
 
-Start the standard rails server and point your browser to: +http\://localhost:3000/home/pages+
+Start the standard rails server and point your browser to: http\://localhost:3000/home/pages
 You will be able create pages and child pages that are accessed as:
 
-  http\://localhost:3000/home
-  http\://localhost:3000/home/sub-page1
+  http://localhost:3000/home
+  http://localhost:3000/home/sub-page1
 
-and so on. The adminstration pages will assign "slugs" to your pages based
+and so on. The administration pages will assign "slugs" to your pages based
 on the title you give the page. You may change the url slug for the page
 at any time.
 
-This project is a Rails Engine. It is meant to give you the processing capaiblity for dynamic content
+This project is a Rails Engine. It is meant to give you the processing capability for dynamic content
 for pages that you may want to deploy in your application. The default application may not be
 what you want, and in fact, I will dare say, it is probably not what you want.
 
-So don't complain that there is no public confiuration module for the application to jump through your hoops.
+So don't complain that there is no public configuration module for the application to jump through your hoops.
 There also is no authentication or authorization model for it. If you want a configurable application, build one.
 You may use pieces and parts of the default application. At the very least they demonstrate how to use the controllers.
 
@@ -63,8 +63,8 @@ in engines. You may want to do extend/copy/modify the controllers if you want ad
 
 The body of a page is processed by Liquid and Textile. Liquid processes a page
 by giving you special constructs with which to program your page. Constructs
-appearing between +{%+ ... +%}+ are control structures and do not print. Constructs
-appearing inside +{{+ ...  +}}+ are usually variable accesses and print their processed context.
+appearing between {% ... %} are control structures and do not print. Constructs
+appearing inside {{ ...  }} are usually variable accesses and print their processed context.
 Please check the Liquid documentation for more information and for the constructs available..
 
 An example might be iterating through a page's children and listing their titles with
@@ -78,14 +78,14 @@ their page photos.
   {% endfor %}
   </dl>
 
-In Comatose Engine, the variable +{{ page }}+ refers to the page you are on. You may access
+In Comatose Engine, the variable {{ page }} refers to the page you are on. You may access
 the children, content, title, slug, link, full_path of any other page by using the "pages" variable.
 
   {{ pages['mary'].url }}
 
 Note: You must be careful about how you name your pages. Just using a slug within
-the +[]+ brackets may result in a collection if you have more than one page with the same
-slug. You may differentiate them by including the slug of the root page, prepeneded with a
+the [ ] brackets may result in a collection if you have more than one page with the same
+slug. You may differentiate them by including the slug of the root page, prepended with a
 hash (#) and using the full_path of the page. For instance, if you have two root pages with direct
 child pages named "mary", you can differentiate them as:
 
@@ -97,7 +97,7 @@ child pages named "mary", you can differentiate them as:
 
 You are allowed to have multiple root pages, and they are ordered. When accessing a page by
 a full path url, and the page path matches two different pages from different roots,
-the *first* root-page is used. So, if you went to +http\://localhost:3000/home/mary+ you would
+the *first* root-page is used. So, if you went to http\://localhost:3000/home/mary you would
 get to the "mary" under the "fester" root.
 
 Having multiple roots allows you to use roots that may be
@@ -113,7 +113,7 @@ There is no automatic escaping to make it look exactly like it was stored.
 === Variables
 
 A Comatose::Variable is basically a Liquid::Drop, which means you define a variable for use within a
-+{{+ ... +}}+ construct. You define a Comatose::Variable by a block, usually in an initializer.
+{{ ... }} construct. You define a Comatose::Variable by a block, usually in an initializer.
 
   Comatose::Variable.define("products") do
     return Products.all
@@ -148,7 +148,7 @@ This field returns a url for the associated photo.
 This field returns the position in its parent's child list, which is ordered.
 
 * prev
-This field returns the previous page in the parent's chilc list, at position - 1.
+This field returns the previous page in the parent's child list, at position - 1.
 
 * next
 This field returns the next page in the parent's child list, at position + 1.
@@ -168,14 +168,14 @@ This field returns a collection that may be iterated through using a +{% for ...
 The +pages+ variable refers to other pages by their slugs or full paths. It has the following
 formats:
 
-* +{{ pages['/path/to/page'] }}
+* {{ pages['/path/to/page'] }}
 This selection refers to a page by the full path. If the path belongs to 2 or more pages, a
 collection will be returned, which may be iterated or selected with [0],[1], etc.
 
-* +{{ pages['#root/path/to/page'] }}
+* {{ pages['#root/path/to/page'] }}
 This selection refers to a page from the full path of a specific root.
 
-* +{{ pages['slug'] }}
+* {{ pages['slug'] }}
 This selection returns all pages with this particular slug.
 
 == Rants
@@ -189,20 +189,25 @@ hearted with Rails 2.3, engines plugin, dessert, etc.
 In an effort to get something better in my next project, I gravitated toward
 "Comfortable Mexican Sofa" (CMS) by Oleg Khabarov, probably because of Ryan's Railscast mention.
 
-That project took a half ton truck, 20 cups of coffee, and an angry dog to figure out WTF is going on.
+That project took a half ton truck, 100 cups of coffee, and an angry dog, and two weeks
+to figure out WTF is going on.
 Okay, maybe it was just me trying to fit it over MongoDB with MongoMapper, but I tore my bloody hair
-out. It was way too complicated, and navigating the code was abosutely horrendous. And
+out. It was way too complicated. Navigating the code was absolutely horrendous. And
 what's with the damn configuration options? Geezus! They were just daunting. Furthermore, you didn't
 know how they worked until you actually tried to do something with them that didn't work.
-This crapola just lead to hours of debugging dynamic code. Thank the guys at Jetbrains for RubyMine.
+This crapola just lead to hours of debugging dynamic code. I have to thank the guys at Jetbrains for
+RubyMine.  But with even great tools like RubyMine doesn't give you license to write crappy code.
 
 It seems like since all this Ruby/Rails (stupid) "magic" exists, people feel they *must* use it!  CMS
-was riddled with some of the most bizzare shit. So, stop it people, just stop it!
+was riddled with some of the most bizarre shit: before filters, after filters, methods overwriting
+active record field accessors, all for what? To save on a variable name?
+
+So, stop it people, just f*king stop it!
 Get off the meth, and get back to writing good, readable, understandable code. I don't know
 WTF happened, but in my days "DRY" stood for something you did when you got out of the water. "Don't
 repeat yourself"? Really? I mean. really? WTF? You mean, we should now all write small functions,
-modularize code, and then put it together, actually THINK about something? Really?
-What the hell have they been teaching you in college these days?
+modularize code, and then put it together in a coherent fashion and actually THINK about the problem
+a bit before jamming it together? Really? What the hell have they been teaching you in college these days?
 
 If you are making a system that is going to be public, that "magic" shit just makes understanding a
 system almost impossible without a lot of time invested (wasted, IMHO). What a crock!
@@ -215,13 +220,17 @@ whistles. I added PaperClip and the ability to associate a photo with the page, 
 that functionality. Thinking about it, I may rip that out too.
 
 So, if you want to use this stuff, you should be a good programmer, and you should know how to
-modify/extend things so that they work they way you want it to, without having some obscure
-configuration option, or a covertly modified class crawling up your butt and doing spins for 2 days.
+modify/extend things. It is my hope so that they will work they way you want it to, without
+having some obscure configuration option, or a covertly modified class crawling up
+your butt and doing spins for 2 days.
 
 I don't see the need to supply a default application for Comatose or to make it work out of the
 box, but it was needed for testing, so there you have it. The real reason for it, is that
 I couldn't test multiple engine mount points because the standard testing harness doesn't
-know how to deal with that correctly yet. But be warned, I make no claims for the
+know how to deal with that correctly yet. Named route methods are the culprit on that one. They only
+refer to the last engine mounted. This is as of Rails 3.2.8.
+
+Be warned, I make no claims for the
 default app or wish to maintain it to a deployable status. Use it at your peril.
 It serves merely as an example.
 
@@ -231,9 +240,12 @@ If you want to improve upon this project, you can join the obvious Github party,
 send pull requests. But let me give you this warning:
 
 If your pull request contains some "magic" use of a before_filter, after_filter *anywhere*,
-or inserting improperly named or replacing standard methods into standard system classes, or
+or inserts improperly named methods, or replaces standard methods, into standard system classes, or
 uses "responds_to?", it will be denied. Use of "method_missing" anywhere will get you duct taped
-to a rocket and fired into the virtual abyss to go meet the Flying Spaghetti Monster. Happy Travels! :)
+to a rocket and fired into the virtual abyss to go meet the Flying Spaghetti Monster.
+
+And while your at it. Keep any comments up to date, in proper English, with correct spelling and
+punctuation! Happy Coding! :)
 
 Cheers,
 
