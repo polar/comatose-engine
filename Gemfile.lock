@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    comatose (3.0.0)
+    comatose (4.0.0)
       RedCloth (>= 4.2.0)
       acts_as_tree (>= 1.1.0)
       acts_as_versioned (~> 0.6.0)
