@@ -88,7 +88,7 @@
       <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.rdoc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="38" selection-start="7023" selection-end="7023" vertical-scroll-proportion="0.3361244">
+            <state line="164" column="67" selection-start="6847" selection-end="6847" vertical-scroll-proportion="0.30023924">
               <folding />
             </state>
           </provider>
@@ -933,7 +933,11 @@
       <created>1347563393745</created>
       <updated>1347563393745</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Progress&#10;">
+      <created>1347563458655</created>
+      <updated>1347563458655</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1125,7 +1129,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="38" selection-start="7023" selection-end="7023" vertical-scroll-proportion="0.3361244">
+        <state line="164" column="67" selection-start="6847" selection-end="6847" vertical-scroll-proportion="0.30023924">
           <folding />
         </state>
       </provider>
