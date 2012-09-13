@@ -31,12 +31,12 @@ This process is standard Rails Engine stuff.
 == Example Application
 
 The gem comes with a default example Rails application that should be able to get you up and running.
-For instance, just with the engine mounted at "/home" you can create pages, create content for them,
+For instance, just with the engine mounted at +/home+ you can create pages, create content for them,
 and reorder them.
 
 ==== Administer Pages
 
-Start the standard rails server and point your browser to: http\://localhost:3000/home/pages
+Start the standard rails server and point your browser to: +http\://localhost:3000/home/pages+
 You will be able create pages and child pages that are accessed as:
 
   http\://localhost:3000/home
@@ -54,7 +54,7 @@ So don't complain that there is no public confiuration module for the applicatio
 There also is no authentication or authorization model for it. If you want a configurable application, build one.
 You may use pieces and parts of the default application. At the very least they demonstrate how to use the controllers.
 
-The "app/views/comatose/pages" view is sufficiently pieced out in partial ERBs that you can pick and choose
+The +app/views/comatose/pages+ view is sufficiently pieced out in partial ERBs that you can pick and choose
 what fields you want to show or not. The original Comatose had configuration options for hiding things.
 I'll take it from here that you know how to deal with extending/mixing controllers
 in engines. You may want to do extend/copy/modify the controllers if you want add an authenticated authorization model.
@@ -63,8 +63,8 @@ in engines. You may want to do extend/copy/modify the controllers if you want ad
 
 The body of a page is processed by Liquid and Textile. Liquid processes a page
 by giving you special constructs with which to program your page. Constructs
-appearing between {% ... %} are control structures and do not print. Constructs
-appearing inside {{ ...  }} are usually variable accesses and print their processed context.
+appearing between +{%+ ... +%}+ are control structures and do not print. Constructs
+appearing inside +{{+ ...  +}}+ are usually variable accesses and print their processed context.
 Please check the Liquid documentation for more information and for the constructs available..
 
 An example might be iterating through a page's children and listing their titles with
@@ -78,13 +78,13 @@ their page photos.
   {% endfor %}
   </dl>
 
-In Comatose Engine, the variable {{ page }} refers to the page you are on. You may access
+In Comatose Engine, the variable +{{ page }}+ refers to the page you are on. You may access
 the children, content, title, slug, link, full_path of any other page by using the "pages" variable.
 
   {{ pages['mary'].url }}
 
 Note: You must be careful about how you name your pages. Just using a slug within
-the [] brackets may result in a collection if you have more than one page with the same
+the +[]+ brackets may result in a collection if you have more than one page with the same
 slug. You may differentiate them by including the slug of the root page, prepeneded with a
 hash (#) and using the full_path of the page. For instance, if you have two root pages with direct
 child pages named "mary", you can differentiate them as:
@@ -97,7 +97,7 @@ child pages named "mary", you can differentiate them as:
 
 You are allowed to have multiple root pages, and they are ordered. When accessing a page by
 a full path url, and the page path matches two different pages from different roots,
-the *first* root-page is used. So, if you went to http\://localhost:3000/home/mary you would
+the *first* root-page is used. So, if you went to +http\://localhost:3000/home/mary+ you would
 get to the "mary" under the "fester" root.
 
 Having multiple roots allows you to use roots that may be
@@ -113,7 +113,7 @@ There is no automatic escaping to make it look exactly like it was stored.
 === Variables
 
 A Comatose::Variable is basically a Liquid::Drop, which means you define a variable for use within a
-{{ }} construct. You define a Comatose::Variable by a block, usually in an initializer.
++{{+ ... +}}+ construct. You define a Comatose::Variable by a block, usually in an initializer.
 
   Comatose::Variable.define("products") do
     return Products.all
@@ -127,23 +127,56 @@ use:
     return Rails::Application.title
   end
 
-=== Page Varialbe Fields
+=== Page Variable Fields
 
-1. title
-2. slug
-3. position
-4. full_path
-6. url
-7. page_photo
-     url(:small)
-8. position
-9. prev
-10. next
-11. content
-12. body
-13. children
-14. adminurl
-15. hardurl
+* title
+This field returns the title column of the page.
+
+* slug
+This field returns the slug column of the page.
+
+* full_path
+This field returns the url path of the page from the mount point.
+
+* url
+This field contains the url path of the page including the mount point.
+
+* photo
+This field returns a url for the associated photo.
+
+* position
+This field returns the position in its parent's child list, which is ordered.
+
+* prev
+This field returns the previous page in the parent's chilc list, at position - 1.
+
+* next
+This field returns the next page in the parent's child list, at position + 1.
+
+* content
+This field returns the HTML content of the page as rendered by its filter, i.e. Textile or not.
+
+* body
+This field returns the body of the page, which is exactly what you may have typed in. Remember
+it is still evaluated by the filter of the current page.
+
+* children
+This field returns a collection that may be iterated through using a +{% for .... %}+ construct.
+
+==== Pages Variable
+
+The +pages+ variable refers to other pages by their slugs or full paths. It has the following
+formats:
+
+* +{{ pages['/path/to/page'] }}
+This selection refers to a page by the full path. If the path belongs to 2 or more pages, a
+collection will be returned, which may be iterated or selected with [0],[1], etc.
+
+* +{{ pages['#root/path/to/page'] }}
+This selection refers to a page from the full path of a specific root.
+
+* +{{ pages['slug'] }}
+This selection returns all pages with this particular slug.
 
 == Rants
 
