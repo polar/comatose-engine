@@ -2,38 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98af8748-e56d-4376-b836-6162a4ab11ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/comatose/content_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/functional/comatose/content_controller_test.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/comatose/admins_controller.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/comatose/admins/_form.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/comatose/admins/index.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/comatose/admins/new.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/functional/comatose/page_controller_test.rb" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/javascripts/comatose/admins.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/comatose/pages.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/helpers/comatose/admins_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/comatose/pages_helper.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/comatose/admins/_admins_items.html.builder" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_pages_items.html.builder" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/comatose/admins/_page_photo.html.erb" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_page_photo.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/comatose/admins/create.js.erb" afterPath="$PROJECT_DIR$/app/views/comatose/pages/create.js.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/comatose/admins/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/comatose/pages/edit.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/comatose/admins/preview.js.erb" afterPath="$PROJECT_DIR$/app/views/comatose/pages/preview.js.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/comatose/admins/reorder.html.erb" afterPath="$PROJECT_DIR$/app/views/comatose/pages/reorder.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/comatose/admins/update.js.erb" afterPath="$PROJECT_DIR$/app/views/comatose/pages/update.js.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/comatose/admins/versions.html.erb" afterPath="$PROJECT_DIR$/app/views/comatose/pages/versions.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/views/layouts/comatose/admin.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/comatose/pages.html.erb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/lib/comatose/comatose_drop.rb" afterPath="$PROJECT_DIR$/lib/comatose/comatose_variable.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/test/functional/comatose/admin_controller_test.rb" afterPath="$PROJECT_DIR$/test/functional/comatose/pages_controller_test.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/comatose/addphoto.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/comatose/application.css.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/comatose/engine_controller.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/comatose/importer.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_body_row.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_created_on_row.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_errors.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_filter_row.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_help_row.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_keywords_row.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_page_status.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_parent_row.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_photo_field_row.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_photo_row.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_preview_area.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_slug_row.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_submit_button_group.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_title_row.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_import_export.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_page_list.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_script.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/comatose/extensions.rb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/comatose/application.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/comatose/configuration.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/dummy/app/assets/javascripts/application.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/dummy/app/assets/stylesheets/application.css" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/comatose/admins.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/comatose/pages.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/comatose.iml" afterPath="$PROJECT_DIR$/.idea/comatose.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.rdoc" afterPath="$PROJECT_DIR$/README.rdoc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/comatose/pages_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/comatose/pages_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/comatose/page.rb" afterPath="$PROJECT_DIR$/app/models/comatose/page.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/comatose/pages/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/comatose/pages/_page_photo.html.erb" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_page_photo.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/comatose/pages/_pages_items.html.builder" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_pages_items.html.builder" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/comatose/content.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/comatose/content.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/comatose/pages.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/comatose/pages.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20120906152842_create_comatose_pages.rb" afterPath="$PROJECT_DIR$/db/migrate/20120906152842_create_comatose_pages.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/comatose.rb" afterPath="$PROJECT_DIR$/lib/comatose.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/comatose/configuration.rb" afterPath="$PROJECT_DIR$/lib/comatose/configuration.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/comatose/support/inline_rendering.rb" afterPath="$PROJECT_DIR$/lib/comatose/support/inline_rendering.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/comatose/pages.yml" afterPath="$PROJECT_DIR$/test/fixtures/comatose/pages.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/comatose/processing_context.rb" afterPath="$PROJECT_DIR$/lib/comatose/processing_context.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/text_filters.rb" afterPath="$PROJECT_DIR$/lib/text_filters.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/dummy/config/application.rb" afterPath="$PROJECT_DIR$/test/dummy/config/application.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/dummy/db/schema.rb" afterPath="$PROJECT_DIR$/test/dummy/db/schema.rb" />
     </list>
     <ignored path="comatose.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,23 +65,14 @@
     <disable_hints />
   </component>
   <component name="DockManager">
-    <window id="1">
+    <window id="2">
       <content type="file-editors">
         <state>
           <leaf>
             <file leaf-file-name="page.rb" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/app/models/comatose/page.rb">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state line="83" column="33" selection-start="3145" selection-end="3145" vertical-scroll-proportion="0.45148516">
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="list.rb" pinned="false" current="false" current-in-tab="false">
-              <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/acts_as_list-0.1.8/lib/acts_as_list/active_record/acts/list.rb">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state line="175" column="12" selection-start="6842" selection-end="6842" vertical-scroll-proportion="0.0">
+                  <state line="77" column="3" selection-start="3008" selection-end="3008" vertical-scroll-proportion="0.98016334">
                     <folding />
                   </state>
                 </provider>
@@ -80,71 +85,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="content_controller_test.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/functional/comatose/content_controller_test.rb">
+      <file leaf-file-name="form_helper.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/action_view/form_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.039215688">
+            <state line="43" column="11" selection-start="1576" selection-end="1579" vertical-scroll-proportion="-25.72">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="setup_and_teardown.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/activesupport-3.2.8/lib/active_support/testing/setup_and_teardown.rb">
+      <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/dummy/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="0" selection-start="2512" selection-end="2512" vertical-scroll-proportion="0.0">
+            <state line="61" column="39" selection-start="2884" selection-end="2884" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testsuite.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/test-unit-2.5.2/lib/test/unit/testsuite.rb">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="0" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.0">
+            <state line="40" column="18" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testrunnermediator.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/test-unit-2.5.2/lib/test/unit/ui/testrunnermediator.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="1725" selection-end="1725" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="autorunner.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/test-unit-2.5.2/lib/test/unit/autorunner.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="450" column="0" selection-start="14288" selection-end="14288" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unit.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/test-unit-2.5.2/lib/test/unit.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="500" column="0" selection-start="16133" selection-end="16133" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="context.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/liquid-2.4.1/lib/liquid/context.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="228" column="0" selection-start="6773" selection-end="6773" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class_options.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/comatose/support/class_options.rb">
+      <file leaf-file-name="application.css.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/src/buspass.admin/app/assets/stylesheets/application.css.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -152,20 +121,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/fixtures/comatose/pages.yml">
+      <file leaf-file-name="normal-layout.css.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/src/buspass.admin/app/assets/stylesheets/normal-layout.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="39" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.0">
+            <state line="75" column="17" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="configuration.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/comatose/configuration.rb">
+      <file leaf-file-name="application.css.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/comatose/application.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="39" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
+            <state line="26" column="43" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/comatose/pages_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="0" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.33264464">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form_parent_row.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/comatose/pages/_form_parent_row.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="75" selection-start="264" selection-end="264" vertical-scroll-proportion="-3.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pages.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/comatose/pages.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="65" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rails.validations.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/vendor/assets/javascripts/rails.validations.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="61" column="18" selection-start="3183" selection-end="3191" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,25 +192,28 @@
       </map>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Rails console: comatose" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/comatose/pages/_import_export.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/comatose/pages/_page_list.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/comatose/pages/index.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/test/functional/comatose/page_controller_test.rb" />
-        <option value="$PROJECT_DIR$/test/functional/comatose/pages_controller_test.rb" />
-        <option value="$PROJECT_DIR$/lib/comatose/comatose_drop.rb" />
-        <option value="$PROJECT_DIR$/lib/comatose/support/inline_rendering.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/comatose/content_controller.rb" />
-        <option value="$PROJECT_DIR$/lib/comatose.rb" />
-        <option value="$PROJECT_DIR$/README.rdoc" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/comatose/pages.js" />
-        <option value="$PROJECT_DIR$/lib/comatose/configuration.rb" />
         <option value="$PROJECT_DIR$/app/models/comatose/page.rb" />
-        <option value="$PROJECT_DIR$/test/fixtures/comatose/pages.yml" />
-        <option value="$PROJECT_DIR$/test/functional/comatose/content_controller_test.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20120906152842_create_comatose_pages.rb" />
+        <option value="$PROJECT_DIR$/app/views/comatose/pages/_pages_items.html.builder" />
+        <option value="$PROJECT_DIR$/app/views/comatose/pages/_form_submit_button_group.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/comatose/pages.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/comatose/pages/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/comatose/pages/_form_title_row.html.erb" />
+        <option value="/usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/vendor/assets/javascripts/rails.validations.js" />
+        <option value="$PROJECT_DIR$/test/dummy/config/application.rb" />
+        <option value="$PROJECT_DIR$/test/dummy/app/assets/stylesheets/application.css" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/comatose/application.css" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/test/dummy/app/assets/stylesheets/application.css.scss" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/comatose/pages.css" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/comatose/application.css.scss" />
+        <option value="$PROJECT_DIR$/app/views/comatose/pages/_form_parent_row.html.erb" />
       </list>
     </option>
   </component>
@@ -441,6 +451,146 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client_side_validations (v3.1.4, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client_side_validations (v3.1.4, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client_side_validations (v3.1.4, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client_side_validations (v3.1.4, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="generators" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client_side_validations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client_side_validations (v3.1.4, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client_side_validations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client_side_validations (v3.1.4, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client_side_validations" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action_view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="comatose" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -561,7 +711,77 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dummy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dummy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="initializers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dummy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -837,6 +1057,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -888,6 +1156,10 @@
               <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="themes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -912,6 +1184,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comatose" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -927,7 +1225,7 @@
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/src/comfortable-mexican-sofa/config/routes.rb" />
+    <property name="last_opened_file_path" value="$USER_HOME$/src/buspass.admin/app/assets/stylesheets/normal-layout.css.scss" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
   </component>
@@ -942,7 +1240,7 @@
       <recent name="$PROJECT_DIR$/app/assets/images/comatose" />
     </key>
   </component>
-  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.test_page_variable_has_correct_content">
+  <component name="RunManager" selected="IRB console.Rails console: comatose">
     <configuration default="false" name="pages_controller_test" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
       <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
       <module name="comatose" />
@@ -966,37 +1264,6 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
-      <RunnerSettings RunnerId="RubyDebugRunner" />
-      <RunnerSettings RunnerId="RubyRunner" />
-      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
-      <ConfigurationWrapper RunnerId="RubyRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="test_reorder_pages" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
-      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
-      <module name="comatose" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift) -Itest" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$PROJECT_DIR$" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="RAILS_ENV" value="test" />
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
-        <COVERAGE_PATTERN ENABLED="true">
-          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
-        </COVERAGE_PATTERN>
-      </EXTENSION>
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$PROJECT_DIR$/test/functional/comatose/pages_controller_test.rb" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="test_reorder_pages" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <RunnerSettings RunnerId="RubyDebugRunner" />
@@ -1092,6 +1359,27 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <RunnerSettings RunnerId="RubyDebugRunner" />
       <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Rails console: comatose" type="IrbRunConfigurationType" factoryName="IRB console" temporary="true">
+      <module name="comatose" />
+      <IRB_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <IRB_RUN_CONFIG NAME="WORK DIR" VALUE="$PROJECT_DIR$/test/dummy" />
+      <IRB_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <IRB_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <IRB_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <IRB_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$PROJECT_DIR$/test/dummy/script/rails" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="console" />
+      <IRB_RUN_CONFIG NAME="IS_RAILS_CONSOLE" VALUE="true" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
       <method />
     </configuration>
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
@@ -1210,6 +1498,25 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method />
     </configuration>
+    <configuration default="true" type="IrbRunConfigurationType" factoryName="IRB console">
+      <module name="" />
+      <IRB_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <IRB_RUN_CONFIG NAME="WORK DIR" VALUE="" />
+      <IRB_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <IRB_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <IRB_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <IRB_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="" />
+      <IRB_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <IRB_RUN_CONFIG NAME="IS_RAILS_CONSOLE" VALUE="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
       <JSRemoteDebuggerConfigurationSettings>
         <option name="engineId" value="embedded" />
@@ -1321,18 +1628,18 @@
       <item index="2" class="java.lang.String" itemvalue="Rails.Production: comatose" />
       <item index="3" class="java.lang.String" itemvalue="Rails.Development: comatose" />
       <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.pages_controller_test" />
-      <item index="5" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_reorder_pages" />
-      <item index="6" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_create_a_page_with_an_empty_body" />
-      <item index="7" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_contain_all_the_correct_options_for_filter_type" />
-      <item index="8" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_page_variable_has_correct_content" />
+      <item index="5" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_create_a_page_with_an_empty_body" />
+      <item index="6" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_contain_all_the_correct_options_for_filter_type" />
+      <item index="7" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_page_variable_has_correct_content" />
+      <item index="8" class="java.lang.String" itemvalue="IRB console.Rails console: comatose" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_page_variable_has_correct_content" />
-        <item index="1" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.pages_controller_test" />
-        <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_contain_all_the_correct_options_for_filter_type" />
-        <item index="3" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_create_a_page_with_an_empty_body" />
-        <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_reorder_pages" />
+        <item index="0" class="java.lang.String" itemvalue="IRB console.Rails console: comatose" />
+        <item index="1" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_page_variable_has_correct_content" />
+        <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.pages_controller_test" />
+        <item index="3" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_contain_all_the_correct_options_for_filter_type" />
+        <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_create_a_page_with_an_empty_body" />
       </list>
     </recent_temporary>
   </component>
@@ -1373,7 +1680,11 @@
       <created>1347418409145</created>
       <updated>1347418409145</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Progress&#10;">
+      <created>1347470190519</created>
+      <updated>1347470190519</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1386,11 +1697,11 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272933" sideWeight="0.46813726" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22610295" sideWeight="0.18644068" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27233782" sideWeight="0.601359" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.398641" sideWeight="0.47988507" order="3" side_tool="false" content_ui="tabs" x="1465" y="416" width="1152" height="585" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27845776" sideWeight="0.601359" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.398641" sideWeight="0.47988507" order="3" side_tool="false" content_ui="tabs" x="1465" y="416" width="1152" height="585" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27267158" sideWeight="0.5344633" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.0" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32768363" sideWeight="0.46017158" order="2" side_tool="false" content_ui="tabs" x="236" y="345" width="966" height="563" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32768363" sideWeight="0.46017158" order="2" side_tool="false" content_ui="tabs" x="1363" y="327" width="966" height="563" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299435" sideWeight="0.0" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965687" sideWeight="0.67118645" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1462,114 +1773,116 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/comatose/content.html.erb">
+    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/core_ext.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/text_filters.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="13" selection-start="2412" selection-end="2412" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/comatose/pages_controller.rb">
+    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/core_ext/range.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/comatose/content_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="100" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/comatose/support/class_options.rb">
+    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/core_ext/regexp.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/comatose/configuration.rb">
+    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/action_view.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="39" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/liquid-2.4.1/lib/liquid/context.rb">
+    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/action_view/form_builder.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="228" column="0" selection-start="6773" selection-end="6773" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/test-unit-2.5.2/lib/test/unit/autorunner.rb">
+    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/action_view/form_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="450" column="0" selection-start="14288" selection-end="14288" vertical-scroll-proportion="0.0">
+        <state line="43" column="11" selection-start="1576" selection-end="1579" vertical-scroll-proportion="-25.72">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/test-unit-2.5.2/lib/test/unit.rb">
+    <entry file="file://$USER_HOME$/src/buspass.admin/app/assets/stylesheets/application.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="500" column="0" selection-start="16133" selection-end="16133" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/test-unit-2.5.2/lib/test/unit/testsuite.rb">
+    <entry file="file://$PROJECT_DIR$/test/dummy/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="1637" selection-end="1637" vertical-scroll-proportion="0.0">
+        <state line="61" column="39" selection-start="2884" selection-end="2884" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/test-unit-2.5.2/lib/test/unit/ui/testrunnermediator.rb">
+    <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="1725" selection-end="1725" vertical-scroll-proportion="0.0">
+        <state line="40" column="18" selection-start="1039" selection-end="1039" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/acts_as_list-0.1.8/lib/acts_as_list/active_record/acts/list.rb">
+    <entry file="file://$USER_HOME$/src/buspass.admin/app/assets/stylesheets/normal-layout.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="12" selection-start="6842" selection-end="6842" vertical-scroll-proportion="0.0">
+        <state line="75" column="17" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/vendor/assets/javascripts/rails.validations.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="18" selection-start="3183" selection-end="3191" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/comatose/pages/_form_parent_row.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="75" selection-start="264" selection-end="264" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/comatose/pages.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="65" selection-start="578" selection-end="578" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/comatose/application.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="43" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/comatose/page.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="33" selection-start="3145" selection-end="3145" vertical-scroll-proportion="0.45148516">
+        <state line="77" column="3" selection-start="3008" selection-end="3008" vertical-scroll-proportion="0.98016334">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/fixtures/comatose/pages.yml">
+    <entry file="file://$PROJECT_DIR$/app/controllers/comatose/pages_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="39" selection-start="2209" selection-end="2209" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/activesupport-3.2.8/lib/active_support/testing/setup_and_teardown.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="2512" selection-end="2512" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/functional/comatose/content_controller_test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1338" selection-end="1338" vertical-scroll-proportion="0.039215688">
+        <state line="46" column="0" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.33264464">
           <folding />
         </state>
       </provider>

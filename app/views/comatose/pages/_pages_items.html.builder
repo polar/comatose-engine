@@ -36,9 +36,6 @@ def do_page(page, xml)
       xml.a page.title, :href => edit_page_path(page)
             xml.div(:class => "commands") {
               xml.span "Created on #{page.created_on}"
-              if !page.author.nil? and !page.author.empty?
-                xml.span "by #{page.author}"
-              end
               if !page.nil? and !page.versions.nil? and page.versions.length > 0
                 xml << link_to(pluralize(page.versions.length, 'revision', 'revisions'), versions_page_path(page))
               end

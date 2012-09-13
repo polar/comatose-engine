@@ -58,6 +58,8 @@
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v3.12, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="remotipart (v1.0.2, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="responds_to_parent (v1.1.0, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sass (v3.2.1, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="sass-rails (v3.2.5, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sprockets (v2.1.3, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.3.6, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="test-unit (v2.5.2, RVM: ruby-1.9.3-p194 [comatose3.0]) [gem]" level="application" />

@@ -1,0 +1,12 @@
+<tr>
+  <td>
+    <%= form.label :page_filter_type, "Page Filter" %>
+  </td>
+  <td>
+    <%= form.select :filter_type,
+                 options_for_select(TextFilters.all_titles.sort, @page.filter_type),
+                 :tabindex => 3,
+                 :id       => 'page_filter_type' %>
+    <span class="field-help">Converts plain text into html</span>
+  </td>
+</tr>

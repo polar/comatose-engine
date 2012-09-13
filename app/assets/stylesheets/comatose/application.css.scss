@@ -1,0 +1,147 @@
+/*
+ * This application.css is from the Comatose:::Engine gem. Is this what you want?
+
+ *= require bootstrap
+ *= require_self
+ */
+
+/*
+ This didn't work in the test/dummy/app. Ugg.
+
+@import "bootstrap";
+
+// We need @import "boostrap" so we can use this Sass @extend directives
+// This class is needed because client_side_validations needs a single class
+// name to deal with handing error messages and styling. Typically we would
+// use just class="control-group error", but that won't work, unless we put
+// a fix in the rails.client_side_validations javascript.
+.control-group-error {
+  @extend .control-group;
+  @extend .error;
+}
+
+So, the following is pasted from a precompile
+
+*/
+
+/* line 1088, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.warning > label, .warning.control-group-error > label,
+.control-group.warning .help-block,
+.warning.control-group-error .help-block,
+.control-group.warning .help-inline,
+.warning.control-group-error .help-inline {
+  color: #c09853;
+}
+
+/* line 1094, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.warning input, .warning.control-group-error input,
+.control-group.warning select,
+.warning.control-group-error select,
+.control-group.warning textarea,
+.warning.control-group-error textarea {
+  color: #c09853;
+  border-color: #c09853;
+}
+
+/* line 1101, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.warning input:focus, .warning.control-group-error input:focus,
+.control-group.warning select:focus,
+.warning.control-group-error select:focus,
+.control-group.warning textarea:focus,
+.warning.control-group-error textarea:focus {
+  border-color: #a47e3c;
+  -webkit-box-shadow: 0 0 6px #dbc59e;
+  -moz-box-shadow: 0 0 6px #dbc59e;
+  box-shadow: 0 0 6px #dbc59e;
+}
+
+/* line 1109, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.warning .input-prepend .add-on, .warning.control-group-error .input-prepend .add-on,
+.control-group.warning .input-append .add-on,
+.warning.control-group-error .input-append .add-on {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #c09853;
+}
+
+/* line 1117, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.error > label, .control-group-error > label,
+.control-group.error .help-block,
+.control-group-error .help-block,
+.control-group.error .help-inline,
+.control-group-error .help-inline {
+  color: #b94a48;
+}
+
+/* line 1123, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.error input, .control-group-error input,
+.control-group.error select,
+.control-group-error select,
+.control-group.error textarea,
+.control-group-error textarea {
+  color: #b94a48;
+  border-color: #b94a48;
+}
+
+/* line 1130, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.error input:focus, .control-group-error input:focus,
+.control-group.error select:focus,
+.control-group-error select:focus,
+.control-group.error textarea:focus,
+.control-group-error textarea:focus {
+  border-color: #953b39;
+  -webkit-box-shadow: 0 0 6px #d59392;
+  -moz-box-shadow: 0 0 6px #d59392;
+  box-shadow: 0 0 6px #d59392;
+}
+
+/* line 1138, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.error .input-prepend .add-on, .control-group-error .input-prepend .add-on,
+.control-group.error .input-append .add-on,
+.control-group-error .input-append .add-on {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #b94a48;
+}
+
+/* line 1146, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.success > label, .success.control-group-error > label,
+.control-group.success .help-block,
+.success.control-group-error .help-block,
+.control-group.success .help-inline,
+.success.control-group-error .help-inline {
+  color: #468847;
+}
+
+/* line 1152, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.success input, .success.control-group-error input,
+.control-group.success select,
+.success.control-group-error select,
+.control-group.success textarea,
+.success.control-group-error textarea {
+  color: #468847;
+  border-color: #468847;
+}
+
+/* line 1159, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.success input:focus, .success.control-group-error input:focus,
+.control-group.success select:focus,
+.success.control-group-error select:focus,
+.control-group.success textarea:focus,
+.success.control-group-error textarea:focus {
+  border-color: #356635;
+  -webkit-box-shadow: 0 0 6px #7aba7b;
+  -moz-box-shadow: 0 0 6px #7aba7b;
+  box-shadow: 0 0 6px #7aba7b;
+}
+
+/* line 1167, ../../app/assets/stylesheets/bootstrap.css */
+.control-group.success .input-prepend .add-on, .success.control-group-error .input-prepend .add-on,
+.control-group.success .input-append .add-on,
+.success.control-group-error .input-append .add-on {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #468847;
+}
+
+/* Done */

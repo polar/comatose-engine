@@ -7,8 +7,8 @@ class Comatose::ProcessingContext < Liquid::Context
     end
 
     #
-    # If there is more than one it returns a collection, otherwise, just one or nil
-    # User should know these things.
+    # If there is more than one it returns a collection, otherwise, just one or nil.
+    # The user should know these things.
     #
     def [](key)
       if (/\// =~ key)

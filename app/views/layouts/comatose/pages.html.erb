@@ -3,7 +3,7 @@
 <html class="noscript" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=<%%= Comatose.config.content_type %>"/>
-    <title>Comatose Admin</title>
+    <title>Comatose Pages Administration</title>
     <%= stylesheet_link_tag "comatose/application", :media => "all" %>
     <%= javascript_include_tag "comatose/application" %>
     <%= csrf_meta_tags %>
@@ -14,18 +14,18 @@
   <body>
     <div id="page-container">
       <div id="header">
-        <h1><%= link_to Comatose.config.admin_title, admins_path %>
+        <h1><%= link_to "Comatose", pages_path %>
         </h1>
         <div id="flash">
           <span id="flash-content"><%= flash[:notice] %></span>
         </div>
-        <h5><%= Comatose.config.admin_sub_title %></h5>
+        <h5><%= "A Micro CMS" %></h5>
       </div>
       <div id="content">
         <%= yield %>
       </div>
       <div id="footer">
-        Powered by Comatose 3.0 by Dr. Polar Humenn
+        Powered by Comatose 4.0 by Dr. Polar Humenn
       </div>
     </div>
   </body>

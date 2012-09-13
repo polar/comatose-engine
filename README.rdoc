@@ -66,30 +66,48 @@ appearing between {% ... %} are control structures and do not print. Constructs
 appearing inside {{ ...  }} are usually variable accesses and print their processed context.
 Please check the Liquid documentation for more information and for the constructs available..
 
-An example might be iterating through a page's children and listing their titles.
+An example might be iterating through a page's children and listing their titles with
+their page photos.
 
   <h1>This page has the following sub pages</h1>
   <dl>
   {% for p in page.children %}
      <dt>{{ forloop.index }}. {{ p.title }}</dt>
-     <dd>|"{{ p.title }}":{{ p.link }}|</dd>
+     <dd>|!{{ p.page_photo }}!:{{ p.url }}|</dd>
   {% endfor %}
   </dl>
 
 In Comatose Engine, the variable {{ page }} refers to the page you are on. You may access
 the children, content, title, slug, link, full_path of any other page by using the "pages" variable.
 
-  {{ pages['mary'].link }}
+  {{ pages['mary'].url }}
 
-Note: You must be careful about how you name your pages. Just using a single slug within
+Note: You must be careful about how you name your pages. Just using a slug within
 the [] brackets may result in a collection if you have more than one page with the same
 slug. You may differentiate them by including the slug of the root page, prepeneded with a
 hash (#) and using the full_path of the page. For instance, if you have two root pages with direct
 child pages named "mary", you can differentiate them as:
 
-  {{ pages['#fester/mary'].link }}
+  {{ pages['#fester/mary'].url }}
 
-  {{ pages['#houser/mary'].link }}
+  {{ pages['#houser/mary'].url }}
+
+=== Multiple Roots
+
+You are allowed to have multiple root pages, and they are ordered. When accessing a page by
+a full path url, and the page path matches two different pages from different roots,
+the *first* root-page is used. So, if you went to "http://localhost:3000/home/mary" you would
+get to the "mary" under the "fester" root.
+
+Having multiple roots allows you to use multiple roots, some of which may be
+hidden from user view. You can use extra roots to store snippets, which you can refer to by accessing
+the body or content of them. If you had a root page called "snippet1", you could use:
+
+  {{ pages["snippet1"].body }}
+
+to include its contents. Remember the body returns exactly what you had in it, but it will be
+evaluated by Textile if you have Textile selected on the page in which you are including it.
+There is no automatic escaping to make it look exactly like it was stored.
 
 === Variables
 
@@ -100,14 +118,87 @@ A Comatose::Variable is basically a Liquid::Drop, which means you define a varia
     return Products.all
   end
 
-This variable is dynamic. Each time you use it, the block will get evaluated.
-You may want a static variable that gets evaluated only when it is initialized.
+The variable evaluation is dynamic. Each time you use it, the block will get evaluated.
+You may want a static variable that gets evaluated only when it is initialized. For that you
+use:
 
   Comatose::Variable.define_static("app-title") do
     return Rails::Application.title
   end
 
+=== Page Varialbe Fields
+
+1. title
+2. slug
+3. position
+4. full_path
+6. url
+7. page_photo
+     url(:small)
+8. position
+9. prev
+10. next
+11. content
+12. body
+13. children
+14. adminurl
+15. hardurl
+
 == Rants
 
-I have many rants about Rails software and "magic". I will expound here about this project
-soon.
+I have many rants about Rails software and "magic".
+
+This project is based on "Comatose: A Micro CMS" by Matt McCray.
+
+I've embedded Comatose in a couple of systems, and it's that was not an effort for the light
+hearted with the embedding problems with Rails 2.3, engines plugin, dessert, etc.
+In an effort to get something better in my next project, I gravitated toward
+"Comfortable Mexican Sofa" by Oleg Khabarov, probably because of Ryan's Railscast mention.
+
+That project took a half ton truck, 20 cups of coffee, and an angry dog to figure out WTF is going on.
+Okay, maybe it was just me trying to fit it over MongoDB with MongoMapper, but I tore my bloody hair
+out. It was way too complicated, and navigating the code was abosutely horrendous. And
+what's with the damn configuration options? Geezus! They were just daunting. Furthermore, you didn't
+know how they worked until you actually tried to do something with them that didn't work.
+This crapola just lead to hours of debugging dynamic code. Thank the guys at Jetbrains for RubyMine.
+
+It seems like since all this Ruby/Rails (stupid) "magic" exists, people feel they *must* use it!
+Stop it people, just stop it. Get off the meth, and get back to writing good code. I don't know
+WTF happend, but n my days, DRY stood for something you did when you got out of the water. "Don't
+repeat yourself"? Really? I mean really? WTF? You mean, we should now all write small functions,
+modularize code, and then put it together? Really? What the hell have they been teaching you in
+College?
+
+If you are making a system that is going to be public that "magic" shit just makes understanding a
+system almost impossible without a lot of time invested (wasted, IMHO). What a crock!
+After the debacle with Comfortable Mexican Sofa, I've decided to return to Comatose and something
+simple.
+
+With the advent of Rails Engines, I've completely stripped Comatose down to its bare essentials
+and eliminated all configuration options, and options of any kind. It does one thing and does
+it well.
+
+Hell, if you want to use embed this stuff, you should be a programmer, and you should know how to
+modify/extend things so that they work they way you want it to, without having some obscure
+configuration option crawling up your butt for 2 days.
+
+I don't see the need to supply a default application for Comatose or to make it work out of the
+box, but it was needed for testing, so there you have it. The real reason for it, is that
+I couldn't test multiple engine mount points because the standard testing harness doesn't
+know how to deal with that correctly yet. But be warned, I make no claims for the
+default app or wish to maintain it to a deployable status. Use it at your peril.
+It serves merely as an example.
+
+=== Contributing
+
+If you want to improve upon this project, you can join the obvious Github party, i.e. fork it, and
+send pull requests. But let me give you this warning:
+
+If your pull request contains some "magic" use of a before_filter, after_filter *anywhere*,
+or inserting improperly named or replacing standard methods into standard system classes, or
+uses "responds_to", it will be denied. Use of "method_missing" anywhere will get you duct taped
+to a rocket and fired into the virtual abyss. Go meet the Flying Spaghetti Monster.
+
+Cheers,
+
+Dr. Polar

@@ -1,0 +1,14 @@
+<tr>
+  <td><%= form.label :parent, "Parent" %></td>
+  <td>
+    <% if @root_pages && @root_pages.include?(@page) || @page.parent_id.nil? %>
+        <select id="page_parent" disabled="true">
+          <option><%= @page.title.blank? ? "<root>" : "This is a root page." %></option>
+        </select>
+    <% else %>
+        <select id="page_parent" name="page[parent_id]" tabindex="8">
+          <%= tree_select_box @root_pages, @page.parent_id, @page.id %>
+        </select>
+    <% end %>
+  </td>
+</tr>

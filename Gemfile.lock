@@ -117,6 +117,11 @@ GEM
       json (~> 1.4)
     remotipart (1.0.2)
     responds_to_parent (1.1.0)
+    sass (3.2.1)
+    sass-rails (3.2.5)
+      railties (~> 3.2.0)
+      sass (>= 3.1.10)
+      tilt (~> 1.3)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -153,6 +158,7 @@ DEPENDENCIES
   rails (= 3.2.8)
   remotipart
   responds_to_parent
+  sass-rails
   sqlite3
   test-unit
   thin

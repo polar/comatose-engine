@@ -1,5 +1,4 @@
 require "comatose/engine"
-require 'comatose/configuration'
 require 'comatose/support/inline_rendering'
 require 'liquid'
 require 'comatose/processing_context'

@@ -11,27 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910223341) do
+ActiveRecord::Schema.define(:version => 20120913013132) do
 
   create_table "comatose_page_versions", :force => true do |t|
     t.integer  "page_id"
     t.integer  "version"
     t.integer  "parent_id"
     t.string   "mount"
-    t.text     "full_path",                             :default => ""
+    t.text     "full_path",                        :default => ""
     t.string   "title"
     t.string   "slug"
     t.string   "keywords"
     t.text     "body"
-    t.string   "filter_type",             :limit => 25, :default => "Textile"
-    t.string   "author"
-    t.integer  "position",                              :default => 0
+    t.string   "filter_type",        :limit => 25, :default => "Textile"
+    t.integer  "position",                         :default => 0
     t.date     "created_on"
     t.date     "updated_on"
-    t.string   "page_photo_file_name"
-    t.string   "page_photo_content_type"
-    t.integer  "page_photo_file_size"
-    t.datetime "page_photo_updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,23 +40,22 @@ ActiveRecord::Schema.define(:version => 20120910223341) do
   create_table "comatose_pages", :force => true do |t|
     t.integer  "parent_id"
     t.string   "mount"
-    t.text     "full_path",                             :default => ""
+    t.text     "full_path",                        :default => ""
     t.string   "title"
     t.string   "slug"
     t.string   "keywords"
     t.text     "body"
-    t.string   "filter_type",             :limit => 25, :default => "Textile"
-    t.string   "author"
-    t.integer  "position",                              :default => 0
+    t.string   "filter_type",        :limit => 25, :default => "Textile"
+    t.integer  "position",                         :default => 0
     t.integer  "version"
     t.date     "created_on"
     t.date     "updated_on"
-    t.string   "page_photo_file_name"
-    t.string   "page_photo_content_type"
-    t.integer  "page_photo_file_size"
-    t.datetime "page_photo_updated_at"
-    t.datetime "created_at",                                                   :null => false
-    t.datetime "updated_at",                                                   :null => false
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
   end
 
 end

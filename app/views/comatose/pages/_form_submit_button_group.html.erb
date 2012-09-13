@@ -1,0 +1,29 @@
+<div id="button-group">
+
+  <% unless @page.updated_on.nil? %>
+      <div class="last-update">
+        <label>
+          Updated <%= time_ago_in_words @page.updated_on, true %> ago
+          <%= link_to(pluralize(@page.versions.length, 'revision', 'revisions'),
+                      :action => 'versions', :id => @page) if @page.versions.length > 0 %>
+        </label>
+      </div>
+  <% end %>
+
+  <div class="comatose-page-buttons">
+    <%= image_tag 'comatose/spinner.gif',
+                  :plugin => 'comatose_engine',
+                  :id     => 'spinner',
+                  :align  => 'absmiddle',
+                  :style  => 'display:none;' %>
+    <%= form.submit 'Preview', :tabindex => 3, :id => 'preview-btn', :class => "btn" %>
+    &nbsp;
+    <%= form.submit (@page.new_record? ? 'Create Page' : 'Save Changes'), :tabindex => 4, :class => "btn" %>
+    <% if @page.versions.length > 0 %>
+        &nbsp;
+        <%= link_to "Revert", :action => 'versions', :id => @page %>
+    <% end %>
+    or
+    <%= link_to "Cancel", pages_path, :tabindex => 5, :onclick => "return false" %>
+  </div>
+</div>

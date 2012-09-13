@@ -1,0 +1,11 @@
+<div class="action">
+  <%= link_to 'Import', '#', :id => 'import_link2' %>
+  <%= link_to 'Export', export_pages_path %>
+  <div id="import_form">
+    <%= form_for Comatose::Importer.new, :url => import_pages_path do |form| %>
+        <%= form.file_field 'import_file' %>
+        <%= form.submit 'Upload and Import', :class => "btn" %>
+        <a href="#" onclick="$('#import_form').hide(); return false;">Cancel</a>
+    <% end %>
+  </div>
+</div>

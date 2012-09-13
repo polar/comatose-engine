@@ -91,7 +91,7 @@ class TextFilters
 private
 
   # This is an instance method so that it won't puke on requiring
-  # a non-existant library until it's being registered -- the only
+  # a non-existent library until it's being registered -- the only
   # place I can really capture the LoadError
   def require(name)
     Kernel.require name

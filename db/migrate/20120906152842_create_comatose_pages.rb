@@ -9,12 +9,11 @@ class CreateComatosePages < ActiveRecord::Migration
       t.string     "keywords",    :limit => 255
       t.text       "body"
       t.string     "filter_type", :limit => 25, :default => "Textile"
-      t.string     "author",      :limit => 255
       t.integer    "position",    :default => 0
       t.integer    "version"
       t.date       "created_on"
       t.date       "updated_on"
-      t.attachment "page_photo"
+      t.attachment "photo"
       t.timestamps
     end
     Comatose::Page.create_versioned_table

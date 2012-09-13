@@ -38,4 +38,5 @@ group :development do
   gem "debugger"
   gem "sqlite3"
   gem "tinymce-rails"
+  gem "sass-rails"
 end

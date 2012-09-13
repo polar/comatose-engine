@@ -6,7 +6,11 @@ BODY {
   font-size: 12px;
   min-width: 450px;
 }
-/* General Layout and Header Area */
+
+/*
+ * General Layout and Header Area
+ */
+
 #page-container {
   margin: 0px;
   padding: 0px;
@@ -40,7 +44,10 @@ BODY {
   font-weight: bold;
   margin-right: 5px;
 }
-/* Content Area */
+
+/*
+ * Content Area
+ */
 #content {
   padding: 15px;
   background: white;
@@ -72,7 +79,9 @@ BODY {
   color: gray;
 }
 
-/* In Admins Index */
+/*
+ * Pages Index
+ */
 
 #import_form {
   position: fixed;
@@ -179,18 +188,27 @@ BODY {
     border-bottom: 0px;
 }
 
-/* Page Form */
+/*
+ * Page Form
+ */
+
 #content .page-form {
   margin-top: 10px;
 }
-#content .page-form LABEL {
+
+/* .message refers stop the client side validation inserted label
+ * That will be styled by .control-group-error
+ */
+
+#content .page-form LABEL:not(.message) {
   font-weight: bold;
   color: #555;
 }
+
 #content .page-form .meta-info LABEL {
   color: #999 !important;
 }
-#content .page-form .label { 
+#content .page-form .label {
   padding-top: 5px;
   width: 75px;
   text-align: right;
@@ -199,11 +217,11 @@ BODY {
 #content .page-form .label.body {
   vertical-align: top;
   padding-top: 10px;
-} 
-#content .page-form .field { 
-  padding-top: 5px;  
 }
-#content .page-form .field-help { 
+#content .page-form .field {
+  padding-top: 5px;
+}
+#content .page-form .field-help {
   color: gray;
 }
 #content .page-form #page_title {
@@ -324,7 +342,10 @@ BODY {
 }
 
 
-/* Errors */
+/*
+ * Errors
+ */
+
 #errorExplanation {
   border: 1px solid red;
   background: #FFEAEB;
@@ -352,7 +373,11 @@ BODY {
   padding: 0px;  
   padding-top: 5px;
 }
-/* Footer Area*/
+
+/*
+ * Footer Area
+ */
+
 #footer {
   border-top: 4px solid #AAA;
   text-align: center;
@@ -379,19 +404,17 @@ BODY {
 .noscript .tree-controller {
   display: none;
 }
-.noscript .page-list.collapsed {
-  display: block !important;
-}
+
 .noscript .delete-page:hover {
   color: red !important;
 }
-.noscript #content .page-form #page_title,
-.noscript #content .page-form #page_slug,
-.noscript #content .page-form #page_parent,
-.noscript #content .page-form #page_keywords,
-.noscript #content .page-form #page_body {
+#content .page-form #page_title,
+#content .page-form #page_slug,
+#content .page-form #page_parent,
+#content .page-form #page_keywords,
+ #content .page-form #page_body {
   width: 100% !important;
 }
-.noscript #content .revisions #go-btn {
+#content .revisions #go-btn {
   display: inline;
 }

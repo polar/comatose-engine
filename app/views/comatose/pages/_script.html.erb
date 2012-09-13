@@ -1,0 +1,12 @@
+<%= content_for :head do %>
+    <script type="text/javascript">
+        /**
+         * This overrides default
+         *
+         * @return {String}
+         */
+        function reorder_url() {
+            return '<%= @reorder_path %>';
+        }
+    </script>
+<% end %>

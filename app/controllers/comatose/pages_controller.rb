@@ -6,7 +6,7 @@ module Comatose
 
     def index
       @root_pages = fetch_root_pages
-      @reorder_path = reorder_admins_path;
+      @reorder_path = reorder_pages_path;
     end
 
     def new
@@ -20,13 +20,13 @@ module Comatose
       mount        = get_mount_point
       @page        = Comatose::Page.new(params[:page])
       @page.mount  = mount
-      @page.author = fetch_author_name
+      @page.update_full_path
       if params[:commit] == "Create Page"
         if @page.save
           flash[:notice] = "Created page '#{@page.title}'"
           @status      = flash[:notice]
           @disposition = "success"
-          @redirect_path = admins_path
+          @redirect_path = pages_path
         else
           @disposition = "error"
           @page_status = "Could Not Create Page"
@@ -45,13 +45,14 @@ module Comatose
     # Called by a remote form for both Preview and Update
     def update
       params[:page][:updated_on] = Time.now
-      params[:page][:author]     = fetch_author_name
       @page = Comatose::Page.find params[:id]
+      @page.assign_attributes(params[:page])
+      @page.update_full_path
       if params[:commit] == "Save Changes"
-        if @page.update_attributes(params[:page])
+        if @page.save
           flash[:notice] = "Saved changes to '#{@page.title}'"
           @disposition = "success"
-          @redirect_path = admins_path
+          @redirect_path = pages_path
         else
           @disposition = "error"
           @page_status = "Could Not Create Page"
@@ -67,7 +68,7 @@ module Comatose
       @page = Comatose::Page.find params[:id]
       @page.destroy
       flash[:notice] = "Deleted page '#{@page.title}'"
-      redirect_to admins_path
+      redirect_to pages_path
     end
 
     # Non-standard routes
@@ -113,7 +114,7 @@ module Comatose
       @version_num = params[:version]
       @page.revert_to!(@version_num)
       flash[:notice] = "Page #{@page.title} has been set to version #{@version_num}."
-      redirect_to admins_path
+      redirect_to pages_path
     end
 
     def export
@@ -124,7 +125,7 @@ module Comatose
                   :filename => "pages.yml")
       else
         flash[:notice] = "Export is not allowed"
-        redirect_to admins_path
+        redirect_to pages_path
       end
     end
 
@@ -139,7 +140,7 @@ module Comatose
     rescue
       flash[:notice] = "Could not import file. Not YAML?"
     ensure
-      redirect_to admins_path
+      redirect_to pages_path
     end
 
     protected
@@ -152,12 +153,10 @@ module Comatose
 
     def compile_preview
       begin
-        page        = Comatose::Page.new(params[:page])
-        page.author = fetch_author_name
         if params.has_key? :version
-          content = page.to_html({ 'params' => params.stringify_keys, 'version' => params[:version] })
+          content = @page.to_html({ 'params' => params.stringify_keys, 'version' => params[:version] })
         else
-          content = page.to_html({ 'params' => params.stringify_keys })
+          content = @page.to_html({ 'params' => params.stringify_keys })
         end
       rescue SyntaxError
         content = "<p>There was an error generating the preview.</p><p><pre>#{$!.to_s.gsub(/\</, '&lt;')}</pre></p>"
@@ -165,12 +164,6 @@ module Comatose
         content = "<p>There was an error generating the preview.</p><p><pre>#{$!.to_s.gsub(/\</, '&lt;')}</pre></p>"
       ensure
         @html = content.html_safe
-      end
-    end
-
-    def fetch_author_name
-      if defined? get_author
-        get_author
       end
     end
 
@@ -214,5 +207,5 @@ module Comatose
       end if child_ary
     end
 
-  end # AdminsController
+  end # pagesController
 end   # module Comatose

@@ -54,6 +54,17 @@ module Dummy
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # This configuration changes the default for form_for to work with Twitter bootstrap.css.
+    # But we cannot use "control-group error" if we want client_side_validations, as that
+    # requires a single class name to work.
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+      unless html_tag =~ /^<label/
+        %{<div class="control-group-error">#{html_tag}<label for="#{instance.send(:tag_id)}" class="message">#{instance.error_message.first}</label></div>}.html_safe
+      else
+        %{<div class="control-group-error">#{html_tag}</div>}.html_safe
+      end
+    end
   end
 end
 
