@@ -19,7 +19,7 @@ class Comatose::ProcessingContext < Liquid::Context
         end
         if 1 < Comatose::Page.where(:mount => @mount, :full_path => path).count
           pages = Comatose::Page.where(:mount => @mount, :full_path => path).all
-          rootslug.nil? ? pages : pages.find {|p| p.slug == rootslug }
+          rootslug.nil? ? pages : pages.find {|p| p.root.slug == rootslug }
         else
           Comatose::Page.where(:mount => @mount, :full_path => path).first
         end
@@ -42,7 +42,8 @@ class Comatose::ProcessingContext < Liquid::Context
   end
 
   def initialize( page, locals={} )
-    @locals = locals.stringify_keys if locals.respond_to? :stringify_keys
+    @locals = locals.merge(Comatose.registered_drops)
+    @locals = @locals.stringify_keys if locals.respond_to? :stringify_keys
     @page = page
     super(@locals, { "page" => @page, "pages" => PageFinder.new(page.mount) }, {}, false)
   end

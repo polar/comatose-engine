@@ -1,35 +1,39 @@
 module Comatose
 
-  class Variable
+  class Variable < Liquid::Drop
 
-    attr_accessor :block
-
-    def initialize(&blk)
-       @block = blk
-    end
-
-    def to_liquid
-      drop = Liquid::Drop.new
-      drop.instance_eval(block)
-      drop
+    def initialize(name = nil)
+      Comatose.register_variable(name, self) unless name.nil?
     end
 
     class << self
-
       def define(name, &block)
-        d = Comatose::Variable.new(&block)
-        Comatose.registered_drops[name] = d
-      rescue Exception => boom
-        Rails.logger.debug "Drop '#{name}' was not included: #{boom}"
+        Comatose.registered_drops[name] = Comatose::VariableDynamic.new(&block)
       end
 
       def define_static(name, &block)
-        d = Liquid::Drop.new
-        d.instance_eval(&block)
-        Comatose.registered_drops[name] = d
+        Comatose.registered_drops[name] = Comatose::VariableStatic.new(block.call(nil))
       rescue Exception => boom
-        Rails.logger.debug "Drop '#{name}' was not included: #{boom}"
+        Rails.logger.debug "Drop '#{name}': bad evaluation: #{boom}"
       end
+    end
+  end
+
+  class VariableStatic < Variable
+    def initialize(val)
+      @val = val
+    end
+    def to_liquid
+      @val.to_liquid
+    end
+  end
+
+  class VariableDynamic < Variable
+    def initialize(&block)
+      @block = block
+    end
+    def to_liquid
+      @block.call(nil).to_liquid
     end
   end
 
@@ -40,10 +44,9 @@ module Comatose
       @registered_drops ||= {}
     end
 
-    # Simple wrapper around the ProcessingContext.define method
-    # I think Comatose.define_drop is probably simpler to remember too
-    def define_drop(name, &block)
-      Comatose::Variable.define(name, &block)
+    def register_variable(name, drop)
+      raise "Drop is not a Comatose::Variable" unless drop.is_a? Comatose::Variable
+      self.registered_drops[name] = drop
     end
 
     # Registers a 'filter' for Liquid use

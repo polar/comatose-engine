@@ -115,6 +115,22 @@ question_three:
   created_at: <%= 10.days.ago.to_s :db %>
   updated_at: <%= 10.days.ago.to_s :db %>
 
+question_four:
+  parent: faq
+  mount : "/comatose"
+  full_path: "/faq/question-four"
+  slug: question-four
+  title: Question Four?
+  body: |-
+    {{ pages["#root-2/faq"].body }}
+  created_on: <%= 10.days.ago.to_s :db %>
+  updated_on: <%= 10.days.ago.to_s :db %>
+  keywords: faq
+  filter_type: Textile
+  position: 3
+  created_at: <%= 10.days.ago.to_s :db %>
+  updated_at: <%= 10.days.ago.to_s :db %>
+
 param_driven:
   parent: question_one
   mount : "/comatose"
@@ -123,6 +139,77 @@ param_driven:
   title: Params
   body: |-
     I'm {{ extra }}
+  created_on: <%= 10.days.ago.to_s :db %>
+  updated_on: <%= 10.days.ago.to_s :db %>
+  keywords:
+  filter_type: Textile
+  position: 1
+  created_at: <%= 10.days.ago.to_s :db %>
+  updated_at: <%= 10.days.ago.to_s :db %>
+
+
+variable:
+  parent: root
+  mount : "/comatose"
+  full_path: "/variable"
+  slug: variable
+  title: Variable
+  body: |-
+    h1. {{ variable }}
+  created_on: <%= 10.days.ago.to_s :db %>
+  updated_on: <%= 10.days.ago.to_s :db %>
+  keywords:
+  filter_type: Textile
+  position : 2
+  created_at: <%= 10.days.ago.to_s :db %>
+  updated_at: <%= 10.days.ago.to_s :db %>
+
+variable_methods:
+  parent: root
+  mount : "/comatose"
+  full_path: "/variable-methods"
+  slug: variable-methods
+  title: Variable Method
+  body: |-
+    h1. {{ variable.hello_world }}
+
+    h2. {{ variable["hello_world"] }}
+
+    h3. {{ variable['hello_world'] }}
+  created_on: <%= 10.days.ago.to_s :db %>
+  updated_on: <%= 10.days.ago.to_s :db %>
+  keywords:
+  filter_type: Textile
+  position : 3
+  created_at: <%= 10.days.ago.to_s :db %>
+  updated_at: <%= 10.days.ago.to_s :db %>
+
+
+second_root:
+  parent:
+  mount : "/comatose"
+  full_path: ""
+  slug: root-2
+  title : Root 2
+  body: |-
+    Second Root
+  created_on: <%= 10.days.ago.to_s :db %>
+  updated_on: <%= 10.days.ago.to_s :db %>
+  keywords:
+  filter_type: Textile
+  position : 1
+  created_at: <%= 10.days.ago.to_s :db %>
+  updated_at: <%= 10.days.ago.to_s :db %>
+
+
+root_2_faq:
+  parent: second_root
+  mount : "/comatose"
+  full_path: "/faq"
+  slug: child-1
+  title: FAQ 2
+  body: |-
+    h1. The second faq
   created_on: <%= 10.days.ago.to_s :db %>
   updated_on: <%= 10.days.ago.to_s :db %>
   keywords:

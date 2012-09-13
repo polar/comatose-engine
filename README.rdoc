@@ -118,7 +118,7 @@ A Comatose::Variable is basically a Liquid::Drop, which means you define a varia
 {{ ... }} construct. You define a Comatose::Variable by a block, usually in an initializer.
 
   Comatose::Variable.define("products") do
-    return Products.all
+    Products.all
   end
 
 The variable evaluation is dynamic. Each time you use it, the block will get evaluated.
@@ -126,8 +126,41 @@ You may want a static variable that gets evaluated only when it is initialized. 
 use:
 
   Comatose::Variable.define_static("app-title") do
-    return Rails::Application.title
+    Rails::Application.title
   end
+
+You may define Comatose::Variables that have keys by returning a Hash, such that you may
+access a field of a variable by one of two ways.
+
+  Comatose::Variable.define("hey") do
+    { "hello" => "Hello World!", "good_bye" => "Goodbye World!" }
+  end
+
+And you may access these elements in Liquid/Textile as:
+
+  {{ hey.hello }}
+  {{ hey.good-bye }}
+  {{ hey['hello'] }}
+  {{ hey["good_bye"] }}
+
+If you need bona fide methods to be dynamically evaluated you may extend Comatose::Variable as such:
+
+  class V < Comatose::Variable
+    def hello
+      "Hello at #{Time.now}"
+    end
+    def good_bye
+      "Good-bye at #{Time.now}"
+    end
+  end
+  Comatose.register_variable("hey", V.new())
+
+In this case, you must register an instance of the class under a name that you want to use in your Textile using
++Comatose.register_variable+. You may also refer to these elements in Liquid/Textile the say way as above.
+
+You cannot hand your methods any arguments from Textile as if it were a parameterized function.
+In the Liquid implementation, access is always by [] or "fetch" with an integer, "size", "first", and "last".
+You can get somewhat creative by overriding [] and "has_key?", but I'll leave that as a hint.
 
 === Page Variable Fields
 
