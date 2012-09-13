@@ -36,27 +36,28 @@ and reorder them.
 
 ==== Administer Pages
 
-Start the standard rails server and point your browser to: ``http://localhost:3000/home/pages''
+Start the standard rails server and point your browser to: http\://localhost:3000/home/pages
 You will be able create pages and child pages that are accessed as:
 
-  http://localhost:3000/home
-  http://localhost:3000/home/sub-page1
+  http\://localhost:3000/home
+  http\://localhost:3000/home/sub-page1
 
 and so on. The adminstration pages will assign "slugs" to your pages based
 on the title you give the page. You may change the url slug for the page
 at any time.
 
-Of course this is a Rails Engine that is meant to give you the processing capaiblity for dynamic content
+This project is a Rails Engine. It is meant to give you the processing capaiblity for dynamic content
 for pages that you may want to deploy in your application. The default application may not be
 what you want, and in fact, I will dare say, it is probably not what you want.
 
-So don't complain that there is no public confiuration module for the application. There also is no
-authentication or authorization model in use. If you want a configurable application, build one.
-You may use pieces and parts, and they will demonstrate how to use the controllers.
+So don't complain that there is no public confiuration module for the application to jump through your hoops.
+There also is no authentication or authorization model for it. If you want a configurable application, build one.
+You may use pieces and parts of the default application. At the very least they demonstrate how to use the controllers.
 
 The "app/views/comatose/pages" view is sufficiently pieced out in partial ERBs that you can pick and choose
-what you want to show or not. I'll take it from here that you know how to deal with extending/mixing controllers
-in engines. You may want to do extend the controllers if you want add an authenticated authorization model.
+what fields you want to show or not. The original Comatose had configuration options for hiding things.
+I'll take it from here that you know how to deal with extending/mixing controllers
+in engines. You may want to do extend/copy/modify the controllers if you want add an authenticated authorization model.
 
 == Page Content (Liquid and Textile)
 
@@ -96,10 +97,10 @@ child pages named "mary", you can differentiate them as:
 
 You are allowed to have multiple root pages, and they are ordered. When accessing a page by
 a full path url, and the page path matches two different pages from different roots,
-the *first* root-page is used. So, if you went to "http://localhost:3000/home/mary" you would
+the *first* root-page is used. So, if you went to http\://localhost:3000/home/mary you would
 get to the "mary" under the "fester" root.
 
-Having multiple roots allows you to use multiple roots, some of which may be
+Having multiple roots allows you to use roots that may be
 hidden from user view. You can use extra roots to store snippets, which you can refer to by accessing
 the body or content of them. If you had a root page called "snippet1", you could use:
 
@@ -150,10 +151,10 @@ I have many rants about Rails software and "magic".
 
 This project is based on "Comatose: A Micro CMS" by Matt McCray.
 
-I've embedded Comatose in a couple of systems, and it's that was not an effort for the light
-hearted with the embedding problems with Rails 2.3, engines plugin, dessert, etc.
+I've embedded Comatose in a couple of systems, and that was not an effort for the light
+hearted with Rails 2.3, engines plugin, dessert, etc.
 In an effort to get something better in my next project, I gravitated toward
-"Comfortable Mexican Sofa" by Oleg Khabarov, probably because of Ryan's Railscast mention.
+"Comfortable Mexican Sofa" (CMS) by Oleg Khabarov, probably because of Ryan's Railscast mention.
 
 That project took a half ton truck, 20 cups of coffee, and an angry dog to figure out WTF is going on.
 Okay, maybe it was just me trying to fit it over MongoDB with MongoMapper, but I tore my bloody hair
@@ -162,25 +163,27 @@ what's with the damn configuration options? Geezus! They were just daunting. Fur
 know how they worked until you actually tried to do something with them that didn't work.
 This crapola just lead to hours of debugging dynamic code. Thank the guys at Jetbrains for RubyMine.
 
-It seems like since all this Ruby/Rails (stupid) "magic" exists, people feel they *must* use it!
-Stop it people, just stop it. Get off the meth, and get back to writing good code. I don't know
-WTF happend, but n my days, DRY stood for something you did when you got out of the water. "Don't
-repeat yourself"? Really? I mean really? WTF? You mean, we should now all write small functions,
-modularize code, and then put it together? Really? What the hell have they been teaching you in
-College?
+It seems like since all this Ruby/Rails (stupid) "magic" exists, people feel they *must* use it!  CMS
+was riddled with some of the most bizzare shit. So, stop it people, just stop it!
+Get off the meth, and get back to writing good, readable, understandable code. I don't know
+WTF happened, but in my days "DRY" stood for something you did when you got out of the water. "Don't
+repeat yourself"? Really? I mean. really? WTF? You mean, we should now all write small functions,
+modularize code, and then put it together, actually THINK about something? Really?
+What the hell have they been teaching you in college these days?
 
-If you are making a system that is going to be public that "magic" shit just makes understanding a
+If you are making a system that is going to be public, that "magic" shit just makes understanding a
 system almost impossible without a lot of time invested (wasted, IMHO). What a crock!
 After the debacle with Comfortable Mexican Sofa, I've decided to return to Comatose and something
-simple.
+simple. Even it was too complicated.
 
 With the advent of Rails Engines, I've completely stripped Comatose down to its bare essentials
-and eliminated all configuration options, and options of any kind. It does one thing and does
-it well.
+and eliminated all configuration options, and options of any kind, page caching, and other bells and
+whistles. I added PaperClip and the ability to associate a photo with the page, because I needed
+that functionality. Thinking about it, I may rip that out too.
 
-Hell, if you want to use embed this stuff, you should be a programmer, and you should know how to
+So, if you want to use this stuff, you should be a good programmer, and you should know how to
 modify/extend things so that they work they way you want it to, without having some obscure
-configuration option crawling up your butt for 2 days.
+configuration option, or a covertly modified class crawling up your butt and doing spins for 2 days.
 
 I don't see the need to supply a default application for Comatose or to make it work out of the
 box, but it was needed for testing, so there you have it. The real reason for it, is that
@@ -196,8 +199,8 @@ send pull requests. But let me give you this warning:
 
 If your pull request contains some "magic" use of a before_filter, after_filter *anywhere*,
 or inserting improperly named or replacing standard methods into standard system classes, or
-uses "responds_to", it will be denied. Use of "method_missing" anywhere will get you duct taped
-to a rocket and fired into the virtual abyss. Go meet the Flying Spaghetti Monster.
+uses "responds_to?", it will be denied. Use of "method_missing" anywhere will get you duct taped
+to a rocket and fired into the virtual abyss to go meet the Flying Spaghetti Monster. Happy Travels! :)
 
 Cheers,
 

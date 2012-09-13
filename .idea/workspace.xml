@@ -2,52 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98af8748-e56d-4376-b836-6162a4ab11ba" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/comatose/addphoto.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/comatose/application.css.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/comatose/engine_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/comatose/importer.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_body_row.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_created_on_row.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_errors.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_filter_row.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_help_row.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_keywords_row.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_page_status.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_parent_row.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_photo_field_row.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_photo_row.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_preview_area.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_slug_row.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_submit_button_group.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form_title_row.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_import_export.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_page_list.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_script.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/comatose/extensions.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/comatose/application.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/comatose/configuration.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/dummy/app/assets/javascripts/application.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/dummy/app/assets/stylesheets/application.css" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/stylesheets/comatose/admins.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/comatose/pages.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/comatose.iml" afterPath="$PROJECT_DIR$/.idea/comatose.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.rdoc" afterPath="$PROJECT_DIR$/README.rdoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/comatose/pages_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/comatose/pages_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/comatose/page.rb" afterPath="$PROJECT_DIR$/app/models/comatose/page.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/comatose/pages/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/comatose/pages/_page_photo.html.erb" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_page_photo.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/comatose/pages/_pages_items.html.builder" afterPath="$PROJECT_DIR$/app/views/comatose/pages/_pages_items.html.builder" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/comatose/content.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/comatose/content.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/comatose/pages.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/comatose/pages.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20120906152842_create_comatose_pages.rb" afterPath="$PROJECT_DIR$/db/migrate/20120906152842_create_comatose_pages.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/comatose.rb" afterPath="$PROJECT_DIR$/lib/comatose.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/comatose/processing_context.rb" afterPath="$PROJECT_DIR$/lib/comatose/processing_context.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/text_filters.rb" afterPath="$PROJECT_DIR$/lib/text_filters.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/dummy/config/application.rb" afterPath="$PROJECT_DIR$/test/dummy/config/application.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/dummy/db/schema.rb" afterPath="$PROJECT_DIR$/test/dummy/db/schema.rb" />
     </list>
     <ignored path="comatose.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,15 +41,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="form_helper.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/action_view/form_helper.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="11" selection-start="1576" selection-end="1579" vertical-scroll-proportion="-25.72">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/dummy/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -139,10 +86,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pages_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/comatose/pages_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="0" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.33264464">
+            <state line="46" column="0" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.rdoc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="202" column="103" selection-start="9291" selection-end="9291" vertical-scroll-proportion="0.7691373">
               <folding />
             </state>
           </provider>
@@ -198,7 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/models/comatose/page.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20120906152842_create_comatose_pages.rb" />
         <option value="$PROJECT_DIR$/app/views/comatose/pages/_pages_items.html.builder" />
         <option value="$PROJECT_DIR$/app/views/comatose/pages/_form_submit_button_group.html.erb" />
@@ -214,6 +169,7 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/comatose/pages.css" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/comatose/application.css.scss" />
         <option value="$PROJECT_DIR$/app/views/comatose/pages/_form_parent_row.html.erb" />
+        <option value="$PROJECT_DIR$/README.rdoc" />
       </list>
     </option>
   </component>
@@ -1684,12 +1640,16 @@
       <created>1347470190519</created>
       <updated>1347470190519</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Progress&#10;">
+      <created>1347514535871</created>
+      <updated>1347514535871</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1278" y="-3" width="1684" height="1008" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24801812" sideWeight="0.5814951" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32881355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1697,8 +1657,8 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272933" sideWeight="0.46813726" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22610295" sideWeight="0.18644068" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27845776" sideWeight="0.601359" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.398641" sideWeight="0.47988507" order="3" side_tool="false" content_ui="tabs" x="1465" y="416" width="1152" height="585" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27845776" sideWeight="0.601359" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.398641" sideWeight="0.47988507" order="3" side_tool="false" content_ui="tabs" x="1465" y="416" width="1152" height="585" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27267158" sideWeight="0.5344633" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.0" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.32768363" sideWeight="0.46017158" order="2" side_tool="false" content_ui="tabs" x="1363" y="327" width="966" height="563" />
@@ -1773,13 +1733,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/core_ext.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/rvm/gems/ruby-1.9.3-p194@comatose3.0/gems/client_side_validations-3.1.4/lib/client_side_validations/core_ext/range.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1873,6 +1826,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/comatose/pages_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="0" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/comatose/page.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="3" selection-start="3008" selection-end="3008" vertical-scroll-proportion="0.98016334">
@@ -1880,9 +1840,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/comatose/pages_controller.rb">
+    <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="1269" selection-end="1269" vertical-scroll-proportion="0.33264464">
+        <state line="202" column="103" selection-start="9291" selection-end="9291" vertical-scroll-proportion="0.7691373">
           <folding />
         </state>
       </provider>
