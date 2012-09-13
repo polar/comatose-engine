@@ -114,7 +114,7 @@ There is no automatic escaping to make it look exactly like it was stored.
 
 === Variables
 
-A Comatose::Variable is basically a Liquid::Drop, which means you define a variable for use within a
+A +Comatose::Variable+ is basically a +Liquid::Drop+, which means you define a variable for use within a
 {{ ... }} construct. You define a Comatose::Variable by a block, usually in an initializer.
 
   Comatose::Variable.define("products") do
