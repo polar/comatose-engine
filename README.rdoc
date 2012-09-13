@@ -216,6 +216,23 @@ This selection refers to a page from the full path of a specific root.
 * {{ pages['slug'] }}
 This selection returns all pages with this particular slug.
 
+== Multiple Engine Mounts
+
+You may mount the engine many times just using Rails routes. For example, the following illustrates multiple mounts:
+
+   Rails.application.routes.draw do
+      root :to => "home/content#show"
+      mount Comatose::Engine => "/home"
+
+      mount Comatose::Engine => "/away"
+
+      mount Comatose::Engine => "/:inbetween"
+   end
+
+The above Rails routes configuration mounts the engine at urls http\//localhost:3000/home, http\://localhost:3000/away,
+and any other name, such as, http\://localhost:3000/syracuse, http\://localhost:3000/saranac-lake.
+
+
 == Rants
 
 I have many rants about Rails software and "magic".
