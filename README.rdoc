@@ -202,7 +202,10 @@ The %page% variable has the following fields:
 The +pages+ variable refers to other pages by their slugs or full paths. It has the following
 formats:
 
-[+{{ pages['/path/to/page'] }}+] This selection refers to a page by the full path. If the path belongs to 2 or more pages, a collection will be returned, which may be iterated or selected with [0],[1], etc.
+  {{ pages['/path/to/page'] }}
+
+This selection refers to a page by the full path. If the path belongs to 2 or more pages, a
+collection will be returned, which may be iterated or selected with [0],[1], etc.
 
   {{ pages['#root/path/to/page'] }}
 
