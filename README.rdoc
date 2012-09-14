@@ -139,7 +139,7 @@ access different fields of a variable.  For example, if you define a variable as
     { "hello" => "Hello World!", "good_bye" => "Goodbye World!" }
   end
 
-you may access these elements in Liquid/Textile as:
+you may access these elements in Liquid as:
 
   {{ hey.hello }}
   {{ hey.good_bye }}
@@ -158,8 +158,8 @@ If you need bona fide methods to be dynamically evaluated you may extend Comatos
   end
   Comatose.register_variable("hey", V.new())
 
-In this case, you must register an instance of the class under a name that you want to use in your Textile using
-+Comatose.register_variable+. You  refer to these fields in Liquid/Textile the same way as above, i.e. as if they were
+In this case, you must register an instance of the class under a name that you want to use in your Liquid using
+%Comatose.register_variable%. You  refer to these fields in Liquid/Textile the same way as above, i.e. as if they were
 keys.
 
 You *cannot* hand a method any arguments from Textile as if it were a parameterized function.
