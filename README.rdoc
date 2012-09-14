@@ -243,10 +243,12 @@ hearted with Rails 2.3, engines plugin, dessert, etc.
 In an effort to get something better in my next project, I gravitated toward
 "Comfortable Mexican Sofa" (CMS) by Oleg Khabarov, probably because of Ryan's Railscast mention.
 
-That project took a half ton truck, 100 cups of coffee, and an angry dog, and two weeks
+That project took a half ton truck, 100 cups of coffee, an angry dog, and two solid weeks of late nights
 to figure out WTF is going on.
 Okay, maybe it was just me trying to fit it over MongoDB with MongoMapper, but I tore my bloody hair
-out. It was way too complicated. Navigating the code was absolutely horrendous. And
+out. I also ran into some bizzare problem with Paperclip in it because of the
+use of "responds_to?" and some objects that were getting recycled by a "smart" ruby interpreter.
+Anyway, it was way too complicated. Navigating the code was absolutely horrendous. And
 what's with the damn configuration options? Geezus! They were just daunting. Furthermore, you didn't
 know how they worked until you actually tried to do something with them that didn't work.
 This crapola just lead to hours of debugging dynamic code. I have to thank the guys at Jetbrains for
