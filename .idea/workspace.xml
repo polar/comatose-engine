@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98af8748-e56d-4376-b836-6162a4ab11ba" name="Default" comment="Progress&#10;">
+    <list default="true" id="98af8748-e56d-4376-b836-6162a4ab11ba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comatose.iws" />
@@ -721,7 +721,11 @@
       <created>1347635753914</created>
       <updated>1347635753914</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Progress&#10;">
+      <created>1347635985387</created>
+      <updated>1347635985387</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
