@@ -247,19 +247,19 @@ That project took a half ton truck, 100 cups of coffee, an angry dog, and two so
 to figure out WTF is going on.
 Okay, maybe it was just me trying to fit it over MongoDB with MongoMapper, but I tore my bloody hair
 out. I also ran into some bizzare problem with Paperclip in it because of the
-use of "responds_to?" and some objects that were getting recycled by a "smart" ruby interpreter.
+use of %responds_to?% and some objects that were getting recycled by a "smart" ruby interpreter.
 Anyway, it was way too complicated. Navigating the code was absolutely horrendous. And
 what's with the damn configuration options? Geezus! They were just daunting. Furthermore, you didn't
 know how they worked until you actually tried to do something with them that didn't work.
 This crapola just lead to hours of debugging dynamic code. I have to thank the guys at Jetbrains for
-RubyMine.  But with even great tools like RubyMine doesn't give you license to write crappy code.
+RubyMine. However, even with great tools, like RubyMine, that doesn't give you license to write crappy code.
 
 It seems like since all this Ruby/Rails (stupid) "magic" exists, people feel they *must* use it!  CMS
 was riddled with some of the most bizarre shit: before filters, after filters, methods overwriting
-active record field accessors, all for what? To save on a variable name, a function definition, or just
-to show people you're "smart"?
+active record field accessors, all for what -- to save on a variable name, a function definition, or just
+to show people you're "smart", or probably just the stupid fact that you can do it?
 
-So, stop it people, just stop it!
+So, STOP it people, just STOP it!
 Get off the meth, and get back to writing good, readable, understandable code. For example, I don't know
 WTF happened, but in my days "DRY" stood for something you did when you got out of the water. "Don't
 repeat yourself"? Really? I mean. really? WTF? You mean, we should now all write small functions,
