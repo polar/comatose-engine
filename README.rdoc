@@ -262,47 +262,56 @@ to show people you're "smart", or probably just the stupid fact that you can do 
 So, STOP it people, just STOP it!
 Get off the meth, and get back to writing good, readable, understandable code. For example, I don't know
 WTF happened, but in my days "DRY" stood for something you did when you got out of the water. "Don't
-repeat yourself"? Really? I mean. really? WTF? You mean, we should now all write small functions,
+repeat yourself"? Really? WTF? So, we should now all write small functions,
 modularize code, and then put it together in a coherent fashion and actually THINK about the problem
 a bit before jamming it together? Really? We've got to come up with an acronym and make it a fad to
 get us to do that? What the hell have they been teaching in college these days?
 
 Listen, if you are buidling a system that "magic" shit just makes understanding a
-system almost impossible without a lot of time invested (wasted, IMHO). What a crock!
-After the debacle with Comfortable Mexican Sofa, I've decided to return to Comatose and something
-simple. Even it was too complicated.
+system almost impossible without a lot of time invested (wasted, IMHO). Especially, if someone else has
+to deal with it, whether its a public library or your handing the project off to somebody else at work.
+After the debacle with CMS, I've decided to return to Comatose and something
+simple. However, even it was too complicated.
 
-With the advent of Rails Engines, I've completely stripped Comatose down to its bare essentials
-and eliminated all configuration options, and options of any kind, page caching, and other bells and
+So, with the advent of Rails mountable Engines, I've completely stripped Comatose down to its bare essentials.
+I've eliminated all the configuration options: authorization models, page caching, and other bells and
 whistles. I added PaperClip and the ability to associate a photo with the page, because I needed
 that functionality. Thinking about it, I may rip that out too.
 
-So, if you want to use this stuff, you should be a good programmer, and you should know how to
-modify/extend things. It is my hope so that they will work they way you want it to, without
-having some obscure configuration option, or a covertly modified class crawling up
+So, if you want to use this stuff my version, you should be a good programmer, and you should know how to
+modify/extend things. It is my hope so that they will work the way you want it to, without
+having some obscure configuration option, or covertly modified class crawling up
 your butt and doing spins for 2 days.
 
 I don't see the need to supply a default application for Comatose or to make it work out of the
-box, but it was needed for testing, so there you have it. The real reason for it, is that
+box, but it was needed for testing, So, there you have it. The real reason for it is that
 I couldn't test multiple engine mount points because the standard testing harness doesn't
 know how to deal with that correctly yet. Named route methods are the culprit on that one. They only
-refer to the last engine mounted. This situation is as of Rails 3.2.8.
+refer to the last engine mounted. Even so, getting the mount point of an engine during a request isn't
+yet standard, and getting the functional tests to believe it isn't as sane as I would like it to be.
+This situation is as of Rails 3.2.8.
 
-Be warned, I make no claims for the
-default app or wish to maintain it to a deployable status. Use it at your peril.
-It serves merely as an example.
+Anyway, be warned, I make no claims for the default app or wish to maintain it to a deployable status.
+Use it at your peril. It serves merely as an example.
 
 === Contributing
 
 If you want to improve upon this project, you can join the obvious Github party, i.e. fork it, and
-send pull requests. But let me give you this warning:
+send pull requests. I would really like to open this up to other ORMs, like MongoMapper, which should be
+my next endeavor. However, let me give you this warning:
 
 If your pull request contains some "magic" use of a before_filter, after_filter *anywhere*,
 or inserts improperly named methods, or replaces standard methods, into standard system classes, or
-uses "responds_to?", it will be denied. Use of "method_missing" anywhere will get you duct taped
+uses %responds_to?%, it will be denied. Stick to Obejct Oriented Programming for goodness sake! If you need some
+relection and "meta" programming, instead of
+%responds_to?% use %is_a?% and a Type name (class name) that guarrantees the method exits.
+At least at that point, you really
+know what you are dealing with and how calling it may affect the system.
+
+And, last, but not least, use of "method_missing" anywhere will get you duct taped
 to a rocket and fired into the virtual abyss to go meet the Flying Spaghetti Monster.
 
-And while your at it. Keep any comments up to date, in proper English, with correct spelling and
+And while your at it. Keep your comments up to date, in proper English, with correct spelling and
 punctuation! Happy Coding! :)
 
 Cheers,
