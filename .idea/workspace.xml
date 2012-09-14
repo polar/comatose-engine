@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98af8748-e56d-4376-b836-6162a4ab11ba" name="Default" comment="">
+    <list default="true" id="98af8748-e56d-4376-b836-6162a4ab11ba" name="Default" comment="Progress&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="comatose.iws" />
@@ -24,7 +24,7 @@
       <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.rdoc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="76" selection-start="2845" selection-end="2845" vertical-scroll-proportion="0.5687204">
+            <state line="66" column="130" selection-start="2899" selection-end="2899" vertical-scroll-proportion="0.51540285">
               <folding />
             </state>
           </provider>
@@ -913,7 +913,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="76" selection-start="2845" selection-end="2845" vertical-scroll-proportion="0.5687204">
+        <state line="66" column="130" selection-start="2899" selection-end="2899" vertical-scroll-proportion="0.51540285">
           <folding />
         </state>
       </provider>
