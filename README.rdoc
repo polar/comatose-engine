@@ -247,7 +247,7 @@ That project took a half ton truck, 100 cups of coffee, an angry dog, and two so
 to figure out WTF is going on.
 Okay, maybe it was just me trying to fit it over MongoDB with MongoMapper, but I tore my bloody hair
 out. I also ran into some bizzare problem with Paperclip in it because of the
-use of %responds_to?% and some objects that were getting recycled by a "smart" ruby interpreter.
+use of "responds_to?" and some objects that were getting recycled by a "smart" ruby interpreter.
 Anyway, it was way too complicated. Navigating the code was absolutely horrendous. And
 what's with the damn configuration options? Geezus! They were just daunting. Furthermore, you didn't
 know how they worked until you actually tried to do something with them that didn't work.
@@ -302,9 +302,9 @@ my next endeavor. However, let me give you this warning:
 
 If your pull request contains some "magic" use of a before_filter, after_filter *anywhere*,
 or inserts improperly named methods, or replaces standard methods, into standard system classes, or
-uses %responds_to?%, it will be denied. Stick to Obejct Oriented Programming for goodness sake! If you need some
+uses "responds_to?", it will be denied. Stick to Obejct Oriented Programming for goodness sake! If you need some
 relection and "meta" programming, instead of
-%responds_to?% use %is_a?% and a Type name (class name) that guarrantees the method exits.
+"responds_to?" use "is_a?" and a Type name (class name) that guarrantees the method exits.
 At least at that point, you really
 know what you are dealing with and how calling it may affect the system.
 
