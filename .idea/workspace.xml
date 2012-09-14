@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="98af8748-e56d-4376-b836-6162a4ab11ba" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.rdoc" afterPath="$PROJECT_DIR$/README.rdoc" />
     </list>
     <ignored path="comatose.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,7 +88,7 @@
       <file leaf-file-name="README.rdoc" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.rdoc">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="17" selection-start="3054" selection-end="3054" vertical-scroll-proportion="0.6196841">
+            <state line="66" column="48" selection-start="2817" selection-end="2817" vertical-scroll-proportion="0.5832321">
               <folding />
             </state>
           </provider>
@@ -778,7 +779,11 @@
       <created>1347635230854</created>
       <updated>1347635230854</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Progress&#10;">
+      <created>1347635240212</created>
+      <updated>1347635240212</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -970,7 +975,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.rdoc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="17" selection-start="3054" selection-end="3054" vertical-scroll-proportion="0.6196841">
+        <state line="66" column="48" selection-start="2817" selection-end="2817" vertical-scroll-proportion="0.5832321">
           <folding />
         </state>
       </provider>
