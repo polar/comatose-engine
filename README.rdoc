@@ -163,13 +163,15 @@ In this case, you must register an instance of the class under a name that you w
 keys.
 
 You *cannot* hand a method any arguments from Textile as if it were a parameterized function.
-In the Liquid implementation, access into variables is always by [ ], with +fetch+ with an integer,
-or using +size+, +first+, and +last+ on collections. You may get somewhat creative by returning another
-Comatose::Variable by overriding [ ] and +has_key?+, but I'll leave that to the experimenter.
+In the Liquid implementation security is taken into account so users that may edit pages don't go off running
+evals. Access into Liquid variables is restricted to use of [ ], +fetch+ with an integer,
+or using +size+, +first+, and +last+ on collections. You may get around this restriction somewhat creatively by
+returning another Comatose::Variable by overriding [ ] and +has_key?+, but I'll leave that to the experimenter and
+a warning to be careful out there!
 
 === Page Variable Fields
 
-The page variable has the following fields:
+The %page% variable has the following fields:
 
 [+title+] This field returns the title column of the page.
 
@@ -179,7 +181,7 @@ The page variable has the following fields:
 
 [+url+] This field returns the url path of the page including the mount point.
 
-[+link+] This field returns the url path of a Rails link to the page including the mount point, such as +/home/3422+.
+[+link+] This field returns the url path of a Rails "RESTful" link to the page including the mount point, such as +/home/3422+.
 
 [+photo+] This field returns a url for the associated photo.
 
