@@ -64,7 +64,7 @@ authenticated authorization.
 
 == Page Content (Liquid and Textile)
 
-The body of a page is processed by (Liquid|URL:http://liquidmarkup.org) and (RedCloth's Textile|URL:http:http://redcloth.org/textile).
+The body of a page is processed by ((<Liquid|URL:http://liquidmarkup.org>)) and (RedCloth's Textile|URL:http:http://redcloth.org/textile).
 Liquid processes a page by giving you special constructs with which to program your page. Constructs
 appearing between {% ... %} are control structures and do not print. Constructs
 appearing inside {{ ...  }} are variable accesses and put forth their content.
