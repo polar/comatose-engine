@@ -54,18 +54,19 @@ what you want, and in fact, I will dare say, it is probably not what you want.
 
 So don't complain that there is no public configuration module for the application to jump through your hoops.
 There also is no authentication or authorization model for it. If you want a configurable application, build one.
-You may use pieces and parts of the default application. At the very least they demonstrate how to use the controllers.
+You may use pieces and parts of the default application. At the very least, they demonstrate how to use the controllers.
 
 The +app/views/comatose/pages+ view is sufficiently pieced out in partial ERBs that you can pick and choose
 what fields you want to show or not. The original Comatose had configuration options for hiding things.
 I'll take it from here that you know how to deal with extending/mixing controllers
-in engines. You may want to do extend/copy/modify the controllers if you want add an authenticated authorization model.
+in engines. For instance, you may want to do extend/copy/modify the controllers if you want to add
+authenticated authorization.
 
 == Page Content (Liquid and Textile)
 
-The body of a page is processed by Liquid and Textile. Liquid processes a page
+The body of a page is processed by Liquid (http://liquidmarkup.org) and Textile. Liquid processes a page
 by giving you special constructs with which to program your page. Constructs
-appearing between {% ... %} are control structures and do not print. Constructs
+appearing between ((%{% ... %}%)) are control structures and do not print. Constructs
 appearing inside {{ ...  }} are variable accesses and put forth their content.
 Please check the Liquid documentation for more information and for the constructs available.
 
