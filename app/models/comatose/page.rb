@@ -18,6 +18,7 @@ module Comatose
   #   We need versions of acts_as_versioned, act_as_list, and acts_as_tree to work with those.
   #
   class Page < ActiveRecord::Base
+    include ActsAsTree
 
     # This declaration allows liquid to call these methods as if it were a Liquid::Drop.
     liquid_methods :children, :photo, :title, :keywords, :slug, :position,

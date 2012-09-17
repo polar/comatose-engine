@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120913013132) do
+ActiveRecord::Schema.define(:version => 20120906152842) do
 
   create_table "comatose_page_versions", :force => true do |t|
     t.integer  "page_id"
