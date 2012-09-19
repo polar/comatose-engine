@@ -1,7 +1,7 @@
 # Extends the view to support rendering inline comatose pages...
 ActionView::Base.class_eval do
 
-  def render_comatose(page_path, params)
+  def render_comatose(page_path, params = {})
     params = {
         :silent => false,
         :locals => { }
@@ -20,9 +20,9 @@ ActionView::Base.class_eval do
     # if mount is not defined the application may just have one Comatose::Engine mounted,
     # Therefore, we assume it's a default.
     if mount
-      pages = Comatose::Page.where(:mount => mount, :full_path => path).all
+      pages = Comatose::Page.where(:mount => mount, :full_path => page_path).all
     else
-      pages = Comatose::Page.where(:full_path => path).all
+      pages = Comatose::Page.where(:full_path => page_path).all
     end
 
     # As of Rails 3.2.8 we don't know how many times or where the Comatose::Engine are mounted.

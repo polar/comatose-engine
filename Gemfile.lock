@@ -16,7 +16,7 @@ PATH
       jquery-rails
       liquid (~> 2.4.0)
       paperclip (~> 3.2.0)
-      rails (~> 3.2.8)
+      rails (~> 3.2.0)
       remotipart (~> 1.0.0)
       responds_to_parent (~> 1.1.0)
 

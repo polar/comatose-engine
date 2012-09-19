@@ -1,3 +1,5 @@
+require "acts_as_tree"
+require "acts_as_versioned"
 require "comatose/engine"
 require 'comatose/support/inline_rendering'
 require 'liquid'
