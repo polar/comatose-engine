@@ -42,8 +42,8 @@ class Comatose::PagesControllerTest < ActionController::TestCase
                    :commit => "Create Page", :format => :js},
         @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
+    assert assigns('page').mount == "/comatose"
     # Should be redirected to PagesPath by way of Javascript
-    #assert_redirected_to pages_path
     assert_match /window.location\s*=\s*\"\/comatose\/pages\"\s*;/, response.body
   end
 
@@ -56,8 +56,8 @@ class Comatose::PagesControllerTest < ActionController::TestCase
                    :commit => "Create Page", :format => :js},
         @request.env.update('SCRIPT_NAME' => "/comatose")
     assert_response :success
+    assert assigns('page').mount == "/comatose"
     # Should be redirected to PagesPath by way of Javascript
-    #assert_redirected_to pages_path
     assert_match /window.location\s*=\s*\"\/comatose\/pages\"\s*;/, response.body
   end
 
@@ -104,6 +104,32 @@ class Comatose::PagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "create a page with a photo" do
+    upload = ActionDispatch::Http::UploadedFile.new(:filename     => 'favicon.ico',
+                                                    :content_type => 'image/jpeg',
+                                                    :tempfile     => File.new("#{Rails.root}/public/favicon.ico")
+    )
+    post :create, { :use_route => "comatose",
+                    :page      => { :title       => "Test page",
+                                    :body        => 'This is a *test*',
+                                    :photo       => upload,
+                                    :parent_id   => comatose_pages(:faq).id,
+                                    :filter_type => 'Textile' },
+                    :commit    => "Create Page", :format => :js },
+         @request.env.update('SCRIPT_NAME' => "/comatose")
+    assert_response :success
+    assert assigns('page').mount == "/comatose"
+    id = assigns('page').id
+
+    assert File.exists?("#{Rails.root}/public/system/comatose/comatose/pages/photos/#{id}/original/favicon.ico")
+    # Should be redirected to PagesPath by way of Javascript
+    assert_match /window.location\s*=\s*\"\/comatose\/pages\"\s*;/, response.body
+
+    # Now, destroy the page, and the photo directory for the attachment should be deleted.
+    assigns(:page).destroy
+    assert !File.exists?("#{Rails.root}/public/system/comatose/comatose/pages/photos/#{id}")
+  end
+
   test "update pages with valid data" do
     post :update, {:use_route => "comatose",
                    :id=> comatose_pages(:faq).id,
@@ -143,6 +169,5 @@ class Comatose::PagesControllerTest < ActionController::TestCase
     q1.reload
     assert_equal q1.position, 1
   end
-
 
 end

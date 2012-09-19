@@ -18,7 +18,7 @@ module Comatose
   #   We need versions of acts_as_versioned, act_as_list, and acts_as_tree to work with those.
   #
   class Page < ActiveRecord::Base
-    include ActsAsTree
+    include ::ActsAsTree
 
     # This declaration allows liquid to call these methods as if it were a Liquid::Drop.
     liquid_methods :children, :photo, :title, :keywords, :slug, :position,
@@ -32,8 +32,9 @@ module Comatose
     # PaperClip for PagePhotos.
     has_attached_file :photo,
                       :default_url => "",
-                      :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
-                      :url  => "/system/:attachment/:id/:style/:filename"
+                      :path => ":rails_root/public/system/comatose/:mount/pages/:attachment/:id/:style/:filename",
+                      :url  => "/system/comatose/:mount/pages/:attachment/:id/:style/:filename",
+                      :interpolator => Comatose::Interpolations
     attr_accessible :photo, :photo_file_name, :photo_content_type, :photo_file_size, :photo_updated_at
 
     # Only versions the page according the significant content.

@@ -8,13 +8,14 @@ module Comatose
     define_model_callbacks :save
     define_model_callbacks :destroy
 
-    validate :no_attachement_errors
+    validate :no_attachment_errors
 
     attr_accessor :id, :import_file_file_name, :import_file_file_size, :import_file_content_type, :import_file_updated_at
 
     has_attached_file :import_file,
-                      :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
-                      :url  => "/system/:attachment/:id/:style/:filename"
+                      :path => ":rails_root/public/system/comatose/:mount/importer/:attachment/:id/:style/:filename",
+                      :url  => "/system/comatose/:mount/importer/:attachment/:id/:style/:filename",
+                      :interpolator => Comatose::Interpolations
 
     def initialize(args = { })
       args.each_pair do |k, v|
